@@ -14,10 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('items', 'ItemController');
+Auth::routes();
 
-Route::get('/abc',function() {
-    return "Hello Man@";
-});
-Route::get('/hello',function() {
-    return "Hello World !";
-});
+Route::get('/home', 'HomeController@index')->name('home');
