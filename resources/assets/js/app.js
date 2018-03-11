@@ -47,7 +47,7 @@ const routes = [
     },
     {
         name : 'EditItem',
-        path : 'edit/:id',
+        path : '/edit/:id',
         component : EditItem
     }
 ];

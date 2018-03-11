@@ -35,21 +35,21 @@
         name: "display-item",
         data: function() {
             return {
-                items:{}
+                items : {}
             }
         },
         created: function () {
             this.fetchItems();
         },
         mounted: function () {
-            console.log("Hello "+items);
+            console.log("Hello "+ this.items);
         },
         methods : {
             fetchItems() {
                 let uri = 'http://localhost:8000/items';
                 this.axios.get(uri).then((response) => {
                     this.items = response.data;
-                    console.log("Data : ".response.data);
+                    console.log("Data : "+ this.items);
                 });
             },
             deleteItem(id) {
