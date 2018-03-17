@@ -14,7 +14,7 @@
                     <td>ID</td>
                     <td>Item Name</td>
                     <td>Item Price</td>
-                    <td>Actions</td>
+                    <td colspan="2">Actions</td>
                 </tr>
             </thead>
             <tbody>

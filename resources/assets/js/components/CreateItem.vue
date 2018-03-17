@@ -14,7 +14,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Item Price : </label>
-                        <input type="text" class="form-control col-md-6" v-model="item.price"/>
+                        <input type="text" class="form-control" v-model="item.price"/>
                     </div>
                 </div>
             </div>
