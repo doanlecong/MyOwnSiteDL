@@ -26,3 +26,19 @@
 .footer {
   margin-bottom: 30px;
 }
+.padding-around {
+  padding: 40px;
+}
+@media only screen and (max-width: 420px) {
+  .padding-around {
+    padding: 20px;
+  }
+  .footer .container .row .col-sm img {
+    width: 100%;
+    margin: 10px 0px;
+  }
+}
+.py-4 {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}

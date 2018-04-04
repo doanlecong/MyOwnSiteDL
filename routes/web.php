@@ -32,7 +32,7 @@ Route::get('/dich-vu', function () {
 })->name('dichvu');
 
 Route::get('/chuyen-de', function() {
-    return view('chuyen-de');
+    return view('chuyende');
 })->name('chuyende');
 
 Route::get('/gioi-thieu', function() {
