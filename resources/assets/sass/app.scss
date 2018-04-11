@@ -7,10 +7,48 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
+@import "~font-awesome/scss/font-awesome";
 .navbar-laravel {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 7px 6px 2px rgba(0, 0, 0, 0.13);
+  .container {
+     .navbar-brand {
+       .logo-full-size {
+         width: 200px;
+         height: 80px;
+       }
+     }
+    .navbar-collapse {
+      .navbar-nav {
+        .nav-item {
+          border: 1px solid;
+          border-radius: 5%;
+          border-color: #8fbcec;
+          margin-right: 10px;
+          a {
+            color: dodgerblue;
+            font-size: larger;
+            font-weight: normal;
+          }
+          &:hover {
+            background: #4fbaff;
+            & > a {
+              color: white;
+            }
+          }
+          .dropdown-menu {
+            .dropdown-item {
+              &:hover {
+                background-color: #4fbaff;
+                color: white;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
 }
 .menu-fixed {
   position: fixed;
@@ -26,19 +64,231 @@
 .footer {
   margin-bottom: 30px;
 }
+// Dung de giu khong gian xung quanh mot phan tu
 .padding-around {
   padding: 40px;
 }
-@media only screen and (max-width: 420px) {
-  .padding-around {
-    padding: 20px;
+// Cho phep image wide het co
+.image-full-width {
+  width: 100%;
+}
+.footer {
+   .container {
+     padding: 0px;
+     .row {
+       .col-sm {
+         img {
+           width :100%;
+           box-shadow: 0px 2px 2px 2px rgba(200,200,200,1);
+           transition: all 100ms;
+           &:hover {
+             box-shadow: 2px 4px 9px 2px #c8c8c8;
+           }
+         }
+       }
+     }
+   }
+ }
+div.card {
+  img.card-img-top {
+    margin: auto;
+    border-radius: 50%;
+    width: 50%;
+    margin-top: 5%;
   }
-  .footer .container .row .col-sm img {
-    width: 100%;
-    margin: 10px 0px;
+}
+.container  {
+  .breadcrumb {
+    background: white;
   }
 }
 .py-4 {
   margin-top: 0px !important;
   padding-top: 0px !important;
+  .container {
+    .row {
+      .col-md-4 {
+        .card {
+          &:hover {
+            transform: translate(0px, -3px);
+            box-shadow: 0px 4px 4px 4px rgb(79, 178, 255);
+          }
+          box-shadow: 0px 2px 2px 2px rgb(92, 127, 255);
+          transition: all 100ms;
+          img {
+            box-shadow: 2px 2px 2px 1px rgba(120, 180, 255, 0.67);
+          }
+        }
+
+      }
+    }
+    .card {
+      .padding-around {
+        .form-group {
+          .form-control {
+            &:hover {
+              box-shadow: 2px 2px 2px 2px #e2e2e2;
+            }
+            &:focus {
+              box-shadow: 2px 2px 2px 2px #b5cedd;
+
+            }
+          }
+          button[type=submit] {
+            &:hover {
+              background-color: transparent;
+              border: solid 1px initial;
+              color: inherit;
+              box-shadow: 2px 2px 2px 2px #e2e2e2;
+              transform:  scale(1.5) translateX(-10px);
+            }
+            transition: all 100ms;
+          }
+        }
+      }
+    }
+  }
 }
+@media only screen and (max-width: 420px) {
+  .padding-around {
+    padding: 20px;
+  }
+  .navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0px 7px 6px 2px rgba(0, 0, 0, 0.13);
+    .container {
+      .navbar-brand {
+        .logo-full-size {
+          width: 200px;
+          height: auto;
+        }
+      }
+      .slogan-title {
+        display: none;
+      }
+      .navbar-collapse {
+        .navbar-nav {
+          .nav-item {
+            border-radius: 0;
+            margin-right: 0;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+  .footer .container .row .col-sm img {
+    width: 100%;
+    box-shadow: 0px 2px 2px 2px rgba(160, 112, 139, 1);
+  }
+  .py-4 {
+    .container {
+      .row {
+        .col-md-4 {
+          margin-bottom: 10px !important;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .footer {
+    .container {
+      .row {
+        .col-sm {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  .my-image {
+    margin-bottom: 15px;
+    border-radius: 100% !important;
+    width: 75%;
+    margin: 12%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    .navbar-top {
+      display: none;
+    }
+    .navbar-under-top {
+      .container {
+        .navbar-toggler {
+          border-color: #2290ff;
+        }
+        .navbar-collapse {
+          text-align: center;
+          vertical-align: center;
+          .ul-list {
+            li {
+              a {
+                cursor: pointer;
+              }
+
+            }
+          }
+        }
+      }
+    }
+    .navbar-laravel {
+      background-color: #fff;
+      box-shadow: 0px 7px 6px 2px rgba(0, 0, 0, 0.13);
+      .container {
+        .navbar-brand {
+          .logo-full-size {
+            width: 200px;
+            height: auto;
+          }
+        }
+        .slogan-title {
+          display: none;
+        }
+        .navbar-collapse {
+          .navbar-nav {
+            .nav-item {
+              border-radius: 0;
+              margin-right: 0;
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0px 7px 6px 2px rgba(0, 0, 0, 0.13);
+    .container {
+      .navbar-brand {
+        .logo-full-size {
+          width: 150px;
+          height: 70px;
+        }
+      }
+      .slogan-title {
+        h4 {
+          font-size: medium ;
+        }
+      }
+      .navbar-collapse {
+        .navbar-nav {
+          .nav-item {
+            a {
+              color: dodgerblue;
+              font-size: smaller;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

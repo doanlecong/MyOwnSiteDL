@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -26,28 +25,28 @@
             <div class="padding-around">
                 <form>
                     <div class="form-group">
-                        <label for="name">Tên của bạn<span class="text-xl-center">*</span> : </label>
+                        <label for="name">Tên của bạn<span class="text-xl-center text-danger">*</span> : </label>
                         <input type="text" class="form-control" id="name" name="name" title="Hãy nhập chữ kèm khoảng trắng.VD : Nguyễn Văn A" required>
                         <p>Vui lòng gửi mình tên đầy đủ của bạn</p>
                     </div>
                     <div class="row" >
                         <div class="col-sm">
                             <div class="form-group">
-                                <label for="email">Email của bạn <span class="text-xl-center">*</span> :</label>
+                                <label for="email">Email của bạn <span class="text-xl-center text-danger">*</span> :</label>
                                 <input type="email" class="form-control" id="email" name="email" title="Vd: levana@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                                 <p>Email</p>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group">
-                                <label for="email1">Xác nhận email <span class="text-xl-center">*</span> :</label>
+                                <label for="email1">Xác nhận email <span class="text-xl-center text-danger">*</span> :</label>
                                 <input type="email" class="form-control" id="email1" name="emailconfirm" title="Vd: levana@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                                 <p>Xác nhận email</p>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="content">Nội dung <span class="text-xl-center">*</span> :</label>
+                        <label for="content">Nội dung <span class="text-xl-center text-danger">*</span> :</label>
                         <textarea class="form-control" rows="6" required style="resize: vertical; min-height: 100px;" id="content" name="content"></textarea>
                         <p>Hãy mô tả thông tin mà bạn cần liên hệ</p>
                     </div>
