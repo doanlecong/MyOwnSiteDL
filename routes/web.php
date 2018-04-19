@@ -38,7 +38,11 @@ Route::get('/chuyen-de', function() {
 Route::get('/gioi-thieu', function() {
     return view('gioithieu');
 })->name('gioithieu');
+Route::get('/logout', function() {
+    auth()->logout();
+    return redirect('/');
+})->name('logout');
 
 Route::resource('items', 'ItemController');
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('admin');

@@ -24,7 +24,8 @@ class CreateMyUsersTable extends Migration
             $table->string('quote');
             $table->string('status');
             $table->string('permission');
-
+            $table->string('remember_session');
+            $table->string('access_token');
 
             $table->timestamps();
         });

@@ -1,10 +1,12 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,900');
+@import url('https://fonts.googleapis.com/css?family=Lobster&subset=vietnamese');
 // Variables
 @import "variables";
-
+@import "side_menu_admin";
+@import "scrollbar";
+@import "top_nav_admin";
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import "~font-awesome/scss/font-awesome";
@@ -13,9 +15,19 @@
   box-shadow: 0px 7px 6px 2px rgba(0, 0, 0, 0.13);
   .container {
      .navbar-brand {
+       .slogan {
+         transition: color 0.2s;
+         &:hover {
+           color: $orange;
+         }
+       }
        .logo-full-size {
          width: 200px;
          height: 80px;
+         -webkit-transition: all 0.3s;
+         -moz-transition: all 0.3s;
+         -o-transition: all 0.3s;
+         transition: all 0.3s;
        }
      }
     .navbar-collapse {
@@ -25,27 +37,76 @@
           border-radius: 5%;
           border-color: #8fbcec;
           margin-right: 10px;
+          -webkit-transition: background 0.5s;
+          -moz-transition: background 0.5s;
+          -ms-transition: background 0.5s;
+          -o-transition: background 0.5s;
+          transition: background 0.5s;
           a {
             color: dodgerblue;
             font-size: larger;
             font-weight: normal;
           }
           &:hover {
-            background: #4fbaff;
+            background: #1879ff;
             & > a {
-              color: white;
+              color: #ffed45;
+              font-weight: bolder;
+              font-family: inherit, 'sans-serif';
             }
           }
           .dropdown-menu {
             .dropdown-item {
+              -webkit-transition: background 0.5s;
+              -moz-transition: background 0.5s;
+              -ms-transition: background 0.5s;
+              -o-transition: background 0.5s;
+              transition: background 0.5s;
               &:hover {
                 background-color: #4fbaff;
-                color: white;
+                color: #ffed45;
               }
             }
           }
 
         }
+      }
+    }
+  }
+}
+.navbar-top {
+  padding-top: 0px !important ;
+  padding-bottom: 0px !important;
+  background-color: $blue1;
+  .container {
+    .navbar-collapse {
+      .navbar-nav {
+        .nav-link {
+          color: #ffed45;
+          font-weight: bolder;
+          font-family: inherit, 'sans-serif';
+        }
+      }
+      .nav-link {
+        color: #ffed45;
+        font-weight: bolder;
+        font-family: inherit, 'sans-serif';
+      }
+    }
+  }
+}
+.shink_navbar {
+  padding-top: 0px !important;
+  padding-bottom: 0px;
+  .container {
+    .navbar-brand {
+      .logo-full-size {
+        width: 150px;
+        height: 70px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
       }
     }
   }
@@ -61,6 +122,10 @@
   width: 1200px;
   height: 400px
 }
+.icon-small {
+  width: 20px;
+  height: 20px;
+}
 .footer {
   margin-bottom: 30px;
 }
@@ -72,9 +137,33 @@
 .image-full-width {
   width: 100%;
 }
+.devider-line {
+  width: 100%;
+  height: 5px;
+  background: #5bbaff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+body{
+  -moz-background-image: url("/upload/images/background_image_1.jpg");
+  -webkit-background-image: url("/upload/images/background_image_1.jpg");
+  -o-background-image: url("/upload/images/background_image_1.jpg");
+  background-image: url("/upload/images/background_image_1.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat-y;
+  & > .container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
 .footer {
    .container {
-     padding: 0px;
+     background-color: white;
+     padding: 20px;
      .row {
        .col-sm {
          img {
@@ -89,6 +178,7 @@
      }
    }
  }
+
 div.card {
   img.card-img-top {
     margin: auto;
@@ -100,18 +190,22 @@ div.card {
 .container  {
   .breadcrumb {
     background: white;
+    margin-top: 20px;
   }
 }
 .py-4 {
   margin-top: 0px !important;
   padding-top: 0px !important;
+  text-shadow: none !important;
   .container {
+    padding: 20px;
+    background-color: white;
     .row {
       .col-md-4 {
         .card {
           &:hover {
             transform: translate(0px, -3px);
-            box-shadow: 0px 4px 4px 4px rgb(79, 178, 255);
+            box-shadow: 0px 4px 4px 4px rgb(226, 156, 255);
           }
           box-shadow: 0px 2px 2px 2px rgb(92, 127, 255);
           transition: all 100ms;
@@ -120,6 +214,10 @@ div.card {
           }
         }
 
+      }
+      .col-md-3 {
+        padding-left: 0px;
+        padding-right: 0px;
       }
     }
     .card {
@@ -148,8 +246,60 @@ div.card {
       }
     }
   }
+  .dichvu-content {
+    background-color: white;
+    padding: 20px !important;
+    .card-header{
+      background: linear-gradient(to left, #33ccff 69%, #ccffff 96%);
+      border-bottom: 1px solid whitesmoke;
+    }
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+      .col-md-4 {
+        .dichvu-card {
+          max-height: 800px;
+          min-height: 415px;
+          .dichvu_web_carousel {
+            .carousel-inner {
+              .carousel-item {
+                .image_dichvu {
+                  max-height: 150px;
+                  min-height: 150px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .dichvu_slogan {
+      transition: color 0.2s;
+      &:hover {
+        color: $orange !important;
+      }
+    }
+  }
+}
+
+.container-fluid {
+  padding: 0;
+  .main-content {
+    transition: margin-left .5s;
+  }
 }
 @media only screen and (max-width: 420px) {
+  body{
+    -moz-background-image: url("/upload/images/background_image_on_mobile.jpg");
+    -webkit-background-image: url("/upload/images/background_image_on_mobile.jpg");
+    -o-background-image: url("/upload/images/background_image_on_mobile.jpg");
+    background-image: url("/upload/images/background_image_on_mobile.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: repeat-y;
+  }
   .padding-around {
     padding: 20px;
   }
@@ -211,13 +361,11 @@ div.card {
 
 @media only screen and (max-width: 768px) {
   body {
-    .navbar-top {
-      display: none;
-    }
     .navbar-under-top {
       .container {
         .navbar-toggler {
           border-color: #2290ff;
+          color: $blue1;
         }
         .navbar-collapse {
           text-align: center;
@@ -257,6 +405,10 @@ div.card {
         }
       }
     }
+    .navbar-top {
+      display: block;
+      background-color: $blue1;
+    }
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -288,7 +440,36 @@ div.card {
       }
     }
   }
+  .navbar-top {
+    background-color: $blue1;
+  }
 }
+@media only screen and (max-width: 1600px) {
+  body{
+    .py-4 {
+      .dichvu-content {
+        .row {
+          .col-md-4 {
+            .dichvu-card {
+              max-height: 800px;
+              min-height: 450px;
+              .dichvu_web_carousel {
+                .carousel-inner {
+                  .carousel-item {
+                    .image_dichvu {
+                      max-height: 150px !important;
+                      min-height: 150px !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
+}
 
 

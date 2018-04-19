@@ -1,0 +1,25 @@
+.container-fluid {
+  .side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+    .d-block {
+      .accordion_content {
+        background-color: white;
+        border-left: 1px solid whitesmoke;
+        border-right: 1px solid whitesmoke;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-in-out;
+      }
+    }
+  }
+}

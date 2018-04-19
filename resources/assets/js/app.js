@@ -6,6 +6,8 @@
  */
 
 require('./bootstrap');
+require('./accordion');
+require('./shinknavbar');
 // window.Vue = require('vue');
 
 /**
