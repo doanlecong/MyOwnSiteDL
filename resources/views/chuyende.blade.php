@@ -10,43 +10,6 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid show-case-chuyen-de">
-        <div class="d-flex justify-content-sm-center">
-            <div class="col-3">
-                <img src="http://via.placeholder.com/300x300" class="img-fluid">
-            </div>
-            <div class="col-3">
-                <div class="col">
-                    <div class="row">
-                        <img src="http://via.placeholder.com/300x150" class="img-fluid">
-                    </div>
-                    <div class="row">
-                        <img src="http://via.placeholder.com/300x150" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="col">
-                    <div class="row">
-                        <img src="http://via.placeholder.com/300x150" class="embed-responsive-item">
-                    </div>
-                    <div class="row">
-                        <img src="http://via.placeholder.com/300x150" class="embed-responsive-item">
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="col">
-                    <div class="row">
-                        <img src="http://via.placeholder.com/300x150" class="embed-responsive-item">
-                    </div>
-                    <div class="row">
-                        <img src="http://via.placeholder.com/300x150" class="embed-responsive-item">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="row border border-primary pt-md-3 pb-md-3 mb-sm-3">
             <div class="col-sm-4">
@@ -176,18 +139,11 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <div class="d-flex flex-column flex-wrap">
-                    <h2>kdksadmadkmakjcnvnasovnsiovcnmsvonovnsaovnsinvsdi</h2>
-                </div>
-                <div class="d-flex flex-column">
-                    <h2>kdksadmadkmakjcnvnasovnsiovcnmsvonovnsaovnsinvsdi</h2>
-                </div>
-                <div class="d-flex flex-column">
-                    <h2>kdksadmadkmakjcnvnasovnsiovcnmsvonovnsaovnsinvsdi</h2>
-                </div>
-                <div class="d-flex flex-column">
-                    <h2>kdksadmadkmakjcnvnasovnsiovcnmsvonovnsaovnsinvsdi</h2>
-                </div>
+                <h2>kdksadmadkmakjcnvnasovnsiovcnmsvonovnsaovnsinvsdi</h2>
+                <h2>kdksadmadkmakjcnvnasovnsiovcnmsvonovnsaovnsinvsdi</h2>
+                <h2>kdksadmadkmakjcnvnasovnsiovcnmsvonovnsaovnsinvsdi</h2>
+                <h2>kdksadmadkmakjcnvnasovnsiovcnmsvonovnsaovnsinvsdi</h2>
+                <h2>kdksadmadkmakjcnvnasovnsiovcnmsvonovnsaovnsinvsdi</h2>
             </div>
         </div>
     </div>

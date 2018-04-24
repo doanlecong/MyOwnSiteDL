@@ -1,90 +1,118 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div id="demo" class="carousel slide" data-ride="carousel">
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{asset('upload/images/image1.jpg')}}" alt="Los Angeles" class="rounded img-carousel">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{asset('upload/images/image2.jpg')}}" alt="Chicago" class="rounded img-carousel">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{asset('upload/images/image3.jpg')}}" alt="New York" class="rounded img-carousel">
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
+    <div id="container-fluid" class="container-fluid justify-content-center">
+        <div class="welcome_slogan text-center text-light">
+            <h1 class="text-capitalize">Chào mừng bạn đến với <span class="inner_h1" style="font-family: Lobster">My Own Site</span></h1>
+            <p class="text-xl-center" style="font-family: Lobster">Với mục đích chính là chia sẻ kiến thức về khoa học máy tính và các công nghệ <span class="inner_p">lập trình Web, lập trình Ứng dụng di động..</span></p>
         </div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="container" style="font-family: Roboto">
         <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <h1 class="display-6 title_baiviet">5 điều bạn nên làm để có năng lượng tràn trề trong một ngày làm việc.</h1>
+            <p class="lead">Ngày ngày , chúng ta đi làm , có thể sẽ có lúc chúng ta cảm thấy mệt mỏi vì mọi thứ cứ tiếp diễn và lặp lại ...</p>
             <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p>Liệu rằng bạn có thực sự muốn thay đổi chưa. Cuối bài , mình chúc bạn sẽ luôn có những phút giây làm việc hiệu quả và vui vẻ</p>
             <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Đọc Thêm</a>
             </p>
         </div>
-        <hr>
+        <div class="devider-line"></div>
         <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <h1 class="display-6 title_baiviet">Những bài viết cùng cùng chuyên đề mới.</h1>
             <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p>Cũng theo dõi các bài viết cùng chuyên đề nào các bợn</p>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header">
-                            Quote
+                        <div class="card-header card_header_gradient">
+                            PHP
                         </div>
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <p>Chạy cron job để thực thi các tác vụ không đồng bộ.</p>
                                 <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
                             </blockquote>
-                            <button type="button" class="btn btn-outline-primary">Primary</button>
+                            <button type="button" class="btn btn-outline-primary">Đọc nào</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header">
-                            Quote
+                        <div class="card-header card_header_gradient">
+                            RUBY
                         </div>
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <p>Các kiểu dữ liệu trong ruby ( và còn cả Rails)</p>
                                 <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
                             </blockquote>
-                            <button type="button" class="btn btn-outline-primary">Primary</button>
+                            <button type="button" class="btn btn-outline-primary">Đọc nào</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header">
-                            Quote
+                        <div class="card-header card_header_gradient">
+                            REACT
                         </div>
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <p>Các trạng thái cơ bản trong một ứng dụng REACT.JS và làm thế nào để sử dụng.</p>
                                 <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
                             </blockquote>
-                            <button type="button" class="btn btn-outline-primary">Primary</button>
+                            <button type="button" class="btn btn-outline-primary">Đọc nào</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="devider-line"></div>
+        <div class="jumbotron">
+            <h1 class="display-6 title_baiviet">Các bài viết được nhiều bạn đọc</h1>
+            <hr class="my-4">
+            <p>Chuỗi bài viết về Framework PHP Laravel</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header card_header_gradient">
+                            PHP
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Mail và cách thức gửi mail trong Laravel</p>
+                                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                            </blockquote>
+                            <button type="button" class="btn btn-outline-primary">Đọc nào</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header card_header_gradient">
+                            PHP
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Gửi Notification trong một ứng dụng Laravel</p>
+                                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                            </blockquote>
+                            <button type="button" class="btn btn-outline-primary">Đọc nào</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header card_header_gradient">
+                            PHP
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Tối ưu hóa các trình chạy realtime với PusherJS và Laravel Echo</p>
+                                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                            </blockquote>
+                            <button type="button" class="btn btn-outline-primary">Đọc nào</button>
                         </div>
                     </div>
                 </div>

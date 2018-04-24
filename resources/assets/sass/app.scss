@@ -24,10 +24,10 @@
        .logo-full-size {
          width: 200px;
          height: 80px;
-         -webkit-transition: all 0.3s;
-         -moz-transition: all 0.3s;
-         -o-transition: all 0.3s;
-         transition: all 0.3s;
+         -webkit-transition: all ease-in-out 0.5s;
+         -moz-transition: all ease-in-out 0.5s;
+         -o-transition: all ease-in-out 0.5s;
+         transition: all ease-in-out 0.3s;
        }
      }
     .navbar-collapse {
@@ -44,7 +44,7 @@
           transition: background 0.5s;
           a {
             color: dodgerblue;
-            font-size: larger;
+            font-size: smaller;
             font-weight: normal;
           }
           &:hover {
@@ -56,6 +56,7 @@
             }
           }
           .dropdown-menu {
+            box-shadow: 0px 2px 6px 1px rgb(109, 141, 150);
             .dropdown-item {
               -webkit-transition: background 0.5s;
               -moz-transition: background 0.5s;
@@ -98,6 +99,15 @@
 .shink_navbar {
   padding-top: 0px !important;
   padding-bottom: 0px;
+  background-color: rgba(240, 240, 242, 0.8);
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -ms-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: papayawhip;
+  }
   .container {
     .navbar-brand {
       .logo-full-size {
@@ -162,6 +172,12 @@ body{
 }
 .footer {
    .container {
+     .danhmuc {
+       color: $orange;
+     }
+     .sdt {
+       color: $blue1;
+     }
      background-color: white;
      padding: 20px;
      .row {
@@ -193,10 +209,75 @@ div.card {
     margin-top: 20px;
   }
 }
+.font-lobster {
+  font-family: Lobster;
+}
+.font-roboto {
+  font-family: Roboto;
+}
+.blue-text {
+  color: $blue1;
+}
+.orange-text {
+  color: $orange;
+}
+.jumbotron {
+  background-color: whitesmoke;
+  padding: 2rem 2rem;
+  .title_baiviet  {
+    color: $blue1;
+    font-weight: bold;
+  }
+}
+.card_header_gradient {
+  background: linear-gradient(to left, #33ccff 69%, #ccffff 96%);
+  border-bottom: 1px solid whitesmoke;
+  color: #005cbf;
+  font-size: medium;
+  font-weight: bold;
+}
 .py-4 {
   margin-top: 0px !important;
   padding-top: 0px !important;
   text-shadow: none !important;
+  .container-fluid {
+    background: linear-gradient(to bottom right, #66ffff -7%, #cc00cc 82%);
+    min-height: 500px;
+    max-height: 600px;
+    background-size: cover;
+    background-position: center;
+    .welcome_slogan {
+      position: absolute;
+      left: 19.5%;
+      top: 28%;
+      h1 {
+        font-size: 50px;
+        .inner_h1 {
+          font-size: 96px;
+          font-weight: lighter;
+          border: 2px solid;
+          border-radius: 5px;
+          padding: 5px;
+          -webkit-transform: color 0.2s;
+          -moz-transform: color 0.2s;
+          -ms-transform: color 0.2s;
+          -o-transform: color 0.2s;
+          transform: color 0.2s;
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+      p {
+        font-size: 25px;
+        margin-top: 30px;
+      }
+    }
+    canvas {
+      width: 100%;
+      height: 500px;
+    }
+  }
   .container {
     padding: 20px;
     background-color: white;
@@ -279,6 +360,23 @@ div.card {
         color: $orange !important;
       }
     }
+    .feedback-khachhang {
+      .feedback-carousel {
+        width: 100%;
+        .carousel-control-prev {
+          width: 20px;
+          .carousel-control-prev-icon {
+            background-color: black;
+          }
+        }
+        .carousel-control-next {
+          width: 20px;
+          .carousel-control-next-icon {
+            background-color: black;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -294,11 +392,28 @@ div.card {
     -webkit-background-image: url("/upload/images/background_image_on_mobile.jpg");
     -o-background-image: url("/upload/images/background_image_on_mobile.jpg");
     background-image: url("/upload/images/background_image_on_mobile.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    //-webkit-background-size: cover;
+    //-moz-background-size: cover;
+    //-o-background-size: cover;
+    //background-size: cover;
     background-repeat: repeat-y;
+    .py-4 {
+      .container-fluid {
+        .welcome_slogan {
+          top: 30% !important;
+          left: 0 !important;
+          h1 {
+            font-size: 32px !important;
+            .inner_h1 {
+              font-size: 52px !important;
+            }
+          }
+          p{
+            font-size: 20px !important;
+          }
+        }
+      }
+    }
   }
   .padding-around {
     padding: 20px;
@@ -419,7 +534,7 @@ div.card {
       .navbar-brand {
         .logo-full-size {
           width: 150px;
-          height: 70px;
+          height: 40px;
         }
       }
       .slogan-title {
@@ -443,10 +558,66 @@ div.card {
   .navbar-top {
     background-color: $blue1;
   }
+  body {
+    .py-4 {
+      .container-fluid {
+        .welcome_slogan {
+          left: 0% !important;
+          h1 {
+              font-size: 38px;
+            .inner_h1 {
+              font-size: 64px;
+            }
+          }
+          p {
+            font-size: 22px;
+            .inner_p {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1368px) {
+  .container {
+    max-width: 950px;
+  }
+  body {
+    .navbar-laravel {
+      .container {
+        .navbar-brand {
+          .logo-full-size {
+            width: 150px;
+            height: 40px;
+          }
+        }
+      }
+    }
+    .py-4 {
+      .container-fluid {
+        .welcome_slogan {
+          left: 12% !important;
+          top: 38% !important;
+          p {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
 }
 @media only screen and (max-width: 1600px) {
   body{
     .py-4 {
+      .container-fluid {
+        .welcome_slogan {
+          top:30%;
+          left: 14%;
+        }
+      }
       .dichvu-content {
         .row {
           .col-md-4 {
