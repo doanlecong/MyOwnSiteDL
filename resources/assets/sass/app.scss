@@ -10,6 +10,126 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import "~font-awesome/scss/font-awesome";
+#paralax_duan {
+  margin:0;
+  padding:0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 700px;
+  box-shadow: 2px 2px 2px 2px purple;
+  h1 {
+    font-size: 250%
+  }
+
+  p {
+    font-size: 140%;
+    line-height: 150%;
+    color: #333;
+  }
+
+  .slide {
+    position: relative;
+    padding: 30vh 10%;
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+    transform-style: inherit;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    width: 320px;
+    height: 240px;
+    transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(240,230,220, .7);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+  }
+
+  img:last-of-type {
+    transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
+  }
+
+  .slide:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, .7);
+  }
+
+  .title {
+    width: 50%;
+    padding: 5%;
+    border-radius: 5px;
+    background: rgba(240,230,220, .7);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+  }
+
+  .slide:nth-child(2n) .title {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .slide:nth-child(2n+1) .title {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .slide, .slide:before {
+    background: 50% 50% / cover;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 175%;
+    color: #fff;
+    text-shadow: 0 2px 2px #000;
+  }
+
+  #title {
+    background-image: url("https://lorempixel.com/640/480/abstract/6/");
+    z-index:2;
+  }
+
+  #title h1 {
+    transform: translateZ(.25px) scale(.75);
+    transform-origin: 50% 100%;
+
+  }
+
+  #slide1:before {
+    background-image: url("https://lorempixel.com/640/480/abstract/4/");
+    transform: translateZ(-1px) scale(2);
+  }
+
+  #slide2 {
+    background-image: url("https://lorempixel.com/640/480/abstract/3/");
+    z-index:2;
+  }
+
+  #slide3:before {
+    background-image: url("https://lorempixel.com/640/480/abstract/5/");
+    transform: translateZ(-1px) scale(2);
+  }
+
+  #slide4 {
+    background: #222;
+  }
+}
+.breadcrumb {
+  border-radius: 0;
+  border-top: 5px solid $blue1 !important;
+}
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0px 7px 6px 2px rgba(0, 0, 0, 0.13);
@@ -17,9 +137,6 @@
      .navbar-brand {
        .slogan {
          transition: color 0.2s;
-         &:hover {
-           color: $orange;
-         }
        }
        .logo-full-size {
          width: 200px;
@@ -43,9 +160,9 @@
           -o-transition: background 0.5s;
           transition: background 0.5s;
           a {
-            color: dodgerblue;
-            font-size: smaller;
-            font-weight: normal;
+            color: $blue1;
+            font-size: medium;
+            font-weight: bold;
           }
           &:hover {
             background: #1879ff;
@@ -99,14 +216,14 @@
 .shink_navbar {
   padding-top: 0px !important;
   padding-bottom: 0px;
-  background-color: rgba(240, 240, 242, 0.8);
+  background-color: rgba(77, 185, 226, 0.87);
   -webkit-transition: background-color 0.2s;
   -moz-transition: background-color 0.2s;
   -ms-transition: background-color 0.2s;
   -o-transition: background-color 0.2s;
   transition: background-color 0.2s;
   &:hover {
-    background-color: papayawhip;
+    background-color: #4fb2ff;
   }
   .container {
     .navbar-brand {
@@ -117,6 +234,24 @@
         -moz-transition: all 0.3s;
         -o-transition: all 0.3s;
         transition: all 0.3s;
+      }
+    }
+    .slogan-title {
+      color: white;
+      &:hover {
+        color: white !important;
+      }
+    }
+    .navbar-collapse {
+      .navbar-nav {
+        .nav-item {
+          border: none;
+          .nav-link {
+            color: white;
+            font-size: large;
+            font-weight: bold;
+          }
+        }
       }
     }
   }
@@ -140,6 +275,7 @@
   margin-bottom: 30px;
 }
 // Dung de giu khong gian xung quanh mot phan tu
+// Cac class dung chung , cho cac chuc nang khac nhau
 .padding-around {
   padding: 40px;
 }
@@ -155,6 +291,33 @@
   margin-bottom: 20px;
 
 }
+.border-top {
+  border-top: 18px solid !important;
+}
+.border-top-blue-m {
+  border-top: 5px solid #3802d6 !important;
+}
+.border-top-blue {
+  border-top: 18px solid $blue1 !important;
+}
+.border-top-orange {
+  border-top: 18px solid #ff6d0d !important;
+}
+.border-top-purple {
+  border-top: 18px solid #882d88 !important;
+}
+
+.background-blue {
+  background-color: #4fb2ff;
+}
+
+.background-orange {
+  background-color: orange;
+}
+.background-purple {
+  background-color: plum;
+}
+// het cac class dung chung
 body{
   -moz-background-image: url("/upload/images/background_image_1.jpg");
   -webkit-background-image: url("/upload/images/background_image_1.jpg");
@@ -227,6 +390,7 @@ div.card {
   .title_baiviet  {
     color: $blue1;
     font-weight: bold;
+    text-shadow: 2px 2px 2px yellowgreen;
   }
 }
 .card_header_gradient {
@@ -240,7 +404,7 @@ div.card {
   margin-top: 0px !important;
   padding-top: 0px !important;
   text-shadow: none !important;
-  .container-fluid {
+  #container-fluid {
     background: linear-gradient(to bottom right, #66ffff -7%, #cc00cc 82%);
     min-height: 500px;
     max-height: 600px;
@@ -381,7 +545,9 @@ div.card {
 }
 
 .container-fluid {
-  padding: 0;
+  //.duandalam_dichvu {
+  //  border-top: 18px solid #882d88;
+  //}
   .main-content {
     transition: margin-left .5s;
   }
@@ -579,6 +745,29 @@ div.card {
       }
     }
   }
+  .shink_navbar {
+    background-color: rgba(77, 185, 226, 0.87);
+    .container {
+      .navbar-brand {
+        .logo-full-size {
+        }
+      }
+      .slogan-title {
+      }
+      .navbar-collapse {
+        .navbar-nav {
+          .nav-item {
+            border: none;
+            .nav-link {
+              color: white !important;
+              font-size: small;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1368px) {
@@ -592,6 +781,17 @@ div.card {
           .logo-full-size {
             width: 150px;
             height: 40px;
+          }
+        }
+        .navbar-collapse {
+          .navbar-nav {
+            .nav-item {
+              .nav-link {
+                color: $blue1;
+                font-size: small;
+                font-weight: bold;
+              }
+            }
           }
         }
       }
@@ -608,7 +808,30 @@ div.card {
       }
     }
   }
+  .shink_navbar {
+    .container {
+      .navbar-brand {
+        .logo-full-size {
+        }
+      }
+      .slogan-title {
+      }
+      .navbar-collapse {
+        .navbar-nav {
+          .nav-item {
+            border: none;
+            .nav-link {
+              color: white !important;
+              font-size: small;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
 @media only screen and (max-width: 1600px) {
   body{
     .py-4 {

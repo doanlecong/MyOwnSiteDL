@@ -8,7 +8,7 @@
     </nav>
 @endsection
 @section('content')
-    <div class="container">
+    <div class="container border-top-blue">
         <div class="card">
             <div class="card">
                 <div class="card-header bg-primary text-center text-light">

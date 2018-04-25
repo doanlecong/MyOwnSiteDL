@@ -8,7 +8,7 @@
     </nav>
 @endsection
 @section('content')
-    <div class="container">
+    <div class="container border-top-blue">
         <div class="row text-center">
             <div class="col-sm-4">
                 <img class="rounded embed-responsive my-image" src="http://via.placeholder.com/600x600" alt="My Image">

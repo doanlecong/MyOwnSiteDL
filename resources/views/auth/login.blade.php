@@ -1,11 +1,20 @@
 @extends('layouts.app')
 
+@section('breadcrumb')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Trang Chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Login</li>
+        </ol>
+    </nav>
+@endsection
+
 @section('content')
-<div class="container">
+<div class="container border-top-blue">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header background-blue text-light">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

@@ -1,5 +1,5 @@
 <div class="footer">
-    <div class="container">
+    <div class="container border-top-blue">
         <div class="row">
             <div class="col-sm">
                 <img src="{{ asset('upload/images/php.png') }}" alt="Image">

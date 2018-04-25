@@ -38,7 +38,7 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-md navbar-primary navbar-laravel navbar-under-top sticky-top" id="navbar-under-top">
+    <nav class="navbar navbar-expand-md navbar-primary navbar-laravel navbar-under-top sticky-top border-top-blue-m" id="navbar-under-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img class="img-fluid logo-full-size" src="{{ asset('upload/images/logo.png')}}">

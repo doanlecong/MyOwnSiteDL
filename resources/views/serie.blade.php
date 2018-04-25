@@ -8,7 +8,7 @@
     </nav>
 @endsection
 @section('content')
-    <div class="container">
+    <div class="container border-top-blue">
         <div class="row">
             <div class="col-sm col-md-8 serie-first-col">
                 <div class="serie-list">
