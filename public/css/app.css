@@ -2,12 +2,12 @@
 
 .container-fluid .side-menu {
   height: 100%;
-  width: 0;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: rgba(255, 129, 21, 0.27);
   overflow-x: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -50,6 +50,10 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #d18cff;
+}
+
+.container-fluid .main-content {
+  margin-left: 250px;
 }
 
 .container-fluid .main-content .top-nav-admin .navbar-toggler {
@@ -13240,6 +13244,11 @@ a.text-dark:focus {
 
 #paralax_duan #slide4 {
   background: #222;
+}
+
+.container_admin {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .breadcrumb {

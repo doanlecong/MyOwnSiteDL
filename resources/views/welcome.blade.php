@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="container-fluid" class="container-fluid justify-content-center">
+    <div id="container-fluid" class="container-fluid justify-content-center border-top-purple">
         <div class="welcome_slogan text-center text-light">
             <h1 class="text-capitalize">Chào mừng bạn đến với <span class="inner_h1" style="font-family: Lobster">My Own Site</span></h1>
             <p class="text-xl-center" style="font-family: Lobster">Với mục đích chính là chia sẻ kiến thức về khoa học máy tính và các công nghệ <span class="inner_p">lập trình Web, lập trình Ứng dụng di động..</span></p>
         </div>
         <canvas id="canvas"></canvas>
     </div>
-    <div class="container" style="font-family: Roboto">
+    <div class="container border-top-blue" style="font-family: Roboto">
         <div class="jumbotron">
             <h1 class="display-6 title_baiviet">5 điều bạn nên làm để có năng lượng tràn trề trong một ngày làm việc.</h1>
             <p class="lead">Ngày ngày , chúng ta đi làm , có thể sẽ có lúc chúng ta cảm thấy mệt mỏi vì mọi thứ cứ tiếp diễn và lặp lại ...</p>

@@ -10,6 +10,22 @@
 
 @section('content')
     <div class="container dichvu-content border-top-blue">
+        @if ($errors->any())
+            <div class="devider-line"></div>
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @if(Session::has('success'))
+            <div class="devider-line"></div>
+            <div class="alert alert-success" role="alert">
+                <strong>Success:</strong> {{ Session::get('success') }}
+            </div>
+        @endif
         <div  class="devider-line"></div>
         <div class="background_orange border-top-orange" style="background-color: orange; padding: 20px 0px;" >
             <h2 class="text-center text-light" style="font-family: Lobster">Dịch vụ chúng tôi cung cấp</h2>
@@ -302,40 +318,181 @@
                 </div>
             </div>
             <div class="padding-around">
-                <form>
+                <form method="POST" id="formDichVu" enctype="multipart/form-data" onsubmit="return validateForm();">
+                    {{ csrf_field() }}
+                    @method('POST')
                     <div class="form-group">
                         <label for="name">Tên của bạn<span class="text-xl-center text-danger">*</span> : </label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Tên của bạn" title="Hãy nhập chữ kèm khoảng trắng.VD : Nguyễn Văn A" required>
+                        <input type="text" class="form-control" id="name_nguoi" name="name_nguoi" placeholder="Tên của bạn" style="border-bottom-width: 4px;" title="Hãy nhập chữ kèm khoảng trắng.VD : Nguyễn Văn A" required>
                         <p>Vui lòng gửi mình tên đầy đủ của bạn</p>
                     </div>
                     <div class="row" style="margin-left: -15px;margin-right: -15px;">
                         <div class="col-sm">
                             <div class="form-group">
                                 <label for="email">Email của bạn <span class="text-xl-center text-danger">*</span> :</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="youremail@mail.com" title="Vd: levana@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="youremail@mail.com" style="border-bottom-width: 4px;" title="Vd: levana@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                                 <p>Email</p>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group">
                                 <label for="email1">Xác nhận email <span class="text-xl-center text-danger">*</span> :</label>
-                                <input type="email" class="form-control" id="email1" name="emailconfirm" placeholder="youremail@mail.com" title="Vd: levana@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                                <input type="email" class="form-control" id="email1" name="emailconfirm" placeholder="youremail@mail.com" style="border-bottom-width: 4px;" title="Vd: levana@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                                 <p>Xác nhận email</p>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="dich_vu">Xác nhận email <span class="text-xl-center text-danger">*</span> :</label>
+                        <select class="form-control" name="dich_vu" id="dich_vu" title="Dịch vụ bạn mong muốn" style="border-bottom-width: 4px;">
+                            <option>-- Mời Chọn Dịch Vụ --</option>
+                            <option value="1">Thiết Kế Phát Triển WebSite</option>
+                            <option value="2">Phát triển Ứng Dụng Di Động</option>
+                            <option value="3">Thiết Kế Logo , Banner</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="content">Nội dung <span class="text-xl-center text-danger">*</span> :</label>
-                        <textarea class="form-control" rows="6" required style="resize: vertical; min-height: 100px;" placeholder="Thông tin bạn muốn gửi" id="content" name="content"></textarea>
+                        <textarea class="form-control" rows="6" required style="resize: vertical; min-height: 100px; border-bottom-width: 4px;" placeholder="Thông tin bạn muốn gửi" id="content" name="content_dichvu"></textarea>
                         <p>Hãy mô tả thông tin mà bạn cần liên hệ</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="file_mota">Bạn có thể gửi cho bên mình file mô tả nếu muốn.</label>
+                        <input class="form-control-file" type="file" name="file_mota" id="file_mota" style="border-bottom-width: 4px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="file_mota">Ngoài ra, bạn có thể để lại link đến thư mục tài liệu của bạn :</label>
+                        <input class="form-control" type="url" id="link_external" name="link_external" style="border-bottom-width: 4px;">
                     </div>
                     <hr>
                     <div class="form-group text-xl-center">
-                        <button type="submit" class="btn btn-primary">Gủi Thông Tin</button>
+                        <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
                     </div>
                     <hr class="font-weight-bold">
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        function validateForm () {
+            var name = document.getElementById('name_nguoi');
+            var email = document.getElementById('email');
+            var email1 = document.getElementById('email1');
+            var dich_vu = document.getElementById('dich_vu');
+            var content = document.getElementById('content');
+            var file_mota = document.getElementById('file_mota');
+            var link_external = document.getElementById('link_external');
+
+            if(name.value == "") {
+                name.focus();
+                // console.log('chay valid form NAME ');
+                name.style.borderBottom = " 4px solid red";
+                swal({
+                    title: "Opp !",
+                    text: "Bạn Thiếu Điền Tên Của Bạn Rồi.",
+                    icon: "error",
+                    button: "Diền Tiếp",
+                });
+                name.focus();
+                return false;
+            } else {
+                name.style.borderBottom = " 4px solid dodgerblue";
+            }
+            if(email.value == "") {
+                // console.log('chay valid form Email ');
+                email.style.borderBottom = " 4px solid red";
+                return false;
+            }
+            if(email1.value == "") {
+                // console.log('chay valid form Email1 ');
+                email1.style.borderBottom = " 4px solid red";
+                return false;
+
+            }
+            if(dich_vu.value == "" || ['1','2','3'].indexOf(dich_vu.value) == -1) {
+                dich_vu.focus();
+                dich_vu.style.borderBottom = " 4px solid red";
+                swal({
+                    title: "Opp !",
+                    text: "Bạn ơi ;> Nhớ chọn dịch vụ nào nhá.",
+                    icon: "error",
+                    button: "Điền Tiếp",
+                });
+                return false;
+            } else {
+                dich_vu.style.borderBottom = " 4px solid dodgerblue";
+            }
+            if( content.value == "") {
+                content.focus();
+                content.style.borderBottom = " 4px solid red";
+                return false;
+            } else {
+                content.style.borderBottom = " 4px solid dodgerblue";
+            }
+            if(email1.value != email.value) {
+                email1.focus();
+                email.style.borderBottom = " 4px solid red";
+                email1.style.borderBottom = " 4px solid red";
+                swal({
+                    title: "Opp !",
+                    text: "Có vẻ như email của bạn không dồng nhất với nhau",
+                    icon: "error",
+                    button: "Điền Tiếp",
+                });
+                return false;
+            } else  {
+                email.style.borderBottom = " 4px solid dodgerblue";
+                email1.style.borderBottom = " 4px solid dodgerblue";
+
+            }
+            if(file_mota.value != "" && file_mota.files[0].size > 3145728) {
+                file_mota.value = "";
+                file_mota.style.borderBottom = " 4px solid red";
+                swal({
+                    title: "Opp !",
+                    text: "Xin lỗi . File bạn gửi có dung lượng lớn quá(max: 3MB) ! Bạn có thể gửi file thông qua nhập link liên kết bên dưới.",
+                    icon: "error",
+                    button: "Điền Tiếp",
+                });
+                return false;
+            }
+            var formData = new FormData();
+            formData.append('name_nguoi', name.value);
+            formData.append('email', email.value);
+            formData.append('dich_vu', dich_vu.value);
+            formData.append('content_dichvu', content.value);
+            formData.append('link_external', link_external.value);
+            if(file_mota.value != "") {
+                formData.append('file_mota',file_mota.files[0]);
+            }
+            $.ajax({
+                url: '{{ route('dichvu.store') }}',
+                data: formData,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    swal({
+                        title: "Thank you!",
+                        text:  data.msg,
+                        icon: "success",
+                        button: "Close This!",
+                    });
+
+                },
+                error: function(e) {
+                    swal({
+                        title: "Opp !",
+                        text: e.responseJSON.msg,
+                        icon: "error",
+                        button: "Close This",
+                    });
+                }
+            }).then(function(){
+                var formDichvu = document.getElementById('formDichVu');
+                formDichvu.reset();
+            });
+            return false;
+        }
+    </script>
 @endsection

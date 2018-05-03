@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container border-top-blue">
         <div class="row border border-primary pt-md-3 pb-md-3 mb-sm-3">
             <div class="col-sm-4">
                 <img src="http://via.placeholder.com/600x600" class="img-fluid" alt="chuyende1">

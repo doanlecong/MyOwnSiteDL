@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('icon/icon.ico') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -12,9 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield("script")
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid container_admin" >
         <div class="side-menu" id="side-menu">
             @include('layouts.side_menu_admin')
         </div>
@@ -26,9 +27,9 @@
             </main>
         </div>
     </div>
-
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/side-menu.js') }}"></script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/side-menu.js') }}"></script>
+    @yield('scriptTail')
 </body>
 </html>

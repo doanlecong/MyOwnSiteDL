@@ -8,5 +8,21 @@ class MyTopic extends Model
 {
     //
     protected $table = 'my_topics';
+    //Hepler Functions
 
+    public static function getArrayTags(MyTopic $topic){
+        $arrTags = [];
+        foreach ($topic->tags as $tag) {
+            $arrTags[] = $tag->id;
+        }
+        return $arrTags;
+    }
+
+    // Relationship functions
+    public function typePost() {
+        return $this->belongsTo('App\MyTypePost','type_post_id');
+    }
+    public function tags() {
+        return $this->belongsToMany('App\MyTag');
+    }
 }

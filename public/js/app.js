@@ -14544,9 +14544,9 @@ window.Popper = __webpack_require__(6).default;
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(7);
+    window.$ = window.jQuery = __webpack_require__(7);
 
-  __webpack_require__(26);
+    __webpack_require__(26);
 } catch (e) {}
 
 /**
@@ -14568,9 +14568,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.$.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': token.content
+        }
+    });
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /**
@@ -44513,10 +44518,12 @@ for (var i = 0; i < accordion_button.length; i++) {
 
 window.onscroll = function () {
     var navbarUnderTop = document.getElementById('navbar-under-top');
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        navbarUnderTop.classList.add('shink_navbar');
-    } else if (document.body.scrollTop <= 50 || document.documentElement.scrollTop <= 50) {
-        navbarUnderTop.classList.remove('shink_navbar');
+    if (navbarUnderTop != null) {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            navbarUnderTop.classList.add('shink_navbar');
+        } else if (document.body.scrollTop <= 50 || document.documentElement.scrollTop <= 50) {
+            navbarUnderTop.classList.remove('shink_navbar');
+        }
     }
 };
 
