@@ -31,10 +31,25 @@
                             <p>File Size : {{ $file->file_size }} bytes </p>
                             <p>Foler Save : {{ $file->folder_save }}</p>
                             @if($file->link_external != "NULL")
-                                <p><a href="{{ $file->link_external }}" >{{ $file->link_external }}</a></p>
+                                <p>Link External : <a href="{{ $file->link_external }}" >{{ $file->link_external }}</a></p>
                             @endif
                             @if(in_array($file->file_type, $arrImageType))
-                                <p><img src="{{route('getFileStoragePrivate',$file->id)}}" style="width: 300px;height: auto;"></p>
+                                <p><img src="{{route('getFileStoragePrivate',$file->id)}}" data-toggle="modal" data-target="#exampleModalCenter" style="width: 300px;height: auto;"></p>
+                                <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Hình Từ Khách Hàng</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src="{{ route('getFileStoragePrivate',$file->id)}}"style="width: 100%;height: auto;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             @else
                                 <p><a  href="{{ route('getFileStoragePrivate', $file->id) }}" target="_blank">Mở File Bên Cửa Sổ Khác</a></p>
                             @endif

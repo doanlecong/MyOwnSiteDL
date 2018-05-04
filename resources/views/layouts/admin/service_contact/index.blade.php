@@ -41,7 +41,20 @@
                                 <td>
                                     @if($service->serviceFile)
                                         @if(in_array($service->serviceFile->file_type, $arrImage))
-                                            <div><img src="{{ route('getFileStoragePrivate',$service->serviceFile->id) }} " style="width: 30px;height: 30px;"/></div>
+                                            <div><img src="{{ route('getFileStoragePrivate',$service->serviceFile->id) }}" data-toggle="modal" data-target="#modalShowImage{{$service->serviceFile->id}}" style="width: 30px;height: 30px;"/>
+                                                <div class="modal" id="modalShowImage{{$service->serviceFile->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Hình Từ Khách Hàng</h5>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="{{ route('getFileStoragePrivate',$service->serviceFile->id)}}"style="width: 100%;height: auto;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @else
                                             {{ $service->serviceFile->file_name }}
                                         @endif
