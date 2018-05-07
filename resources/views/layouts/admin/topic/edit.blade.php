@@ -10,20 +10,20 @@
 @endsection
 
 @section('contentAdmin')
-    <div class="col-lg">
+    <div class="col-lg no-padding-left-right">
         <div class="card">
-            <div class="card-header">Chỉnh sửa Chủ Đề</div>
+            <div class="card-header card_header_gradient">Chỉnh sửa Chủ Đề</div>
             <div class="card-body">
                 <form action="{{route('topic.update',$topic->id)}}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     @method('PUT')
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 no-padding-left">
                                 <label for="title" class="text-danger">Tiêu đề :</label>
                                 <input class="form-control" name="title" type="text" placeholder="Nhập tiêu đề cho kiểu bài viết" required value="{{ $topic->title }}">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 no-padding-right">
                                 <label for="type_post" class="text-danger">Bài Viết Thuộc :</label>
                                 <select class="form-control" name="type_post" value="{{ $topic->type_post_id }}">
                                     @foreach($typePosts as $tp)

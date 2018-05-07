@@ -9,9 +9,9 @@
 @endsection
 
 @section('contentAdmin')
-    <div class="col-lg">
+    <div class="col-lg no-padding-left-right">
         <div class="card">
-            <div class="card-header">Danh Sách Tag</div>
+            <div class="card-header card_header_gradient">Danh Sách Tag</div>
             <div class="card-body">
                 <a href="{{ route('tag.create') }}" class="btn btn-outline-primary" >Thêm Mới Tag</a>
                 <div class="devider-line"></div>

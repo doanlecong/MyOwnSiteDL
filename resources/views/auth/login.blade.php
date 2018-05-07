@@ -12,7 +12,7 @@
 @section('content')
 <div class="container border-top-blue">
     <div class="row justify-content-center">
-        <div class="col-md">
+        <div class="col-md no-padding-left-right">
             <div class="card">
                 <div class="card-header background-blue text-light">{{ __('Login') }}</div>
 

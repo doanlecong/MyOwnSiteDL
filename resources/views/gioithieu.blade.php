@@ -8,8 +8,8 @@
     </nav>
 @endsection
 @section('content')
-    <div class="container border-top-blue">
-        <div class="row text-center">
+    <div class="container border-top-blue no-padding-top no-padding-left-right">
+        <div class="row text-center background-darkblue text-light padding-around">
             <div class="col-sm-4">
                 <img class="rounded embed-responsive my-image" src="http://via.placeholder.com/600x600" alt="My Image">
             </div>
@@ -17,31 +17,30 @@
                 <table class="table table-hover table-striped">
                     <tbody>
                     <tr>
-                        <td><th>My Name :</th></td>
-                        <td>Le Cong Doan</td>
+                        <th class="text-right padding-top-30 no-padding-left-right">My Name</th>
+                        <td class="text-left padding-top-30 ">Le Cong Doan</td>
                     </tr>
                     <tr>
-                        <td><th>My Hobbies :</th></td>
-                        <td>Bong da , cau long, boi loi, doc sach, nghe nhac , xem phim</td>
+                        <th class="text-right padding-top-30 no-padding-left-right"><span>My Hobbies</span></th>
+                        <td class="text-left padding-top-30 ">Bong da , cau long, boi loi, doc sach, nghe nhac , xem phim</td>
                     </tr>
                     <tr>
-                        <td><th>My Degree :</th></td>
-                        <td>I have been graduated in Ho Chi Minh City University of Technology (Bach Khoa TP.HCM)</td>
+                        <th class="text-right padding-top-30 no-padding-left-right">My Degree</th>
+                        <td class="text-left padding-top-30 ">I have been graduated in Ho Chi Minh City University of Technology (Bach Khoa TP.HCM)</td>
                     </tr>
                     <tr>
-                        <td><th>My Professional :</th></td>
-                        <td>My major is Computer Science</td>
+                        <th class="text-right padding-top-30 no-padding-left-right"><span>My Professional </span></th>
+                        <td class="text-left padding-top-30 ">My major is Computer Science</td>
                     </tr>
                     <tr>
-                        <td><th>Working in :</th></td>
-                        <td>Web Developer , Mobile App Developer ( Android is my love) , Software Developer</td>
+                        <th class="text-right padding-top-30 no-padding-left-right">Working in</th>
+                        <td class="text-left padding-top-30 ">Web Developer , Mobile App Developer ( Android is my love) , Software Developer</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="devider-line" ></div>
-        <div class="row">
+        <div class="row border-top-blue background-blue padding-around">
             <div class="col-md-4">
                 <div class="card">
                     <img class="card-img-top" src="http://via.placeholder.com/600x600" alt="Card image cap">

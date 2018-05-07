@@ -10,9 +10,9 @@
 @endsection
 
 @section('contentAdmin')
-    <div class="col-lg">
+    <div class="col-lg no-padding-left-right">
         <div class="card">
-            <div class="card-header">Chỉnh sửa Tag</div>
+            <div class="card-header card_header_gradient">Chỉnh sửa Tag</div>
             <div class="card-body">
                 <form action="{{route('tag.update',$tag->id)}}" method="POST" enctype="application/x-www-form-urlencoded">
                     {{ csrf_field() }}

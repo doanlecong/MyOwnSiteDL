@@ -7,12 +7,12 @@ use App\MailServiceContact;
 use App\MyServiceContact;
 use App\MyServiceFile;
 use App\MyUserContactInfo;
-use Illuminate\Http\Response;
 use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Session;
+use Purifier;
 class ServiceContactController extends Controller
 {
     /**
@@ -25,7 +25,7 @@ class ServiceContactController extends Controller
         $this->middleware('auth');
         $serviceName = ConfigData::getArrayService();
         $arrImage = ConfigData::getArrTypeImage();
-        $myServiceContact = MyServiceContact::with('serviceFile')->paginate(10);
+        $myServiceContact = MyServiceContact::orderBy('updated_at','desc')->with('serviceFile')->paginate(10);
         return view('layouts.admin.service_contact.index')
             ->withArrImage($arrImage)
             ->withServiceName($serviceName)
@@ -73,7 +73,7 @@ class ServiceContactController extends Controller
                 $myServiceContact->name = $request->name_nguoi;
                 $myServiceContact->email = $request->email;
                 $myServiceContact->service_name = $request->dich_vu;
-                $myServiceContact->service_description = $request->content_dichvu;
+                $myServiceContact->service_description = Purifier::clean($request->content_dichvu);
                 $myServiceContact->is_read = 'N';
                 $myServiceContact->is_reply = 'N';
                 $myServiceContact->save();
@@ -83,7 +83,7 @@ class ServiceContactController extends Controller
                     $link_external = !empty($request->link_external) ? $request->link_external : ConfigData::$nullValueForString;
                     MyServiceFile::addNew($file->getClientOriginalName(),
                         $file->getSize(),
-                        $file->getClientOriginalExtension(),
+                        strtolower($file->getClientOriginalExtension()),
                         $myServiceContact->id,
                         'storage/app',
                         $link_external);
@@ -153,7 +153,7 @@ class ServiceContactController extends Controller
     }
 
     public function saveMail(Request $request, $id) {
-//        return $request;
+//        return dd($request);
 //        return (new Response($request->ce,200))->header('Content-Type', ConfigData::getContentTypeResponseBaseFileType('html'));
         $serviceContact = MyServiceContact::find($id);
         $serviceContact->is_reply = "Y";
@@ -165,6 +165,8 @@ class ServiceContactController extends Controller
             $oldMail->title = $request->title;
             $oldMail->email = $request->email;
             $oldMail->content = $request->contentEmail;
+            $oldMail->time_to_send = $request->timesend;
+            $oldMail->allow_send = $request->allow_send;
             $oldMail->save();
         } else {
             $newMailService = new MailServiceContact();
@@ -173,6 +175,8 @@ class ServiceContactController extends Controller
             $newMailService->title = $request->title;
             $newMailService->email = $request->email;
             $newMailService->content = $request->contentEmail;
+            $newMailService->time_to_send = $request->timesend;
+            $newMailService->allow_send = $request->allow_send;
             $newMailService->save();
         }
 

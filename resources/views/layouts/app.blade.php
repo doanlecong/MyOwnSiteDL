@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#6c0fdd">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('icon/icon_web_hay_song_voi_dam_me_1.png') }}">
+    @yield('metadata')
     <title>My Own Site | Doan Le</title>
 
     <!-- Styles -->
@@ -29,7 +31,7 @@
                 @if(Auth::check())
                     <ul class="navbar-nav ml-auto">
                         <a class="nav-link ml-auto btn btn-outline-primary" href="{{ route('admin') }}">Admin Page</a>
-                        <a class="nav-link ml-auto btn btn-outline-primary" href="{{ route('logout') }}">Logout </a>
+                        <a class="nav-link ml-auto btn btn-outline-primary" href="{{ route('logout') }}">Logout</a>
                     </ul>
                 @else
                     <a class="nav-link ml-auto" href="/login">Login</a>
@@ -39,7 +41,7 @@
         </div>
     </nav>
     <nav class="navbar navbar-expand-md navbar-primary navbar-laravel navbar-under-top sticky-top border-top-blue-m" id="navbar-under-top">
-        <div class="container">
+        <div class="container no-padding-left-right">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img class="img-fluid logo-full-size" src="{{ asset('upload/images/logo.png')}}">
             </a>
@@ -63,7 +65,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="{{ route('dichvu') }}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dịch Vụ</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('dichvu') }}">Thiết kê phát Triển Website</a>
+                            <a class="dropdown-item" href="{{ route('dichvu') }}">Thiết kế phát Triển Website</a>
                             <a class="dropdown-item" href="{{ route('dichvu') }}">Phát triển Ứng dụng di động</a>
                             <a class="dropdown-item" href="{{ route('dichvu') }}">Thiết kế Logo</a>
                         </div>
@@ -74,6 +76,7 @@
             </div>
         </div>
     </nav>
+    @yield('superlink')
     <div class="container">
         @yield('breadcrumb')
     </div>
@@ -85,6 +88,6 @@
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @yield('addScript')
 </body>
 </html>

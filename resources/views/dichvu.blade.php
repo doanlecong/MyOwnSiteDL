@@ -8,8 +8,19 @@
     </nav>
 @endsection
 
+@section('superlink')
+    <div class="box-shadown-darkblue super-link">
+        <div><p style="width: 100%; font-size: x-small; height: 40px;"><a href="#dichvuchungtoi">Dịch Vụ</a></p></div>
+        <div><p style="width: 100%; font-size: x-small; height: 40px;"><a href="#taisao">Tại Sao</a></p></div>
+        <div><p style="width: 100%; font-size: x-small; height: 40px; "><a href="#thanhqua">Thành Quả</a></p></div>
+        <div><p style="width: 100%; font-size: x-small; height: 40px;"><a href="#feedback">Feedback</a></p></div>
+        <div><p style="width: 100%; font-size: x-small; height: 40px;"><a href="#lienhe">Liên Hệ</a></p></div>
+    </div>
+@endsection
+
 @section('content')
-    <div class="container dichvu-content border-top-blue">
+
+    <div class="container dichvu-content border-top-blue no-padding-left-right no-padding-top no-padding-bottom">
         @if ($errors->any())
             <div class="devider-line"></div>
             <div class="alert alert-danger">
@@ -26,13 +37,12 @@
                 <strong>Success:</strong> {{ Session::get('success') }}
             </div>
         @endif
-        <div  class="devider-line"></div>
-        <div class="background_orange border-top-orange" style="background-color: orange; padding: 20px 0px;" >
-            <h2 class="text-center text-light" style="font-family: Lobster">Dịch vụ chúng tôi cung cấp</h2>
+        <div id="dichvuchungtoi" class="background_orange border-top-orange padding-top-10" style="background-color: orange;">
+            <h2  class="text-center text-light padding-bottom-10 font-lobster text-shadown-orange" >Dịch vụ chúng tôi cung cấp</h2>
             <div class="row" style="font-family: Roboto">
                 <div class="col-md-4">
-                    <div class="card border-primary mb-3 dichvu-card">
-                        <div class="card-header"><h4 class="text-capitalize text-light text-center">Phát triển <span style="display: inline-block">website</span></h4></div>
+                    <div class="card mb-3 dichvu-card">
+                        <div class="card-header"><h4 class="text-capitalize text-light text-center text-shadown-lightblue">Phát triển <span style="display: inline-block">website</span></h4></div>
                         <div class="card-body text-primary">
                             <h5 class="card-title">Thiết kế website chuyên nghiệp</h5>
                             <p class="card-text">Cung cấp cho bạn dịch vụ thiết kế website chuyên nghiệp giá tốt, sự lựa chọn tốt nhất cho bạn, thiết kế website sạch, chuẩn SEO.</p>
@@ -61,8 +71,8 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card border-primary mb-3 dichvu-card">
-                        <div class="card-header"><h4 class="text-capitalize text-light text-center">Phát triển <span style="display: inline-block">ứng dụng di động</span></h4></div>
+                    <div class="card mb-3 dichvu-card">
+                        <div class="card-header"><h4 class="text-capitalize text-light text-center text-shadown-lightblue">Phát triển <span style="display: inline-block">ứng dụng di động</span></h4></div>
                         <div class="card-body text-primary">
                             <h5 class="card-title">Ứng dụng tuyệt vời mang lại nhiều trải nghiệm tốt cho người dùng</h5>
                             <p class="card-text">Trong sự bùng nổ của công nghệ, ứng dụng điện thoại mang lại nhiều lợi ích cho người dùng khi thế giới luôn luôn trong trạng thái kết nối</p>
@@ -91,8 +101,8 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card border-primary mb-3 dichvu-card">
-                        <div class="card-header"><h4 class="text-danger text-capitalize text-center text-light">Thiết kế <span style="display: inline-block">logo, banner</span></h4></div>
+                    <div class="card mb-3 dichvu-card">
+                        <div class="card-header"><h4 class="text-danger text-capitalize text-center text-light text-shadown-lightblue">Thiết kế <span style="display: inline-block">logo, banner</span></h4></div>
                         <div class="card-body text-primary">
                             <h5 class="card-title">Hãy thể hiện dấu ấn của bạn bằng một logo hay banner chuyên nghiệp</h5>
                             <p class="card-text">Logo hay banner bạn mong muốn sẽ được thiết kế cẩn thận đảm bảo chất lượng cao mà giá thành hợp lý</p>
@@ -126,12 +136,12 @@
             </div>
         </div>
 
-        <div class="devider-line" ></div>
-        <div class="background_blue border-top-blue" style="padding: 20px 0px; background-color: #5c7fff">
-            <h3 class="text-center text-capitalize text-light" style="font-family: Lobster">Điều bạn tìm kiếm từ một dịch vụ</h3>
+
+        <div id="taisao" class="background_blue border-top-blue" style="padding: 20px 0px; background-color: #5c7fff">
+            <h3 class="text-center text-capitalize text-light font-lobster text-shadown-blue">Điều bạn tìm kiếm từ một dịch vụ</h3>
             <div class="row mt-3">
                 <div class="col-md-6 col-lg-3">
-                    <div class="card">
+                    <div class="card card-no-border box-shadown-darkblue">
                         <img class="image-full-width" src="{{ asset('upload/images/chatluong_slogan_5.png') }}" alt="Card image cap">
                         <div class="card-body">
                             <h3 style="font-family: Lobster;" class="text-capitalize text-center text-warning">Make it easy</h3>
@@ -140,7 +150,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="card">
+                    <div class="card card-no-border box-shadown-darkblue">
                         <img class="image-full-width" src="{{ asset('upload/images/chatluong_slogan_1.png') }}" alt="Card image cap">
                         <div class="card-body">
                             <h3 style="font-family: Lobster;" class="text-capitalize text-center text-warning">High quality</h3>
@@ -149,7 +159,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="card">
+                    <div class="card card-no-border box-shadown-darkblue">
                         <img class="image-full-width" src="{{ asset('upload/images/chatluong_slogan_3.jpg') }}" alt="Card image cap">
                         <div class="card-body">
                             <h3 style="font-family: Lobster;" class="text-capitalize text-center text-warning">Money saving</h3>
@@ -158,7 +168,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="card">
+                    <div class="card card-no-border box-shadown-darkblue">
                         <img class="image-full-width" src="{{ asset('upload/images/chatluong_slogan_2.jpg') }}" alt="Card image cap">
                         <div class="card-body">
                             <h3 style="font-family: Lobster;" class="text-capitalize text-center text-warning">Long term support</h3>
@@ -168,13 +178,11 @@
                 </div>
             </div>
         </div>
-
-        <div class="devider-line"></div>
     </div>
-    <div class="container-fluid" style="background-color: white; padding: 20px 0px;">
-        <div class="duandalam_dichvu border-top-purple" style="padding: 20px; background-color: plum">
-            <h2 class="dichvu_slogan text-center text-capitalize text-light font-lobster">Những dự án đã được hiện thực</h2>
-            <h3 class="text-center font-lobster">paralax</h3>
+    <div id="thanhqua" class="container-fluid" style="background-color: white; padding: 0px;">
+        <div class="duandalam_dichvu border-top-purple border-bottom-purple" style="padding: 20px; background-color: plum">
+            <h2  class="dichvu_slogan text-center text-capitalize text-light font-lobster text-shadown-purple">Những dự án đã được hiện thực</h2>
+            <h3 class="text-center font-lobster yellow-text text-shadown-purple">*******************************************</h3>
             <div class="row mt-3">
                 <div class="col-lg" id="paralax_duan">
                     <div id="title" class="slide header">
@@ -212,10 +220,9 @@
         </div>
 
     </div>
-    <div class="container dichvu-content border-top-blue">
-        <div class="devider-line"></div>
-        <div class="background_yellowgreen" style="padding: 20px 0px; background-color: #7de2fb">
-            <h3 class="text-capitalize blue-text font-lobster text-center text-light">Khách hàng phản hồi</h3>
+    <div id="feedback" class="container dichvu-content border-top-blue no-padding-left-right no-padding-top no-padding-bottom">
+        <div class="background-blue" style="padding: 20px 0px;">
+            <h3  class="text-capitalize blue-text font-lobster text-center text-light text-shadown-blue">Khách hàng phản hồi</h3>
             <div class="row mt-3 feedback-khachhang">
                 <div id="feedback-carousel" class="carousel slide carousel-fade feedback-carousel" data-ride="carousel">
                     <div class="carousel-inner">
@@ -229,7 +236,7 @@
                                         <table class="table ">
                                             <thead>
                                                 <th>
-                                                    <p>
+                                                    <p class="font-roboto-light">
                                                         Mình là một nhiếp ảnh gia nghiệp cmn dư . Thật may mắn cho mình là trên mạng có rất nhiều nơi làm web ,
                                                         mà không biết nên chọn ai , may thay có người quen giới thiệu cho mình đến với trang .
                                                         Các bạn tại đây hết sức nhiệt tình , luôn sẵn sàng tư vấn cho mình. Nhờ đó mà mình đã có một trang web cho cá nhân vô cùng ưng ý .
@@ -253,7 +260,7 @@
                                         <table class="table  ">
                                             <thead>
                                                 <th>
-                                                    <p>
+                                                    <p class="font-roboto-light">
                                                         Mình mới mở cửa hàng bán tóc giả . Đang lúc cần một website để phục vụ nhu cầu bán hàng của mình thay
                                                         vì sử dụng facebook để quảng cáo, thì mình biết được các bạn bên trang đây . Giờ thì công việc bán hàng của mình đã trở nên
                                                         thật tuyệt từ khi có được trang web được các bạn đây thiết kế. Cám ơn các bạn nhiều . Chúc trang gặp nhiều thành công.
@@ -276,7 +283,7 @@
                                         <table class="table">
                                             <thead>
                                                 <th>
-                                                    <p>
+                                                    <p class="font-roboto-light">
                                                         Gia đình có mở một quán ăn . Nhờ vào trang web đặt bên đây mà quán ăn gia đình chú ngày càng đông khách.
                                                         Khách đến luôn biết được mình sẽ được ăn gì hôm nay , giá cả luôn được cập nhật , các phản hồi góp ý kiến
                                                         của thực khách về cho quán được quản lý rất tốt. Hiện chú đang có kế hoạch nâng cấp website để thực sự phục vụ tốt
@@ -302,12 +309,10 @@
                 </div>
             </div>
         </div>
-
-        <div class="devider-line"></div>
-        <div class="card">
-            <div class="card">
-                <div class="card-header bg-primary text-center text-light font-lobster">
-                    <h2>Hãy để lại mong muốn của bạn</h2>
+        <div  id="lienhe" class="card">
+            <div class="card card-no-border">
+                <div class="card-header background-blue text-center text-light font-lobster card-no-border">
+                    <h2  class="text-shadown-lightblue">Hãy để lại mong muốn của bạn</h2>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Thông tin liên hệ dịch vụ</h5>
@@ -365,10 +370,9 @@
                         <input class="form-control" type="url" id="link_external" name="link_external" style="border-bottom-width: 4px;">
                     </div>
                     <hr>
-                    <div class="form-group text-xl-center">
-                        <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary box-shadown-superdarkblue">Gửi Thông Tin</button>
                     </div>
-                    <hr class="font-weight-bold">
                 </form>
             </div>
         </div>
@@ -476,7 +480,7 @@
                         title: "Thank you!",
                         text:  data.msg,
                         icon: "success",
-                        button: "Close This!",
+                        button: "Tắt nó !",
                     });
 
                 },
@@ -485,7 +489,7 @@
                         title: "Opp !",
                         text: e.responseJSON.msg,
                         icon: "error",
-                        button: "Close This",
+                        button: "Tắt nó !",
                     });
                 }
             }).then(function(){
@@ -495,4 +499,7 @@
             return false;
         }
     </script>
+@endsection
+@section('addScript')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @endsection

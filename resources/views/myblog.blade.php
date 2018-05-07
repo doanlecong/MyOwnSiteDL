@@ -8,7 +8,7 @@
     </nav>
 @endsection
 @section('content')
-    <div class="container border-top-blue">
+    <div class="container border-top-blue no-padding-left-right">
         <div class="jumbotron">
             <div class="card_header_gradient">
                 Bài viết mới trong tuần này !

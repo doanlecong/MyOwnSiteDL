@@ -10,7 +10,7 @@
 @section('content')
     <div class="container border-top-blue">
         <div class="row">
-            <div class="col-sm col-md-8 serie-first-col">
+            <div class="col-sm col-md-8 serie-first-col no-padding-left no-padding-right">
                 <div class="serie-list">
                     <div class="list-group">
                         <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
@@ -116,9 +116,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm col-md-4 serie-second-col">
+            <div class="col-sm col-md-4 serie-second-col no-padding-right">
                 <div class="row mb-sm-5">
-                    <div class="col">
+                    <div class="col no-padding-left-right">
                         <h2>Ban muon tim hieu gi ?</h2>
                         <hr>
                         <h5>Chuyen muc nho 1</h5>
@@ -156,16 +156,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col no-padding-left-right">
                         <h2>Bai dang moi nhat</h2>
                         <hr>
                         <ul class="list-group">
-                            <li class="list-group-item">
+                            <li class="list-group-item no-padding-left-right">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-sm-3 no-padding-right">
                                         <img src="http://via.placeholder.com/100x100" class="img-fluid image-full-width">
                                     </div>
-                                    <div class="col">
+                                    <div class="col-sm-9">
                                         <h6>Dasadaslfkaflkafkalsfaklsfkafafaff</h6>
                                         <hr>
                                         <p>dkasfasfaslfkl;fksld;fksdl;fksf</p>
@@ -173,28 +173,28 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item no-padding-left-right">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-sm-3 no-padding-right">
                                         <img src="http://via.placeholder.com/100x100" class="img-fluid image-full-width">
                                     </div>
-                                    <div class="col">
-                                        <h6>Dasadaslfkaflkafkalsfaklsfkafafaff</h6>
+                                    <div class="col-sm-9">
+                                        <p><h6>Dasadaslfkaflkafkalsfakl</h6></p>
                                         <hr>
                                         <p>dkasfasfaslfkl;fksld;fksdl;fksf</p>
                                         <button class="btn btn-outline-primary">Chi tiết</button>
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item no-padding-left-right">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-sm-3 no-padding-right">
                                         <img src="http://via.placeholder.com/100x100" class="img-fluid image-full-width">
                                     </div>
-                                    <div class="col">
-                                        <h6>Dasadaslfkaflkafkalsfaklsfkafafaff</h6>
+                                    <div class="col-sm-9">
+                                        <h6>Dasadaslfkaflkafkalsfak</h6>
                                         <hr>
-                                        <p>dkasfasfaslfkl;fksld;fksdl;fksf</p>
+                                        <p>dkasfasfaslfkl;fksld;fksdl;fksfdasdasdadadadadadaddasdasdadadadadasdasdasdadfwegwgwgwegwe</p>
                                         <button class="btn btn-outline-primary mb-1">Chi tiết</button>
                                     </div>
                                 </div>

@@ -10,7 +10,7 @@
 @endsection
 
 @section('contentAdmin')
-    <div class="col-lg">
+    <div class="col-lg no-padding-left-right">
         <div class="card">
             <div class="card-header card_header_gradient">Thêm mới Chủ Đề</div>
             <div class="card-body">

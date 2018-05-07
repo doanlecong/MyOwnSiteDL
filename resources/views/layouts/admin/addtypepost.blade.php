@@ -10,9 +10,9 @@
 @endsection
 
 @section('contentAdmin')
-    <div class="col-lg">
+    <div class="col-lg no-padding-left-right">
         <div class="card">
-            <div class="card-header">Thêm mới Kiểu Bài Viết</div>
+            <div class="card-header card_header_gradient">Thêm mới Kiểu Bài Viết</div>
             <div class="card-body">
                 <form action="{{route('typepost.store')}}" method="POST" enctype="application/x-www-form-urlencoded">
                     {{ csrf_field() }}

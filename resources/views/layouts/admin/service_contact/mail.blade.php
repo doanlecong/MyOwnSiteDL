@@ -13,7 +13,7 @@
 @endsection
 
 @section('contentAdmin')
-    <div class="col-lg">
+    <div class="col-lg no-padding-left-right">
         <div class="card">
             <div class="card-header card_header_gradient">Thông tin khách liên hệ</div>
             <div class="card-body">
@@ -67,11 +67,24 @@
                                         <div class="col-md-4">
                                             <label for="fileAttach">File Đính Kèm</label>
                                             <select class="form-control" name="fileAttach">
-                                                <option>Lựa chọn file đính kèm</option>
-                                                <option value="{{1}}">Catalo cho bảng giá dịch vụ website</option>
-                                                <option value="{{2}}">Catalo cho bảng giá dịch vụ mobile</option>
-                                                <option value="{{3}}">Catalo cho bảng giá dịch vụ logo</option>
+                                                <option value=''>Lựa chọn file đính kèm</option>
+                                                <option value="{{'1'}}">Catalo cho bảng giá dịch vụ website</option>
+                                                <option value="{{'2'}}">Catalo cho bảng giá dịch vụ mobile</option>
+                                                <option value="{{'3'}}">Catalo cho bảng giá dịch vụ logo</option>
                                             </select>
+                                            <label for="fileAttach">Thời gian gửi:</label>
+                                            <input class="form-control" type="datetime-local" name="timesend" value="{{ date('Y-m-d', strtotime($mail->time_to_send)).'T'.date('H:i', strtotime($mail->time_to_send)) }}">
+
+                                            <div class="devider-line"></div>
+                                            <label>Allow to Send Mail:</label>
+                                            <div class="btn-group btn-group-toggle btn-light" data-toggle="buttons">
+                                                <label class="btn  {{ ($mail->allow_send == 'Y' ? 'active btn-primary' : '') }}">
+                                                    <input type="radio" name="allow_send" id="option1" value="Y" autocomplete="off" {{ ($mail->allow_send == 'Y' ? 'checked' : '') }}>Allow
+                                                </label>
+                                                <label class="btn {{ ($mail->allow_send == 'N' ? 'active btn-danger' : '') }}">
+                                                    <input type="radio" name="allow_send" id="option2" value="N" autocomplete="off" {{ ($mail->allow_send == 'N' ? 'checked' : '') }}>Wait
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -103,7 +116,7 @@
             'image link media template codesample  code table charmap hr pagebreak ' +
             'nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount ' +
             'imagetools contextmenu colorpicker textpattern help',
-            toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | emoticons ',
+            toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | emoticons | fontselect',
             image_advtab: true,
             templates: [
                 { title: 'Website Template', content: 'Test 1' },
@@ -125,7 +138,7 @@
                 {text:"JSON",value:"json"}
             ],
             content_css: [
-                '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+                '//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700,900,900i&amp;subset=vietnamese',
                 '//www.tinymce.com/css/codepen.min.css'
             ],
             relative_urls: false,

@@ -9,7 +9,7 @@
 @endsection
 
 @section('contentAdmin')
-    <div class="col-lg">
+    <div class="col-lg no-padding-left-right">
         <div class="card">
             <div class="card-header card_header_gradient">Danh Sách Các Liên Hệ Dịch Vụ</div>
             <div class="card-body">
@@ -25,6 +25,7 @@
                             <th>Service Description</th>
                             <th>File</th>
                             <th>Link External</th>
+                            <th>Time</th>
                             <th>Read</th>
                             <th>Reply</th>
                             <th>Action</th>
@@ -69,6 +70,9 @@
                                     @else
                                         {{ "NULL" }}
                                     @endif
+                                </td>
+                                <td>
+                                    {{ $service->created_at }}
                                 </td>
                                 <td>
                                     @if($service->is_read == 'N')

@@ -10,8 +10,8 @@
 @endsection
 
 @section('content')
-    <div class="container border-top-blue">
-        <div class="row border border-primary pt-md-3 pb-md-3 mb-sm-3">
+    <div class="container border-top-blue no-padding-left-right no-padding-top">
+        <div class="row border border-primary pt-md-3 pb-md-3 mb-sm-3 background-blue">
             <div class="col-sm-4">
                 <img src="http://via.placeholder.com/600x600" class="img-fluid" alt="chuyende1">
             </div>
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="row border border-primary pt-md-3 pb-md-3 mb-sm-3">
+        <div class="row border border-primary pt-md-3 pb-md-3 mb-sm-3 background-blue">
             <div class="col-sm-8">
                 <div class="list-group d-flex">
                     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -83,7 +83,7 @@
                 <img src="http://via.placeholder.com/600x600" class="img-fluid" alt="chuyende1">
             </div>
         </div>
-        <div class="row border border-primary pt-md-3 pb-md-3 mb-sm-3">
+        <div class="row border border-primary pt-md-3 pb-md-3 mb-sm-3 background-blue">
             <div class="col-sm-4">
                 <img src="http://via.placeholder.com/600x600" class="img-fluid" alt="chuyende1">
             </div>
@@ -119,7 +119,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row background-blue padding-top-20  ">
             <div class="col-sm-4">
                 <div class="row">
                     <div class="col d-flex justify-content-center">

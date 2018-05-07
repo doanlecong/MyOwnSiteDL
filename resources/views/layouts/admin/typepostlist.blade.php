@@ -9,9 +9,9 @@
 @endsection
 
 @section('contentAdmin')
-    <div class="col-lg">
+    <div class="col-lg no-padding-left-right">
         <div class="card">
-            <div class="card-header">Danh Sách Kiểu Bài Viết</div>
+            <div class="card-header card_header_gradient">Danh Sách Kiểu Bài Viết</div>
             <div class="card-body">
                 <a href="typepost/create" class="btn btn-outline-primary" >Thêm mới Kiểu Bài viết</a>
                 <div class="devider-line"></div>

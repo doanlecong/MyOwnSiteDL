@@ -47,9 +47,9 @@
     </div>
 </div>
 <div class="d-block">
-    <button class="accordion-button btn btn-dark btn-block" href="#">Quan ly nguoi dung</button>
+    <button class="accordion-button btn btn-dark btn-block" href="#">Quan ly Liên Hệ Góp Ý</button>
     <div class="accordion_content">
-        <a href="#" class="btn btn-primary btn-block text-left" >Danh sach nguoi dung</a>
+        <a href="{{ route('lienhe.index') }}" class="btn btn-primary btn-block text-left" >Danh Sách</a>
         <a href="#" class="btn btn-primary btn-block text-left" >Them xua xoa</a>
         <a href="#" class="btn btn-primary btn-block text-left" >Danh Sach bi chan</a>
         <a href="#" class="btn btn-primary btn-block text-left" >Thong .... </a>
