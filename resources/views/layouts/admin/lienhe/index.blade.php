@@ -138,7 +138,12 @@
                          }
                      })
                  } else {
-                     swal("Mày rảnh vậy !!");
+                     swal({
+                         title: "Mày rảnh vậy !!",
+                         icon: "info",
+                         button: "Tắt đi con chóa!",
+                         closeOnClickOutside: false
+                     });
                  }
              })
 

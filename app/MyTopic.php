@@ -8,9 +8,17 @@ class MyTopic extends Model
 {
     //
     protected $table = 'my_topics';
+
     //Hepler Functions
 
-    public static function getArrayTags(MyTopic $topic){
+    public static function countTopic($type = '')
+    {
+        $count = MyTopic::where('type_posts', ConfigData::getConvention($type))->count();
+        return $count;
+    }
+
+    public static function getArrayTags(MyTopic $topic)
+    {
         $arrTags = [];
         foreach ($topic->tags as $tag) {
             $arrTags[] = $tag->id;
@@ -19,10 +27,13 @@ class MyTopic extends Model
     }
 
     // Relationship functions
-    public function typePost() {
-        return $this->belongsTo('App\MyTypePost','type_post_id');
+    public function typePost()
+    {
+        return $this->belongsTo('App\MyTypePost', 'type_posts', 'convention');
     }
-    public function tags() {
+
+    public function tags()
+    {
         return $this->belongsToMany('App\MyTag');
     }
 }

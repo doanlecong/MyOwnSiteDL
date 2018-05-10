@@ -7,7 +7,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(255, 129, 21, 0.27);
+  background-color: #007bff;
   overflow-x: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -13319,8 +13319,9 @@ a.text-dark:focus {
 }
 
 .navbar-laravel .container .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
-  -webkit-box-shadow: 0px 2px 6px 1px #6d8d96;
-          box-shadow: 0px 2px 6px 1px #6d8d96;
+  -webkit-box-shadow: 1px 3px 0px 0px #007bff;
+          box-shadow: 1px 3px 0px 0px #007bff;
+  border-radius: 0px !important;
 }
 
 .navbar-laravel .container .navbar-collapse .navbar-nav .nav-item .dropdown-menu .dropdown-item {
@@ -13420,6 +13421,11 @@ a.text-dark:focus {
   padding: 40px;
 }
 
+.padding-leftright-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .image-full-width {
   width: 100%;
 }
@@ -13430,6 +13436,57 @@ a.text-dark:focus {
   background: #5bbaff;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.btn {
+  border-radius: 0px !important;
+}
+
+.wrapper-for-loading {
+  width: 100%;
+  height: 7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loader {
+  border: 2px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue;
+  width: 2rem;
+  height: 2rem;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .border-top {
@@ -13456,6 +13513,10 @@ a.text-dark:focus {
   border-bottom: 18px solid #882d88 !important;
 }
 
+.border-bottom-bluethin {
+  border-bottom: 5px solid #0056cc !important;
+}
+
 .background-blue {
   background-color: #4fb2ff !important;
 }
@@ -13470,6 +13531,10 @@ a.text-dark:focus {
 
 .background-purple {
   background-color: plum;
+}
+
+.background-white {
+  background-color: white;
 }
 
 .font-lobster {
@@ -13495,6 +13560,10 @@ a.text-dark:focus {
 
 .yellow-text {
   color: #ffe229;
+}
+
+.text-50 {
+  font-size: 50px;
 }
 
 .card-no-border {
@@ -13538,6 +13607,10 @@ a.text-dark:focus {
   padding-bottom: 10px !important;
 }
 
+.no-margin-bottom {
+  margin-bottom: 0px !important;
+}
+
 .form-control {
   border-radius: 0px !important;
   border-bottom: 5px solid #e1e1e1;
@@ -13567,6 +13640,11 @@ a.text-dark:focus {
           box-shadow: 3px 6px 0px 1px #000075;
 }
 
+.box-shadown-purple-thin {
+  -webkit-box-shadow: 0px 2px 0px blueviolet;
+          box-shadow: 0px 2px 0px blueviolet;
+}
+
 .text-shadown-purple {
   text-shadow: 2px 3px 1px blueviolet;
 }
@@ -13581,6 +13659,34 @@ a.text-dark:focus {
 
 .text-shadown-orange {
   text-shadow: 2px 3px 1px #ff6d0d;
+}
+
+.text-shadown-orange-thin {
+  text-shadow: 1px 1px 0px #ef7d0a;
+}
+
+.no-border-radius {
+  border-radius: 0px !important;
+}
+
+.haft-left {
+  display: inline;
+  float: left;
+  width: 50%;
+}
+
+.haft-right {
+  display: inline;
+  float: right;
+  width: 50%;
+}
+
+.card_header_gradient {
+  background: -webkit-gradient(linear, right top, left top, color-stop(69%, #33ccff), color-stop(96%, #ccffff));
+  background: linear-gradient(to left, #33ccff 69%, #ccffff 96%);
+  color: #005cbf;
+  font-size: medium;
+  font-weight: bold;
 }
 
 body {
@@ -13664,15 +13770,6 @@ div.card img.card-img-top {
   color: #0056cc;
   font-weight: bold;
   text-shadow: 2px 2px 2px yellowgreen;
-}
-
-.card_header_gradient {
-  background: -webkit-gradient(linear, right top, left top, color-stop(69%, #33ccff), color-stop(96%, #ccffff));
-  background: linear-gradient(to left, #33ccff 69%, #ccffff 96%);
-  border-bottom: 1px solid whitesmoke;
-  color: #005cbf;
-  font-size: medium;
-  font-weight: bold;
 }
 
 .py-4 {
@@ -13779,7 +13876,7 @@ div.card img.card-img-top {
 
 .py-4 .dichvu-content .row .col-md-4 .dichvu-card {
   max-height: 800px;
-  min-height: 415px;
+  min-height: 423px;
 }
 
 .py-4 .dichvu-content .row .col-md-4 .dichvu-card .dichvu_web_carousel .carousel-inner .carousel-item .image_dichvu {

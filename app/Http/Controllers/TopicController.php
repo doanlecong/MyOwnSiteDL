@@ -10,6 +10,7 @@ use App\MyTypePost;
 use Illuminate\Http\Request;
 use Image;
 use Illuminate\Routing\Route;
+use Purifier;
 
 class TopicController extends Controller
 {
@@ -33,7 +34,7 @@ class TopicController extends Controller
 
     public function index()
     {
-        $myTopic = MyTopic::orderBy('type_post_id','asc')->paginate(10);
+        $myTopic = MyTopic::orderBy('type_posts','asc')->paginate(10);
         return view('layouts.admin.topic.index')->withMyTopic($myTopic);
     }
 
@@ -46,7 +47,7 @@ class TopicController extends Controller
     {
 
         $tags = MyTag::all();
-        $typePosts = MyTypePost::all();
+        $typePosts = ConfigData::arrKeyValuePostType();
         return view('layouts.admin.topic.create')
             ->withTags($tags)
             ->withTypePosts($typePosts);
@@ -62,8 +63,8 @@ class TopicController extends Controller
     {
         $topic = new MyTopic();
         $topic->title = $request->title;
-        $topic->type_post_id = $request->type_post;
-        $topic->description = $request->description;
+        $topic->type_posts = $request->type_post;
+        $topic->description = Purifier::clean($request->description);
 
         if($request->hasFile('image_name') && $request->file('image_name')->isValid()){
             $image = $request->file('image_name');
@@ -120,7 +121,7 @@ class TopicController extends Controller
 
         $topic = MyTopic::find($id);
         $tags = MyTag::all();
-        $typePosts = MyTypePost::all();
+        $typePosts = ConfigData::arrKeyValuePostType();
         if($topic){
             $arrTagSelected = MyTopic::getArrayTags($topic);
             return view('layouts.admin.topic.edit')
@@ -149,8 +150,8 @@ class TopicController extends Controller
         $topic = MyTopic::find($id);
         if($topic) {
             $topic->title = $request->title;
-            $topic->type_post_id = $request->type_post;
-            $topic->description = $request->description;
+            $topic->type_posts = $request->type_post;
+            $topic->description = Purifier::clean($request->description);
 
             if($request->hasFile('image_name')) {
                 $image = $request->file('image_name');

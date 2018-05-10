@@ -41,11 +41,11 @@
             <h2  class="text-center text-light padding-bottom-10 font-lobster text-shadown-orange" >Dịch vụ chúng tôi cung cấp</h2>
             <div class="row" style="font-family: Roboto">
                 <div class="col-md-4">
-                    <div class="card mb-3 dichvu-card">
-                        <div class="card-header"><h4 class="text-capitalize text-light text-center text-shadown-lightblue">Phát triển <span style="display: inline-block">website</span></h4></div>
+                    <div class="card mb-3 dichvu-card card-no-border">
+                        <div class="card-header no-border-radius"><h4 class="text-capitalize text-light text-center text-shadown-lightblue">Phát triển <span style="display: inline-block">website</span></h4></div>
                         <div class="card-body text-primary">
                             <h5 class="card-title">Thiết kế website chuyên nghiệp</h5>
-                            <p class="card-text">Cung cấp cho bạn dịch vụ thiết kế website chuyên nghiệp giá tốt, sự lựa chọn tốt nhất cho bạn, thiết kế website sạch, chuẩn SEO.</p>
+                            <p class="card-text text-justify">Cung cấp cho bạn dịch vụ thiết kế website chuyên nghiệp giá tốt, sự lựa chọn tốt nhất cho bạn, thiết kế website sạch, chuẩn SEO.</p>
                         </div>
                         <div id="dichvu_web_carousel" class="carousel slide carousel-fade" data-ride="carousel">
                             <div class="carousel-inner">
@@ -71,11 +71,11 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mb-3 dichvu-card">
-                        <div class="card-header"><h4 class="text-capitalize text-light text-center text-shadown-lightblue">Phát triển <span style="display: inline-block">ứng dụng di động</span></h4></div>
+                    <div class="card mb-3 dichvu-card card-no-border">
+                        <div class="card-header no-border-radius"><h4 class="text-capitalize text-light text-center text-shadown-lightblue ">Phát triển <span style="display: inline-block">ứng dụng di động</span></h4></div>
                         <div class="card-body text-primary">
                             <h5 class="card-title">Ứng dụng tuyệt vời mang lại nhiều trải nghiệm tốt cho người dùng</h5>
-                            <p class="card-text">Trong sự bùng nổ của công nghệ, ứng dụng điện thoại mang lại nhiều lợi ích cho người dùng khi thế giới luôn luôn trong trạng thái kết nối</p>
+                            <p class="card-text text-justify">Trong sự bùng nổ của công nghệ, ứng dụng điện thoại mang lại nhiều lợi ích cho người dùng khi thế giới luôn luôn trong trạng thái kết nối</p>
                         </div>
                         <div id="dich_vu_mobile_carousel" class="carousel slide carousel-fade" data-ride="carousel">
                             <div class="carousel-inner">
@@ -101,11 +101,11 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mb-3 dichvu-card">
-                        <div class="card-header"><h4 class="text-danger text-capitalize text-center text-light text-shadown-lightblue">Thiết kế <span style="display: inline-block">logo, banner</span></h4></div>
+                    <div class="card mb-3 dichvu-card card-no-border">
+                        <div class="card-header no-border-radius"><h4 class="text-danger text-capitalize text-center text-light text-shadown-lightblue ">Thiết kế <span style="display: inline-block">logo, banner</span></h4></div>
                         <div class="card-body text-primary">
                             <h5 class="card-title">Hãy thể hiện dấu ấn của bạn bằng một logo hay banner chuyên nghiệp</h5>
-                            <p class="card-text">Logo hay banner bạn mong muốn sẽ được thiết kế cẩn thận đảm bảo chất lượng cao mà giá thành hợp lý</p>
+                            <p class="card-text text-justify">Logo hay banner bạn mong muốn sẽ được thiết kế cẩn thận đảm bảo chất lượng cao mà giá thành hợp lý</p>
                         </div>
                         <div id="dich_vu_logo_carousel" class="carousel slide carousel-fade" data-ride="carousel">
                             <div class="carousel-inner">
@@ -182,7 +182,7 @@
     <div id="thanhqua" class="container-fluid" style="background-color: white; padding: 0px;">
         <div class="duandalam_dichvu border-top-purple border-bottom-purple" style="padding: 20px; background-color: plum">
             <h2  class="dichvu_slogan text-center text-capitalize text-light font-lobster text-shadown-purple">Những dự án đã được hiện thực</h2>
-            <h3 class="text-center font-lobster yellow-text text-shadown-purple">*******************************************</h3>
+            <h3 class="text-center font-lobster yellow-text text-shadown-purple">***************************************</h3>
             <div class="row mt-3">
                 <div class="col-lg" id="paralax_duan">
                     <div id="title" class="slide header">
@@ -314,7 +314,7 @@
                 <div class="card-header background-blue text-center text-light font-lobster card-no-border">
                     <h2  class="text-shadown-lightblue">Hãy để lại mong muốn của bạn</h2>
                 </div>
-                <div class="card-body">
+                <div class="card-body no-padding-bottom">
                     <h5 class="card-title">Thông tin liên hệ dịch vụ</h5>
                     <p>
                         Đây là form giúp bạn để lại thông tin khi bạn có nhu cầu về dịch vụ mà bên chúng tôi cung cấp.
@@ -322,7 +322,7 @@
                     <p><span class="text-danger">*</span> Bạn có thế liên hệ trực tiếp thông qua số điện thoại cuối trang hay gửi email về cho chúng tôi.</p>
                 </div>
             </div>
-            <div class="padding-around">
+            <div class="padding-around no-padding-top">
                 <form method="POST" id="formDichVu" enctype="multipart/form-data" onsubmit="return validateForm();">
                     {{ csrf_field() }}
                     @method('POST')

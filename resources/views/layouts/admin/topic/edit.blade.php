@@ -21,16 +21,19 @@
                         <div class="row">
                             <div class="col-md-6 no-padding-left">
                                 <label for="title" class="text-danger">Tiêu đề :</label>
-                                <input class="form-control" name="title" type="text" placeholder="Nhập tiêu đề cho kiểu bài viết" required value="{{ $topic->title }}">
+                                <input class="form-control" name="title" type="text"
+                                       placeholder="Nhập tiêu đề cho kiểu bài viết" required
+                                       value="{{ $topic->title }}">
                             </div>
                             <div class="col-md-6 no-padding-right">
                                 <label for="type_post" class="text-danger">Bài Viết Thuộc :</label>
-                                <select class="form-control" name="type_post" value="{{ $topic->type_post_id }}">
-                                    @foreach($typePosts as $tp)
-                                        @if($tp->id == $topic->type_post_id)
-                                            <option value="{{ $tp->id }}" selected>{{$tp->title}}</option>
+                                <select class="form-control" name="type_post" value="{{ $topic->type_post_id }}"
+                                        style="height: 41px;">
+                                    @foreach($typePosts as $key => $tp)
+                                        @if($key == $topic->type_posts)
+                                            <option value="{{ $key }}" selected>{{$tp}}</option>
                                         @else
-                                            <option value="{{ $tp->id }}">{{$tp->title}}</option>
+                                            <option value="{{ $key }}">{{$tp}}</option>
                                         @endif
 
                                     @endforeach
@@ -39,20 +42,27 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="tags" class="text-danger">Các Tags :</label>
-                        <select class="form-control" name="tags[]" multiple>
-                            @foreach($tags as $tg)
-                                @if(in_array($tg->id , $arrTagSelected))
-                                    <option value="{{ $tg->id }}" selected>{{$tg->abbrev}}--{{$tg->name}}</option>
-                                @else
-                                    <option value="{{ $tg->id }}">{{$tg->abbrev}}--{{$tg->name}}</option>
-                                @endif
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="description" class="text-danger"> Miêu tả:</label>
-                        <textarea class="form-control" name="description" type="text" placeholder="Thông tin mô tả cho kiểu bài biết" rows="5" required>{{ $topic->description }}</textarea>
+                        <div class="row">
+                            <div class="col-sm-4 no-padding-left">
+                                <label for="tags" class="text-danger">Các Tags :</label>
+                                <select class="form-control" name="tags[]" multiple style="height: 25vh;">
+                                    @foreach($tags as $tg)
+                                        @if(in_array($tg->id , $arrTagSelected))
+                                            <option value="{{ $tg->id }}" selected>{{$tg->abbrev}}--{{$tg->name}}</option>
+                                        @else
+                                            <option value="{{ $tg->id }}">{{$tg->abbrev}}--{{$tg->name}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-sm-8 no-padding-right">
+                                <label for="description" class="text-danger"> Miêu tả:</label>
+                                <textarea class="form-control" name="description" type="text"
+                                          placeholder="Thông tin mô tả cho kiểu bài biết" rows="10"
+                                          required>{{ strip_tags($topic->description) }}</textarea>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <label for="image_name" class="text-danger">Hình Đại Diện :</label>

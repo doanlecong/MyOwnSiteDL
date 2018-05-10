@@ -25,6 +25,19 @@
                         <label for="description" class="text-danger"> Miêu tả:</label>
                         <textarea class="form-control" name="description" type="text" placeholder="Thông tin mô tả cho kiểu bài biết" rows="5">{{$typepost->description}}</textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="convention" class="text-danger">Kiểu để quản lý :</label>
+                        <select class="form-control" name="convention">
+                            @foreach($arrConvention as $con)
+                                @if($typepost->convention != "" && $typepost->convention == $con)
+                                    <option value="{{ $con }}" selected>{{ $con }}</option>
+                                @else
+                                    <option value="{{ $con }}">{{ $con }}</option>
+                                @endif
+
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="devider-line"></div>
                     <button class="btn btn-outline-primary" type="submit">Lưu Thông Tin</button>
                 </form>

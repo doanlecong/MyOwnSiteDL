@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ConfigData;
 use Illuminate\Http\Request;
 use App\MyTypePost;
 class TypePostController extends Controller
@@ -30,7 +31,8 @@ class TypePostController extends Controller
      */
     public function create()
     {
-        return view('layouts.admin.addtypepost');
+        $arrConvention = ConfigData::arrConventionPostType();
+        return view('layouts.admin.addtypepost')->withArrConvention($arrConvention);
     }
 
     /**
@@ -44,6 +46,7 @@ class TypePostController extends Controller
         $typePost = new MyTypePost();
         $typePost->title = $request->title;
         $typePost->description = $request->description;
+        $typePost->convention = $request->convention;
 
         $typePost->save();
         return redirect()->route('typepost.index');
@@ -70,7 +73,10 @@ class TypePostController extends Controller
     {
         $typepost = MyTypePost::find($id);
         if($typepost) {
-            return view('layouts.admin.edit_typepost')->withTypepost($typepost);
+            $arrConvention = ConfigData::arrConventionPostType();
+            return view('layouts.admin.edit_typepost')
+                ->withTypepost($typepost)
+                ->withArrConvention($arrConvention);
         } else {
             return view('layouts.admin.addtypepost');
         }
@@ -89,6 +95,7 @@ class TypePostController extends Controller
         if($typepost) {
             $typepost->title = $request->title;
             $typepost->description = $request->description;
+            $typepost->convention = $request->convention;
             $typepost->save();
 
             return redirect()->route('typepost.index');

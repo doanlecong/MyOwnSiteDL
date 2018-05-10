@@ -56,6 +56,39 @@ Route::middleware('auth')->prefix('authorized')->group(function () {
     Route::get('lienhe/', 'LienHeController@index')->name('lienhe.index');
     Route::get('lienhe/{id}/dadoc','LienHeController@doclienhe')->name('lienhe.dadoc');
     Route::get('lienhe/{id}/delete','LienHeController@delete')->name('lienhe.delete');
+
+
+
+    Route::get('dashboard/{type?}',"DashboardController@index")->name('dashboard.index');
+    // Danh sach dang viet do
+    Route::get('get-un-blog','DashboardController@getMyUnPublishblog')->name('dashboard.getunblog');
+    Route::get('get-un-serie','DashboardController@getMyUnPuhlishserie')->name('dashboard.getunserie');
+    Route::get('get-un-chuyende','DashboardController@getMyUnPublishchuyende')->name('dashboard.getunchuyende');
+
+
+    // danh sach da xuat ban
+    Route::get('get-blog','DashboardController@getMyblog')->name('dashboard.getblog');
+    Route::get('get-serie','DashboardController@getMySerie')->name('dashboard.getserie');
+    Route::get('get-chuyende','DashboardController@getMyChuyende')->name('dashboard.getchuyende');
+    //
+    Route::get('get-topic-blog','DashboardController@gettopicblog')->name('dashboard.gettopicblog');
+    Route::get('get-topic-serie','DashboardController@gettopicserie')->name('dashboard.gettopicserie');
+    Route::get('get-topic-chuyende','DashboardController@gettopicchuyende')->name('dashboard.gettopicchuyende');
+
+    Route::get('view-post/{id}','MyPostController@viewPost')->name('mypost.viewpost');
+    Route::get('edit-post/{id}','MyPostController@editPost')->name('mypost.editpost');
+    Route::get('delete-post/{id}','MyPostController@deletePost')->name('mypost.delete');
+
+    Route::get('write-blog/{id}','MyPostController@writeblog')->name('mypost.writeblog');
+    Route::get('write-serie/{id}','MyPostController@writeserie')->name('mypost.writeserie');
+    Route::get('write-chuyende/{id}','MyPostController@writechuyende')->name('mypost.writechuyende');
+
+    Route::post('save-blog','MyPostController@saveblog')->name('mypost.saveblog');
+    Route::post('save-serie','MyPostController@saveserie')->name('mypost.saveserie');
+    Route::post('save-chuyende','MyPostController@savechuyende')->name('mypost.savechuyende');
+
+
+
 });
 
 Route::prefix('authorized')->group(function() {

@@ -10,6 +10,23 @@ class ConfigData
     public static $maximumContactPerDay = 20;
     // Dành cho lúc tao mới chỉnh sửa thông tin Tag
 
+    public static function arrKeyValuePostType() {
+        return [
+            'B' => 'My Blog',
+            'C' => 'Chuyên Đề',
+            'S' => 'Serie Bài Viết'
+        ];
+    }
+    public static function arrConventionPostType() {
+        return [
+            'B', 'C' ,'S'
+        ];
+    }
+    public static function getConvention($type =''){
+        if($type =='blog') return static::arrConventionPostType()[0];
+        else if($type == 'serie') return static::arrConventionPostType()[2];
+        else if($type == 'chuyende') return static::arrConventionPostType()[1];
+    }
     public static function arrDataForFileManagement($controlerName = '', $actionName = '', $purpose = '', $external_id, $file_type = '', $file_name = '', $file_path = '', $file_size, $image_zize = '')
     {
         return [
@@ -51,6 +68,7 @@ class ConfigData
         'svg' => 'image/svg+xml',
         'doc' => 'application/msword',
         'dot' => 'application/msword',
+        'json' => 'application/json',
 
         'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'dotx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.template',

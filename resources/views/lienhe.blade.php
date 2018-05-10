@@ -11,10 +11,10 @@
     <div class="container border-top-blue no-padding-left-right no-padding-top no-padding-bottom">
         <div class="card card-no-border">
             <div class="card card-no-border">
-                <div class="card-header bg-primary text-center text-light">
+                <div class="card-header bg-primary text-center text-light no-border-radius">
                     <h2 class="text-shadown-blue">Liên Hệ</h2>
                 </div>
-                <div class="card-body">
+                <div class="card-body no-padding-bottom">
                     <h5 class="card-title">Thắc mắc hay góp ý:</h5>
                     <p>
                         Nếu bạn có bất cứ thắc mắc nào có thể gửi lại cho mình thông tin thông qua form bên dưới.
@@ -22,7 +22,7 @@
                     <p><span class="text-danger">*</span> Mọi ý kiến đóng góp về nội dung các bài đăng hay đề xuất làm hoàn thiện hơn nội dung các bài đăng . Mong các bạn cho mình ý kiến để xây dựng tôt hơn.</p>
                 </div>
             </div>
-            <div class="padding-around">
+            <div class="padding-around padding-top-10">
                 <form method="POST" onsubmit="return validate();" enctype="application/x-www-form-urlencoded" id="formlienhe">
                     {{ csrf_field() }}
                     @method("POST")

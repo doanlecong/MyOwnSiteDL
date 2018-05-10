@@ -21,8 +21,16 @@
                         <input class="form-control" name="title" type="text" placeholder="Nhập tiêu đề cho kiểu bài viết">
                     </div>
                     <div class="form-group">
-                        <label for="description" class="text-danger"> Miêu tả:</label>
+                        <label for="description" class="text-danger">Miêu tả:</label>
                         <textarea class="form-control" name="description" type="text" placeholder="Thông tin mô tả cho kiểu bài biết" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="convention" class="text-danger">Kiểu để quản lý :</label>
+                        <select class="form-control" name="convention">
+                            @foreach($arrConvention as $con)
+                                <option value="{{ $con }}">{{ $con }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="devider-line"></div>
                     <button class="btn btn-outline-primary" type="submit">Lưu Thông Tin</button>

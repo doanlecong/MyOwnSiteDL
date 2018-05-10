@@ -183,7 +183,8 @@
             }
           }
           .dropdown-menu {
-            box-shadow: 0px 2px 6px 1px rgb(109, 141, 150);
+            box-shadow: 1px 3px 0px 0px #007bff;
+            border-radius: 0px !important;
             .dropdown-item {
               -webkit-transition: background 0.5s;
               -moz-transition: background 0.5s;
@@ -295,6 +296,10 @@
 .padding-around {
   padding: 40px;
 }
+.padding-leftright-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 // Cho phep image wide het co
 .image-full-width {
   width: 100%;
@@ -307,6 +312,38 @@
   margin-bottom: 20px;
 
 }
+.btn{
+  border-radius: 0px !important;
+}
+// dung cho loading animation
+.wrapper-for-loading {
+  width: 100%;
+  height:7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  border: 2px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue;
+  width: 2rem;
+  height: 2rem;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// danh cho animation
 .border-top {
   border-top: 18px solid !important;
 }
@@ -325,6 +362,9 @@
 .border-bottom-purple {
   border-bottom: 18px solid #882d88 !important;
 }
+.border-bottom-bluethin {
+  border-bottom: 5px solid $blue1 !important;
+}
 .background-blue {
   background-color: #4fb2ff !important;
 }
@@ -336,6 +376,9 @@
 }
 .background-purple {
   background-color: plum;
+}
+.background-white {
+  background-color: white;
 }
 .font-lobster {
   font-family: Lobster;
@@ -355,6 +398,9 @@
 }
 .yellow-text {
   color: #ffe229;
+}
+.text-50 {
+  font-size: 50px;
 }
 .card-no-border {
   border: 0px;
@@ -387,6 +433,9 @@
 .padding-bottom-10 {
   padding-bottom: 10px !important;
 }
+.no-margin-bottom {
+  margin-bottom: 0px !important;
+}
 .form-control {
   border-radius: 0px !important;
   border-bottom: 5px solid #e1e1e1;
@@ -405,6 +454,9 @@
   }
   transition: all 100ms;
 }
+.box-shadown-purple-thin {
+  box-shadow: 0px 2px 0px blueviolet;
+}
 .text-shadown-purple {
   text-shadow: 2px 3px 1px blueviolet;
 }
@@ -416,6 +468,30 @@
 }
 .text-shadown-orange {
   text-shadow: 2px 3px 1px #ff6d0d;
+}
+.text-shadown-orange-thin {
+  text-shadow: 1px 1px 0px #ef7d0a;
+}
+.no-border-radius {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+.haft-left {
+  display: inline;
+  float: left;
+  width: 50%;
+}
+.haft-right {
+  display: inline;
+  float: right;
+  width: 50%;
+}
+.card_header_gradient {
+  background: linear-gradient(to left, #33ccff 69%, #ccffff 96%);
+  color: #005cbf;
+  font-size: medium;
+  font-weight: bold;
 }
 // het cac class dung chung
 body{
@@ -496,13 +572,7 @@ div.card {
     text-shadow: 2px 2px 2px yellowgreen;
   }
 }
-.card_header_gradient {
-  background: linear-gradient(to left, #33ccff 69%, #ccffff 96%);
-  border-bottom: 1px solid whitesmoke;
-  color: #005cbf;
-  font-size: medium;
-  font-weight: bold;
-}
+
 .py-4 {
   margin-top: 0px !important;
   padding-top: 0px !important;
@@ -606,7 +676,7 @@ div.card {
       .col-md-4 {
         .dichvu-card {
           max-height: 800px;
-          min-height: 415px;
+          min-height: 423px;
           .dichvu_web_carousel {
             .carousel-inner {
               .carousel-item {
