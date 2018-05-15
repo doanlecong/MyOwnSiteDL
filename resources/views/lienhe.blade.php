@@ -19,37 +19,49 @@
                     <p>
                         Nếu bạn có bất cứ thắc mắc nào có thể gửi lại cho mình thông tin thông qua form bên dưới.
                     </p>
-                    <p><span class="text-danger">*</span> Mọi ý kiến đóng góp về nội dung các bài đăng hay đề xuất làm hoàn thiện hơn nội dung các bài đăng . Mong các bạn cho mình ý kiến để xây dựng tôt hơn.</p>
+                    <p><span class="text-danger">*</span> Mọi ý kiến đóng góp về nội dung các bài đăng hay đề xuất làm
+                        hoàn thiện hơn nội dung các bài đăng . Mong các bạn cho mình ý kiến để xây dựng tôt hơn.</p>
                 </div>
             </div>
             <div class="padding-around padding-top-10">
-                <form method="POST" onsubmit="return validate();" enctype="application/x-www-form-urlencoded" id="formlienhe">
+                <form method="POST" onsubmit="return validate();" enctype="application/x-www-form-urlencoded"
+                      id="formlienhe">
                     {{ csrf_field() }}
                     @method("POST")
                     <div class="form-group">
                         <label for="name">Tên của bạn<span class="text-xl-center text-danger">*</span> : </label>
-                        <input type="text" class="form-control" id="name_nguoi" name="name_nguoi" placeholder="Tên của bạn" title="Hãy nhập chữ kèm khoảng trắng.VD : Nguyễn Văn A" required>
+                        <input type="text" class="form-control" id="name_nguoi" name="name_nguoi"
+                               placeholder="Tên của bạn" title="Hãy nhập chữ kèm khoảng trắng.VD : Nguyễn Văn A"
+                               required>
                         <p>Vui lòng gửi mình tên đầy đủ của bạn</p>
                     </div>
-                    <div class="row" >
-                        <div class="col-sm no-padding-left">
+                    <div class="row" style="margin-left: -15px;margin-right: -15px;">
+                        <div class="col-sm">
                             <div class="form-group">
-                                <label for="email">Email của bạn <span class="text-xl-center text-danger">*</span> :</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="youremail@mail.com" title="Vd: levana@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                                <label for="email">Email của bạn <span class="text-xl-center text-danger">*</span>
+                                    :</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       placeholder="youremail@mail.com" title="Vd: levana@gmail.com" required
+                                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                                 <p>Email</p>
                             </div>
                         </div>
-                        <div class="col-sm no-padding-right">
+                        <div class="col-sm">
                             <div class="form-group">
-                                <label for="email1">Xác nhận email <span class="text-xl-center text-danger">*</span> :</label>
-                                <input type="email" class="form-control" id="email1" name="emailconfirm" placeholder="youremail@mail.com" title="Vd: levana@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                                <label for="email1">Xác nhận email <span class="text-xl-center text-danger">*</span>
+                                    :</label>
+                                <input type="email" class="form-control" id="email1" name="emailconfirm"
+                                       placeholder="youremail@mail.com" title="Vd: levana@gmail.com" required
+                                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                                 <p>Xác nhận email</p>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="content">Nội dung <span class="text-xl-center text-danger">*</span> :</label>
-                        <textarea class="form-control" rows="6" required style="resize: vertical; min-height: 100px;" placeholder="Thông tin bạn muốn gửi" id="contentlienhe" name="contentlienhe"></textarea>
+                        <textarea class="form-control" rows="6" required style="resize: vertical; min-height: 100px;"
+                                  placeholder="Thông tin bạn muốn gửi" id="contentlienhe"
+                                  name="contentlienhe"></textarea>
                         <p>Hãy mô tả thông tin mà bạn cần liên hệ</p>
                     </div>
                     <hr>
@@ -65,13 +77,13 @@
 @section('addScript')
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        function  validate() {
+        function validate() {
             var name = document.getElementById('name_nguoi');
             var email = document.getElementById('email');
             var email1 = document.getElementById('email1');
             var content = document.getElementById('contentlienhe');
 
-            if(name == ""){
+            if (name == "") {
                 swal({
                     title: "Opp !",
                     text: "Bạn Thiếu Điền Tên Của Bạn Rồi.",
@@ -83,25 +95,25 @@
             } else {
                 name.style.borderBottom = " 4px solid dodgerblue";
             }
-            if(email.value == "") {
+            if (email.value == "") {
                 // console.log('chay valid form Email ');
                 email.style.borderBottom = " 4px solid red";
                 return false;
             }
-            if(email1.value == "") {
+            if (email1.value == "") {
                 // console.log('chay valid form Email1 ');
                 email1.style.borderBottom = " 4px solid red";
                 return false;
 
             }
-            if( content.value == "") {
+            if (content.value == "") {
                 content.focus();
                 content.style.borderBottom = " 4px solid red";
                 return false;
             } else {
                 content.style.borderBottom = " 4px solid dodgerblue";
             }
-            if(email1.value != email.value) {
+            if (email1.value != email.value) {
                 email1.focus();
                 email.style.borderBottom = " 4px solid red";
                 email1.style.borderBottom = " 4px solid red";
@@ -112,7 +124,7 @@
                     button: "Điền Tiếp",
                 });
                 return false;
-            } else  {
+            } else {
                 email.style.borderBottom = " 4px solid dodgerblue";
                 email1.style.borderBottom = " 4px solid dodgerblue";
 
@@ -129,16 +141,16 @@
                 type: 'POST',
                 contentType: false,
                 processData: false,
-                success: function(data) {
+                success: function (data) {
                     swal({
                         title: "Thank you!",
-                        text:  data.msg,
+                        text: data.msg,
                         icon: "success",
                         button: "Tắt nó !",
                     });
 
                 },
-                error: function(e) {
+                error: function (e) {
                     swal({
                         title: "Opp !",
                         text: e.responseJSON.msg,
@@ -146,7 +158,7 @@
                         button: "Tắt nó !",
                     });
                 }
-            }).then(function(){
+            }).then(function () {
                 var formlienhe = document.getElementById('formlienhe');
                 formlienhe.reset();
             });
