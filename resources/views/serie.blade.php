@@ -166,7 +166,7 @@
                                         <img src="http://via.placeholder.com/100x100" class="img-fluid image-full-width">
                                     </div>
                                     <div class="col-sm-9">
-                                        <h6>Dasadaslfkaflkafkalsfaklsfkafafaff</h6>
+                                        <h6>Dasadaslfkaflkafkalsf</h6>
                                         <hr>
                                         <p>dkasfasfaslfkl;fksld;fksdl;fksf</p>
                                         <button class="btn btn-outline-primary">Chi tiết</button>
@@ -179,7 +179,7 @@
                                         <img src="http://via.placeholder.com/100x100" class="img-fluid image-full-width">
                                     </div>
                                     <div class="col-sm-9">
-                                        <p><h6>Dasadaslfkaflkafkalsfakl</h6></p>
+                                        <p><h6>Dasadaslfkaflkafk</h6></p>
                                         <hr>
                                         <p>dkasfasfaslfkl;fksld;fksdl;fksf</p>
                                         <button class="btn btn-outline-primary">Chi tiết</button>
@@ -194,7 +194,7 @@
                                     <div class="col-sm-9">
                                         <h6>Dasadaslfkaflkafkalsfak</h6>
                                         <hr>
-                                        <p>dkasfasfaslfkl;fksld;fksdl;fksfdasdasdadadadadadaddasdasdadadadadasdasdasdadfwegwgwgwegwe</p>
+                                        <p>dkasfasfaslfkl;fksld;fksdl;fk</p>
                                         <button class="btn btn-outline-primary mb-1">Chi tiết</button>
                                     </div>
                                 </div>

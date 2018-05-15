@@ -9,7 +9,6 @@
 @import "top_nav_admin";
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-@import "~font-awesome/scss/font-awesome";
 #paralax_duan {
   margin:0;
   padding:0;
@@ -845,7 +844,7 @@ div.card {
   background-repeat: no-repeat;
   background-position: center center;
   .card {
-    min-height: 55  0px;
+    min-height: 550px;
     //max-height: 450px;
   }
 }

@@ -529,7 +529,7 @@
                     </div>
                     <div class="form-group">
                         <label for="content">Nội dung <span class="text-xl-center text-danger">*</span> :</label>
-                        <textarea class="form-control" rows="6" required
+                        <textarea class="form-control" rows="3" required
                                   style="resize: vertical; min-height: 100px; border-bottom-width: 4px;"
                                   placeholder="Thông tin bạn muốn gửi" id="content" name="content_dichvu"></textarea>
                         <p>Hãy mô tả thông tin mà bạn cần liên hệ</p>
