@@ -59,7 +59,7 @@ Route::middleware('auth')->prefix('authorized')->group(function () {
 
 
 
-    Route::get('dashboard/{type?}',"DashboardController@index")->name('dashboard.index');
+    Route::get('dashboard',"DashboardController@index")->name('dashboard.index');
     // Danh sach dang viet do
     Route::get('get-un-blog','DashboardController@getMyUnPublishblog')->name('dashboard.getunblog');
     Route::get('get-un-serie','DashboardController@getMyUnPuhlishserie')->name('dashboard.getunserie');
@@ -71,24 +71,36 @@ Route::middleware('auth')->prefix('authorized')->group(function () {
     Route::get('get-serie','DashboardController@getMySerie')->name('dashboard.getserie');
     Route::get('get-chuyende','DashboardController@getMyChuyende')->name('dashboard.getchuyende');
     //
+
     Route::get('get-topic-blog','DashboardController@gettopicblog')->name('dashboard.gettopicblog');
     Route::get('get-topic-serie','DashboardController@gettopicserie')->name('dashboard.gettopicserie');
     Route::get('get-topic-chuyende','DashboardController@gettopicchuyende')->name('dashboard.gettopicchuyende');
 
-    Route::get('view-post/{id}','MyPostController@viewPost')->name('mypost.viewpost');
-    Route::get('edit-post/{id}','MyPostController@editPost')->name('mypost.editpost');
-    Route::get('delete-post/{id}','MyPostController@deletePost')->name('mypost.delete');
+    Route::get('get-list-post/{type}/{id}','MyPostController@viewPostsOfTopic')->name('mypost.postsTopic');
 
-    Route::get('write-blog/{id}','MyPostController@writeblog')->name('mypost.writeblog');
-    Route::get('write-serie/{id}','MyPostController@writeserie')->name('mypost.writeserie');
-    Route::get('write-chuyende/{id}','MyPostController@writechuyende')->name('mypost.writechuyende');
+    // Danh cho post
+    Route::get('get-post-table/{typepost}/{ispublic}', 'MyPostController@getPostTable')->name('mypost.tablePost');
 
-    Route::post('save-blog','MyPostController@saveblog')->name('mypost.saveblog');
-    Route::post('save-serie','MyPostController@saveserie')->name('mypost.saveserie');
-    Route::post('save-chuyende','MyPostController@savechuyende')->name('mypost.savechuyende');
+    Route::get('view-post/{type}/{id}','MyPostController@viewPost')->name('mypost.viewpost');
+    Route::get('edit-post/{type}/{id}','MyPostController@editPost')->name('mypost.editpost');
+    Route::get('write-post/{type}/{idTopic?}','MyPostController@writePost')->name('mypost.writepost');
+    Route::get('delete-post/{type}/{id}','MyPostController@deletePost')->name('mypost.delete');
 
 
+    Route::get('viewlist-blog','MyPostController@danhsachblog')->name('mypost.danhsachblog');
+    Route::get('viewlist-serie','MyPostController@danhsachserie')->name('mypost.danhsachserie');
+    Route::get('viewlist-chuyende','MyPostController@danhsachchuyende')->name('mypost.danhsachchuyende');
 
+    Route::get('view-instance-post/{type}/{id}', 'MyPostController@viewInstancePost')->name('mypost.viewInstance');
+
+    Route::post('save-post-new/{type}','MyPostController@savePost')->name('mypost.savepostnew');
+    Route::put('save-post/{type}/{id}','MyPostController@updatePost')->name('mypost.updatePost');
+
+
+    // route helper check for post
+
+    Route::post('check-title-post/{type}','MyPostController@checkTitle')->name('mypost.checkTitle');
+    Route::post('check-slug/{type}', 'MyPostController@checkSlug')->name('mypost.checkSlug');
 });
 
 Route::prefix('authorized')->group(function() {

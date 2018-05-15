@@ -13222,7 +13222,7 @@ a.text-dark:focus {
 }
 
 #paralax_duan #title {
-  background-image: url("https://lorempixel.com/640/480/abstract/6/");
+  background-image: url("/upload/images/background_blue_taisao.jpg");
   z-index: 2;
 }
 
@@ -13234,24 +13234,26 @@ a.text-dark:focus {
 }
 
 #paralax_duan #slide1:before {
-  background-image: url("https://lorempixel.com/640/480/abstract/4/");
+  background-image: url("/upload/images/taisao_1.jpg");
   -webkit-transform: translateZ(-1px) scale(2);
           transform: translateZ(-1px) scale(2);
 }
 
 #paralax_duan #slide2 {
-  background-image: url("https://lorempixel.com/640/480/abstract/3/");
+  background-image: url("/upload/images/taisao_2.png");
   z-index: 2;
 }
 
 #paralax_duan #slide3:before {
-  background-image: url("https://lorempixel.com/640/480/abstract/5/");
+  background-image: url("/upload/images/image2.jpg");
   -webkit-transform: translateZ(-1px) scale(2);
           transform: translateZ(-1px) scale(2);
 }
 
 #paralax_duan #slide4 {
-  background: #222;
+  background-image: url("/upload/images/taisao_4.jpg");
+  -webkit-transform: translateZ(-1px) scale(2) translateY(30vh);
+          transform: translateZ(-1px) scale(2) translateY(30vh);
 }
 
 .container_admin {
@@ -13513,8 +13515,20 @@ a.text-dark:focus {
   border-bottom: 18px solid #882d88 !important;
 }
 
+.border-orange-thin {
+  border: 2px solid #ff6d0d !important;
+}
+
+.border-blue-thin {
+  border: 2px solid #0056cc !important;
+}
+
 .border-bottom-bluethin {
   border-bottom: 5px solid #0056cc !important;
+}
+
+.border-around-blue {
+  border: 1px dashed #0056cc;
 }
 
 .background-blue {
@@ -13535,6 +13549,19 @@ a.text-dark:focus {
 
 .background-white {
   background-color: white;
+}
+
+.background-gradient-orange-violet {
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(34%, #ffa066), to(#ff3399)) !important;
+  background: linear-gradient(to bottom right, #ffa066 34%, #ff3399 100%) !important;
+}
+
+.background-tranparent {
+  background-color: rgba(41, 33, 33, 0.26) !important;
+}
+
+.background-litle-tranparent {
+  background-color: rgba(41, 33, 33, 0.49) !important;
 }
 
 .font-lobster {
@@ -13564,6 +13591,10 @@ a.text-dark:focus {
 
 .text-50 {
   font-size: 50px;
+}
+
+.text-20 {
+  font-size: 20px;
 }
 
 .card-no-border {
@@ -13607,8 +13638,16 @@ a.text-dark:focus {
   padding-bottom: 10px !important;
 }
 
+.padding-bottom-40 {
+  padding-bottom: 40px !important;
+}
+
 .no-margin-bottom {
   margin-bottom: 0px !important;
+}
+
+.no-margin-top {
+  margin-top: 0px !important;
 }
 
 .form-control {
@@ -13645,6 +13684,18 @@ a.text-dark:focus {
           box-shadow: 0px 2px 0px blueviolet;
 }
 
+.box-shadow-orange {
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+}
+
+.box-shadow-orange:hover {
+  -webkit-transform: translate(0px, -3px);
+          transform: translate(0px, -3px);
+  -webkit-box-shadow: 3px 6px 0px 1px #ff6d0d !important;
+          box-shadow: 3px 6px 0px 1px #ff6d0d !important;
+}
+
 .text-shadown-purple {
   text-shadow: 2px 3px 1px blueviolet;
 }
@@ -13665,6 +13716,10 @@ a.text-dark:focus {
   text-shadow: 1px 1px 0px #ef7d0a;
 }
 
+.text-shadown-black {
+  text-shadow: 1px 1px 0px #000000;
+}
+
 .no-border-radius {
   border-radius: 0px !important;
 }
@@ -13681,12 +13736,115 @@ a.text-dark:focus {
   width: 50%;
 }
 
+.scale-onetwo {
+  -webkit-transition: -webkit-transform ease-in-out 0.3s;
+  transition: -webkit-transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+}
+
+.scale-onetwo:hover {
+  -webkit-transform: scale(1.05) !important;
+          transform: scale(1.05) !important;
+  z-index: 3;
+}
+
 .card_header_gradient {
   background: -webkit-gradient(linear, right top, left top, color-stop(69%, #33ccff), color-stop(96%, #ccffff));
   background: linear-gradient(to left, #33ccff 69%, #ccffff 96%);
   color: #005cbf;
   font-size: medium;
   font-weight: bold;
+}
+
+.shade-orange {
+  width: 40px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shade-orange::after,
+.shade-orange::before {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 40px;
+  background: #ff6d0d;
+  bottom: -2.5em;
+  z-index: 100;
+}
+
+.shade-orange::before {
+  right: 48.5%;
+  -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
+  clip-path: polygon(0 0, 99% 100%, 100% 0);
+}
+
+.shade-orange::after {
+  left: 50%;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+
+.shade-blue {
+  width: 40px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shade-blue::after,
+.shade-blue::before {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 40px;
+  background: #0000fa;
+  bottom: -2.5em;
+  z-index: 100;
+}
+
+.shade-blue::before {
+  right: 48.5%;
+  -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
+  clip-path: polygon(0 0, 99% 100%, 100% 0);
+}
+
+.shade-blue::after {
+  left: 50%;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+
+.shade-purple {
+  width: 40px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shade-purple::after,
+.shade-purple::before {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 40px;
+  background: #882d88;
+  bottom: -2.5em;
+  z-index: 100;
+}
+
+.shade-purple::before {
+  right: 48.5%;
+  -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
+  clip-path: polygon(0 0, 99% 100%, 100% 0);
+}
+
+.shade-purple::after {
+  left: 50%;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 0);
 }
 
 body {
@@ -13827,6 +13985,7 @@ div.card img.card-img-top {
 }
 
 .py-4 .container .row .col-md-4 .card {
+  border-color: white;
   border-radius: 0px;
   -webkit-transition: all 100ms;
   transition: all 100ms;
@@ -13837,11 +13996,6 @@ div.card img.card-img-top {
           transform: translate(0px, -3px);
   -webkit-box-shadow: 3px 6px 0px 1px #5c7fff;
           box-shadow: 3px 6px 0px 1px #5c7fff;
-}
-
-.py-4 .container .row .col-md-4 .card img {
-  -webkit-box-shadow: 2px 2px 2px 1px rgba(120, 180, 255, 0.67);
-          box-shadow: 2px 2px 2px 1px rgba(120, 180, 255, 0.67);
 }
 
 .py-4 .container .row .col-md-3 {
@@ -13913,20 +14067,154 @@ div.card img.card-img-top {
   background-color: black;
 }
 
+#mucdichtaotrang {
+  background-image: url("/upload/images/mucdich.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#mucdichtaotrang .card {
+  min-height: 550px;
+}
+
+#thongtinbanthan {
+  position: relative;
+  background-image: url("/upload/images/thongtinbanthan.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#dichvuchungtoi {
+  background-image: url("/upload/images/image_background_dichvu.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#duandalam_dichvu {
+  background-image: url("/upload/images/thongtinbanthan.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#taisao-card {
+  display: none;
+}
+
+#taisao {
+  position: relative;
+  padding: 50px 0px 50px;
+  color: white;
+  background-color: #005cbf;
+}
+
+#taisao .bg-blue {
+  position: absolute;
+  left: 90px;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("/upload/images/background_blue_taisao.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #005cbf;
+  z-index: 1;
+  -webkit-transform: skewX(-14deg);
+  transform: skewX(-14deg);
+}
+
+#taisao .image_taisao_1 {
+  background-image: url("/upload/images/taisao_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#taisao .image_taisao_2 {
+  background-image: url("/upload/images/taisao_2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#taisao .image_taisao_3 {
+  background-image: url("/upload/images/taisao_3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#taisao .image_taisao_4 {
+  background-image: url("/upload/images/taisao_4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#taisao .bg-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 65%;
+  height: 100%;
+  z-index: 0;
+  -webkit-transition: -webkit-transform ease-in-out 0.3s;
+  transition: -webkit-transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+}
+
+#taisao .auto-container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.block {
+  margin-bottom: 10px;
+  -webkit-transition: transform 0.3s;
+  -webkit-transition: -webkit-transform  0.3s;
+  transition: -webkit-transform  0.3s;
+  transition: transform  0.3s;
+  transition: transform  0.3s, -webkit-transform  0.3s;
+  cursor: pointer;
+}
+
+.block:hover {
+  -webkit-transform: translate(-2px, -3px);
+          transform: translate(-2px, -3px);
+}
+
+.block .row {
+  border: 1px solid white;
+  border-left: 0;
+}
+
+.block .row .col-4 img {
+  height: 100%;
+  -webkit-transition: -webkit-transform ease-in-out 0.3s;
+  transition: -webkit-transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+}
+
+.block .row .col-4 img:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
 .container-fluid .main-content {
   -webkit-transition: margin-left .5s;
   transition: margin-left .5s;
 }
 
 @media only screen and (max-width: 420px) {
-  body {
-    -moz-background-image: url("/upload/images/background_image_on_mobile.jpg");
-    -webkit-background-image: url("/upload/images/background_image_on_mobile.jpg");
-    -o-background-image: url("/upload/images/background_image_on_mobile.jpg");
-    background-image: url("/upload/images/background_image_on_mobile.jpg");
-    background-repeat: repeat-y;
-  }
-
   body .py-4 .container-fluid .welcome_slogan {
     top: 30% !important;
     left: 0 !important;
@@ -14094,6 +14382,14 @@ div.card img.card-img-top {
     font-size: small;
     font-weight: normal;
   }
+
+  #taisao-card {
+    display: block !important;
+  }
+
+  #taisao {
+    display: none !important;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1368px) {
@@ -14134,6 +14430,14 @@ div.card img.card-img-top {
     font-size: small;
     font-weight: normal;
   }
+
+  #taisao {
+    display: block;
+  }
+
+  #taisao-card {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 1600px) {
@@ -14150,6 +14454,14 @@ div.card img.card-img-top {
   body .py-4 .dichvu-content .row .col-md-4 .dichvu-card .dichvu_web_carousel .carousel-inner .carousel-item .image_dichvu {
     max-height: 150px !important;
     min-height: 150px !important;
+  }
+
+  #taisao {
+    display: block;
+  }
+
+  #taisao-card {
+    display: none;
   }
 }
 

@@ -16,16 +16,20 @@
                 <th scope="row">{{$blog->id}}</th>
                 <td>{{ $blog->title }}</td>
                 <td>{{ $blog->slug }}</td>
-                <td>{{ $blog->description }}</td>
+                <td title="{{strip_tags($blog->description)}}">{{ substr(strip_tags($blog->description),0, 100) }}</td>
                 <td>
-                    <button class="btn btn-info box-shadown-darkblue">{{ $blog->topic->title }}</button>
+                    @if($blog->topic != null)
+                        <button class="btn btn-info box-shadown-darkblue">{{ $blog->topic->title }}</button>
+                    @else
+                        <button class="btn btn-info box-shadown-darkblue">No Topic Selected.</button>
+                    @endif
                 </td>
                 <td>
-                    <a href="{{ route('mypost.viewpost',$blog->id) }}"
+                    <a href="{{ route('mypost.viewpost',['type' => $type,'id' => $blog->id]) }}"
                        class="btn btn-primary box-shadown-darkblue">View</a>
-                    <a href="{{ route('mypost.editpost',$blog->id) }}"
+                    <a href="{{ route('mypost.editpost',['type' => $type,'id' => $blog->id]) }}"
                        class="btn btn-warning box-shadown-darkblue">Edit</a>
-                    <a href="{{ route('mypost.delete',$blog->id) }}"
+                    <a href="{{ route('mypost.delete',['type' => $type,'id' => $blog->id]) }}"
                        class="btn btn-danger box-shadown-darkblue">Delete</a>
                 </td>
             </tr>

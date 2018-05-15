@@ -1,0 +1,57 @@
+.content-post-show {
+  padding-top:10px !important;
+  padding-bottom: 10px !important;
+  a {
+    text-decoration: none;
+    position: relative;
+    transition: color ease-out 0.2s;
+
+    &::before {
+      position: absolute;
+      bottom: -2px;
+      content: "✔";
+      left: -15px;
+      display: block;
+    }
+    &::after{
+      position: absolute;
+      bottom: -2px;
+      content: '';
+      left: 1px;
+      display: block;
+      width: 0;
+      height: 3px;
+      background: #bc70fa;
+      transition: width ease-in-out .3s;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+    &:hover {
+      color: #bc70fa;
+    }
+  }
+  pre {
+    border: 2px solid  dodgerblue;
+    transition: box-shadow ease-in-out 0.2s;
+    &:hover {
+      box-shadow: 3px 3px 0px 1px #0000fa;
+    }
+    code {
+      table {
+        tbody {
+          font-size: 1.1em;
+          tr {
+            td.hljs-ln-numbers {
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+  }
+
+}

@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('script')
+    <link href="/css/select2.min.css" rel="stylesheet">
+@endsection
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -37,7 +40,7 @@
                         <div class="row">
                             <div class="col-sm-4 no-padding-left">
                                 <label for="tags" class="text-danger">Các Tags :</label>
-                                <select class="form-control" name="tags[]" multiple style="height: 25vh;">
+                                <select class="form-control" name="tags[]" multiple id="tagsSelect" style="height: 25vh;">
                                     @foreach($tags as $tg)
                                         <option value="{{ $tg->id }}">{{$tg->abbrev}}--{{$tg->name}}</option>
                                     @endforeach
@@ -62,4 +65,10 @@
         </div>
     </div>
 
+@endsection
+@section('scriptTail')
+    <script src="/js/select2.min.js"></script>
+    <script>
+        $('#tagsSelect').select2({placeholder : " Chon tag "});
+    </script>
 @endsection

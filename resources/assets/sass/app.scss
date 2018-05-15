@@ -97,7 +97,7 @@
   }
 
   #title {
-    background-image: url("https://lorempixel.com/640/480/abstract/6/");
+    background-image: url("/upload/images/background_blue_taisao.jpg");
     z-index:2;
   }
 
@@ -108,22 +108,23 @@
   }
 
   #slide1:before {
-    background-image: url("https://lorempixel.com/640/480/abstract/4/");
+    background-image: url("/upload/images/taisao_1.jpg");
     transform: translateZ(-1px) scale(2);
   }
 
   #slide2 {
-    background-image: url("https://lorempixel.com/640/480/abstract/3/");
+    background-image: url("/upload/images/taisao_2.png");
     z-index:2;
   }
 
   #slide3:before {
-    background-image: url("https://lorempixel.com/640/480/abstract/5/");
+    background-image: url("/upload/images/image2.jpg");
     transform: translateZ(-1px) scale(2);
   }
 
   #slide4 {
-    background: #222;
+    background-image: url("/upload/images/taisao_4.jpg");
+    transform: translateZ(-1px) scale(2) translateY(30vh);
   }
 }
 .container_admin {
@@ -344,6 +345,7 @@
 }
 
 // danh cho animation
+
 .border-top {
   border-top: 18px solid !important;
 }
@@ -362,8 +364,17 @@
 .border-bottom-purple {
   border-bottom: 18px solid #882d88 !important;
 }
+.border-orange-thin {
+  border: 2px solid #ff6d0d !important;
+}
+.border-blue-thin {
+  border: 2px solid $blue1 !important;
+}
 .border-bottom-bluethin {
   border-bottom: 5px solid $blue1 !important;
+}
+.border-around-blue{
+  border: 1px dashed $blue1;
 }
 .background-blue {
   background-color: #4fb2ff !important;
@@ -379,6 +390,15 @@
 }
 .background-white {
   background-color: white;
+}
+.background-gradient-orange-violet {
+  background: linear-gradient(to bottom right, #ffa066 34%, #ff3399 100%) !important;
+}
+.background-tranparent {
+  background-color: rgba(41, 33, 33, 0.26) !important;
+}
+.background-litle-tranparent {
+  background-color: rgba(41, 33, 33, 0.49) !important;
 }
 .font-lobster {
   font-family: Lobster;
@@ -401,6 +421,9 @@
 }
 .text-50 {
   font-size: 50px;
+}
+.text-20 {
+  font-size: 20px;
 }
 .card-no-border {
   border: 0px;
@@ -433,8 +456,14 @@
 .padding-bottom-10 {
   padding-bottom: 10px !important;
 }
+.padding-bottom-40 {
+  padding-bottom: 40px !important;
+}
 .no-margin-bottom {
   margin-bottom: 0px !important;
+}
+.no-margin-top {
+  margin-top: 0px !important;
 }
 .form-control {
   border-radius: 0px !important;
@@ -457,6 +486,13 @@
 .box-shadown-purple-thin {
   box-shadow: 0px 2px 0px blueviolet;
 }
+.box-shadow-orange {
+  &:hover {
+    transform: translate(0px, -3px);
+    box-shadow: 3px 6px 0px 1px #ff6d0d !important;
+  }
+  transition: all 100ms;
+}
 .text-shadown-purple {
   text-shadow: 2px 3px 1px blueviolet;
 }
@@ -472,6 +508,9 @@
 .text-shadown-orange-thin {
   text-shadow: 1px 1px 0px #ef7d0a;
 }
+.text-shadown-black {
+  text-shadow: 1px 1px 0px #000000;
+}
 .no-border-radius {
   -webkit-border-radius: 0px !important;
   -moz-border-radius: 0px !important;
@@ -482,16 +521,100 @@
   float: left;
   width: 50%;
 }
+
 .haft-right {
   display: inline;
   float: right;
   width: 50%;
+}
+.scale-onetwo {
+  &:hover{
+    transform: scale(1.05) !important;
+    z-index: 3;
+  }
+  transition: transform ease-in-out 0.3s;
 }
 .card_header_gradient {
   background: linear-gradient(to left, #33ccff 69%, #ccffff 96%);
   color: #005cbf;
   font-size: medium;
   font-weight: bold;
+}
+
+.shade-orange {
+   width: 40px;
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   &::after, &::before {
+     position: absolute;
+     content: '';
+     width: 40px;
+     height: 40px;
+     background: #ff6d0d;
+     bottom: -2.5em;
+     z-index: 100;
+   }
+   &::before {
+     right: 48.5%;
+     -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
+     clip-path: polygon(0 0, 99% 100%, 100% 0);
+   }
+   &::after {
+     left: 50%;
+     -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+     clip-path: polygon(0 0, 0 100%, 100% 0);
+   }
+ }
+.shade-blue {
+  width: 40px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  &::after, &::before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: #0000fa;
+    bottom: -2.5em;
+    z-index: 100;
+  }
+  &::before {
+    right: 48.5%;
+    -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
+    clip-path: polygon(0 0, 99% 100%, 100% 0);
+  }
+  &::after {
+    left: 50%;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+  }
+}
+.shade-purple {
+  width: 40px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  &::after, &::before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: #882d88;
+    bottom: -2.5em;
+    z-index: 100;
+  }
+  &::before {
+    right: 48.5%;
+    -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
+    clip-path: polygon(0 0, 99% 100%, 100% 0);
+  }
+  &::after {
+    left: 50%;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+  }
 }
 // het cac class dung chung
 body{
@@ -621,6 +744,7 @@ div.card {
     .row {
       .col-md-4 {
         .card {
+          border-color: white;
           &:hover {
             transform: translate(0px, -3px);
             box-shadow: 3px 6px 0px 1px rgb(92, 127, 255);
@@ -628,7 +752,7 @@ div.card {
           border-radius: 0px;
           transition: all 100ms;
           img {
-            box-shadow: 2px 2px 2px 1px rgba(120, 180, 255, 0.67);
+            //box-shadow: 2px 2px 2px 1px rgba(120, 180, 255, 0.67);
           }
         }
 
@@ -715,7 +839,128 @@ div.card {
     }
   }
 }
+#mucdichtaotrang {
+  background-image: url("/upload/images/mucdich.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  .card {
+    min-height: 550px;
+    //max-height: 450px;
+  }
+}
+#thongtinbanthan {
+  position: relative;
+  background-image: url("/upload/images/thongtinbanthan.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#dichvuchungtoi {
+  background-image: url("/upload/images/image_background_dichvu.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#duandalam_dichvu {
+  background-image: url("/upload/images/thongtinbanthan.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#taisao-card {
+  display: none;
+}
+#taisao {
+  position: relative;
+  padding: 50px 0px 50px;
+  color: white;
+  background-color: #005cbf;
+  .bg-blue {
+    position: absolute;
+    left: 90px;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url("/upload/images/background_blue_taisao.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #005cbf;
+    z-index: 1;
+    -webkit-transform: skewX(-14deg);
+    -moz-transform: skewX(-14deg);
+    -ms-transform: skewX(-14deg);
+    -o-transform: skewX(-14deg);
+    transform: skewX(-14deg);
+  }
+  .image_taisao_1 {
+    background-image: url("/upload/images/taisao_1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .image_taisao_2 {
+    background-image: url("/upload/images/taisao_2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .image_taisao_3 {
+    background-image: url("/upload/images/taisao_3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 
+  }
+  .image_taisao_4 {
+    background-image: url("/upload/images/taisao_4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .bg-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 65%;
+    height: 100%;
+    z-index: 0;
+    transition: transform ease-in-out 0.3s;
+  }
+  .auto-container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+}
+.block {
+  margin-bottom: 10px;
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform  0.3s;
+  -ms-transition: transform  0.3s;
+  -o-transition: transform  0.3s;
+  transition: transform  0.3s;
+  cursor: pointer;
+  &:hover {
+    transform: translate(-2px, -3px);
+  }
+  .row {
+    border: 1px solid white;
+    border-left: 0;
+    .col-4 {
+      img {
+        height: 100%;
+        transition: transform ease-in-out 0.3s;
+        &:hover {
+          transform: scale(1.1, 1.1);
+        }
+      }
+    }
+  }
+}
 .container-fluid {
   //.duandalam_dichvu {
   //  border-top: 18px solid #882d88;
@@ -726,15 +971,11 @@ div.card {
 }
 @media only screen and (max-width: 420px) {
   body{
-    -moz-background-image: url("/upload/images/background_image_on_mobile.jpg");
-    -webkit-background-image: url("/upload/images/background_image_on_mobile.jpg");
-    -o-background-image: url("/upload/images/background_image_on_mobile.jpg");
-    background-image: url("/upload/images/background_image_on_mobile.jpg");
-    //-webkit-background-size: cover;
-    //-moz-background-size: cover;
-    //-o-background-size: cover;
-    //background-size: cover;
-    background-repeat: repeat-y;
+    //-moz-background-image: url("/upload/images/background_image_on_mobile.jpg");
+    //-webkit-background-image: url("/upload/images/background_image_on_mobile.jpg");
+    //-o-background-image: url("/upload/images/background_image_on_mobile.jpg");
+    //background-image: url("/upload/images/background_image_on_mobile.jpg");
+    //background-repeat: repeat-y;
     .py-4 {
       .container-fluid {
         .welcome_slogan {
@@ -940,6 +1181,12 @@ div.card {
       }
     }
   }
+  #taisao-card {
+    display: block !important;
+  }
+  #taisao {
+    display: none !important;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1368px) {
@@ -1005,6 +1252,12 @@ div.card {
       }
     }
   }
+  #taisao {
+    display: block;
+  }
+  #taisao-card {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 1600px) {
@@ -1038,7 +1291,12 @@ div.card {
       }
     }
   }
-
+  #taisao {
+    display: block;
+  }
+  #taisao-card {
+    display: none;
+  }
 }
 
 

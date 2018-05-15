@@ -9,16 +9,16 @@
 @endsection
 @section('content')
     <div class="container border-top-blue no-padding-top no-padding-left-right">
-        <div class="row text-center background-darkblue text-light padding-around">
+        <div class="row text-center background-darkblue text-light padding-around" id="thongtinbanthan">
             <div class="col-sm-4">
-                <img class="rounded embed-responsive my-image" src="http://via.placeholder.com/600x600" alt="My Image">
+                <img class="rounded embed-responsive my-image" src="{{ asset('upload/images/myseft.jpg') }}" alt="My Image">
             </div>
             <div class="col-sm-8">
                 <table class="table table-hover table-striped">
                     <tbody>
                     <tr>
                         <th class="text-right padding-top-30 no-padding-left-right">My Name</th>
-                        <td class="text-left padding-top-30 ">Le Cong Doan</td>
+                        <td class="text-left padding-top-30 ">Doan Le</td>
                     </tr>
                     <tr>
                         <th class="text-right padding-top-30 no-padding-left-right"><span>My Hobbies</span></th>
@@ -40,34 +40,44 @@
                 </table>
             </div>
         </div>
-        <div class="row border-top-blue background-blue padding-around">
+        <div class="shade-orange"></div>
+        <div class="row border-top-blue background-blue padding-around" id="mucdichtaotrang">
+            <div class="col-12 padding-bottom-40">
+                <h1 class="font-lobster text-light text-shadown-black text-center" style="color: #ffb60a !important;">Tại sao mình lại lập ra trang web này ?</h1>
+            </div>
             <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="http://via.placeholder.com/600x600" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary btn-outline-primary">Go somewhere</a>
+                <div class="card scale-onetwo box-shadow-orange text-light background-tranparent padding-top-10">
+                    <img class="image-full-width" src="{{ asset('upload/images/one_finger.png') }}" alt="Card image cap">
+                    <div class="shade-orange"></div>
+                    <div class="card-body background-litle-tranparent">
+                        <h4 class="card-title text-center text-shadown-black padding-top-30" style="color: #ffb60a !important;">Thứ nhất</h4>
+                        <p class="card-text font-roboto-light">
+                            Mình thích thì mình làm thôi. Sao phải xoắn chứ. Sống có mấy đâu nên phải sống hết mình
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="http://via.placeholder.com/600x600" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary btn-outline-primary">Go somewhere</a>
+                <div class="card scale-onetwo box-shadow-orange text-light background-tranparent padding-top-10">
+                    <img class="image-full-width" src="{{ asset('upload/images/two_finger.png') }}" alt="Card image cap">
+                    <div class="shade-orange"></div>
+                    <div class="card-body background-litle-tranparent">
+                        <h4 class="card-title text-center text-shadown-black padding-top-30" style="color: #ffb60a !important;">Thứ hai</h4>
+                        <p class="card-text font-roboto-light">
+                            Mình thích tìm tòi các công nghê , ngôn ngữ lập trình khác nhau, để mở mang tầm hiểu biết và nâng cao kỹ năng
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="http://via.placeholder.com/600x600" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary btn-outline-primary">Go somewhere</a>
+                <div class="card scale-onetwo box-shadow-orange text-light background-tranparent padding-top-10">
+                    <img class="image-full-width" src="{{ asset('upload/images/three_finger.png') }}" alt="Card image cap">
+                    <div class="shade-orange"></div>
+                    <div class="card-body background-litle-tranparent">
+                        <h4 class="card-title text-center text-shadown-black padding-top-30"style="color: #ffb60a !important;">Cuối cùng</h4>
+                        <p class="card-text font-roboto-light">
+                            Còn gì nữa, là để chia sẻ kiến thức cũng như kết thêm nhiều bạn chứ sao. Để có gì lúc đi ăn chơi quên mang tiền còn có thằng cho mượn
+                        </p>
                     </div>
                 </div>
             </div>

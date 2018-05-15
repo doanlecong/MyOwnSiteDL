@@ -16,7 +16,7 @@
                 <div class="row mt-3">
                     <div class="col-md-6 col-lg-4">
                         <div class="card card-no-border box-shadown-darkblue no-border-radius">
-                            <div class="card-header card_header_gradient no-border-radius">My Blog</div>
+                            <div class="card-header card_header_gradient no-border-radius"><i class="fa fa-bookmark-o" aria-hidden="true"></i> My Blog</div>
                             <div class="card-body no-padding-left-right no-padding-bottom padding-top-10">
                                 <div class="haft-left padding-leftright-10">
                                     <h3 class="text-capitalize text-left text-warning border-bottom-bluethin box-shadown-purple-thin no-margin-bottom text-shadown-orange-thin">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="card card-no-border box-shadown-darkblue no-border-radius">
-                            <div class="card-header card_header_gradient no-border-radius">Serie Bài Viết</div>
+                            <div class="card-header card_header_gradient no-border-radius"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Serie Bài Viết</div>
                             <div class="card-body no-padding-left-right no-padding-bottom padding-top-10">
                                 <div class="haft-left padding-leftright-10">
                                     <h3 class="text-capitalize text-left text-warning border-bottom-bluethin box-shadown-purple-thin no-margin-bottom text-shadown-orange-thin">
@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="card card-no-border box-shadown-darkblue no-border-radius">
-                            <div class="card-header card_header_gradient no-border-radius">Chuyên Đề</div>
+                            <div class="card-header card_header_gradient no-border-radius"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Chuyên Đề</div>
                             <div class="card-body no-padding-left-right no-padding-bottom padding-top-10">
                                 <div class="haft-left padding-leftright-10">
                                     <h3 class="text-capitalize text-left text-warning border-bottom-bluethin box-shadown-purple-thin no-margin-bottom text-shadown-orange-thin">
@@ -90,31 +90,32 @@
                 </div>
                 <div class="row mt-3 background-white padding-top-30 border-top-blue">
                     <div class="col ">
-                        <h3 class="text-left orange-text font-roboto-light">My BLOG</h3>
+                        <h3 class="text-left orange-text font-roboto-light"><i class="fa fa-bookmark-o" aria-hidden="true"></i> My BLOG</h3>
                         <p>
-                            <button class="btn btn-warning  box-shadown-darkblue">Viết bài mới</button>
+                            <a href="{{ route('mypost.danhsachblog') }}" class="btn btn-primary box-shadown-darkblue"><i class="fa fa-list-ol" aria-hidden="true"></i> Danh sách</a>
+                            <a href="{{ route('mypost.writepost',['type' => 'blog']) }}" class="btn btn-warning  box-shadown-darkblue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Viết bài mới</a>
                         </p>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item box-shadown-darkblue no-border-radius">
-                                <a class="nav-link" id="home-tab" data-toggle="tab" href="#topicblog" role="tab"
-                                   aria-controls="home" aria-selected="true">Chủ đề</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#topicblog" role="tab"
+                                   aria-controls="home" aria-selected="true"><i class="fa fa-list-ol" aria-hidden="true"></i> Chủ đề</a>
                             </li>
                             <li class="nav-item box-shadown-darkblue no-border-radius">
-                                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#publicpost"
-                                   role="tab" aria-controls="profile" aria-selected="false">Bài đăng đã xuất bản</a>
+                                <a class="nav-link " id="profile-tab" data-toggle="tab" href="#publicpost"
+                                   role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-check-circle" aria-hidden="true"></i>Bài đăng đã xuất bản</a>
                             </li>
                             <li class="nav-item box-shadown-darkblue no-border-radius">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#unpublishblog" role="tab"
-                                   aria-controls="profile" aria-selected="false">Bài đang viết dở</a>
+                                   aria-controls="profile" aria-selected="false"><i class="fa fa-pause" aria-hidden="true"></i> Bài đang viết dở</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade " id="topicblog" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="topicblog" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
                                     <div class="loader"></div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade show active" id="publicpost" role="tabpanel"
+                            <div class="tab-pane fade " id="publicpost" role="tabpanel"
                                  aria-labelledby="profile-tab">
                                 <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
                                     <div class="loader"></div>
@@ -132,31 +133,32 @@
                 </div>
                 <div class="row mt-3 background-white padding-top-30 border-top-blue">
                     <div class="col ">
-                        <h3 class="text-left orange-text font-roboto-light">Serie Bài Viết</h3>
+                        <h3 class="text-left orange-text font-roboto-light"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Serie Bài Viết</h3>
                         <p>
-                            <button class="btn btn-warning  box-shadown-darkblue">Viết bài mới</button>
+                            <a href="{{ route('mypost.danhsachserie') }}" class="btn btn-primary box-shadown-darkblue"><i class="fa fa-list-ol" aria-hidden="true"></i> Danh sách</a>
+                            <a href="{{ route('mypost.writepost',['type'=>'serie']) }}" class="btn btn-warning  box-shadown-darkblue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Viết bài mới</a>
                         </p>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item box-shadown-darkblue no-border-radius">
-                                <a class="nav-link " id="home-tab" data-toggle="tab" href="#topicserie" role="tab"
-                                   aria-controls="home" aria-selected="true">Chủ đề</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#topicserie" role="tab"
+                                   aria-controls="home" aria-selected="true"><i class="fa fa-list-ol" aria-hidden="true"></i> Chủ đề</a>
                             </li>
                             <li class="nav-item box-shadown-darkblue no-border-radius">
-                                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#publicserie"
-                                   role="tab" aria-controls="profile" aria-selected="false">Bài đăng đã xuất bản</a>
+                                <a class="nav-link " id="profile-tab" data-toggle="tab" href="#publicserie"
+                                   role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-check-circle" aria-hidden="true"></i> Bài đăng đã xuất bản</a>
                             </li>
                             <li class="nav-item box-shadown-darkblue no-border-radius">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#unpublishserie" role="tab"
-                                   aria-controls="profile" aria-selected="false">Bài đang viết dở</a>
+                                   aria-controls="profile" aria-selected="false"><i class="fa fa-pause" aria-hidden="true"></i> Bài đang viết dở</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade " id="topicserie" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="topicserie" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
                                     <div class="loader"></div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade show active" id="publicserie" role="tabpanel"
+                            <div class="tab-pane fade " id="publicserie" role="tabpanel"
                                  aria-labelledby="profile-tab">
                                 <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
                                     <div class="loader"></div>
@@ -173,18 +175,19 @@
                 </div>
                 <div class="row mt-3 background-white padding-top-30 border-top-blue">
                     <div class="col ">
-                        <h3 class="text-left orange-text font-roboto-light">Chuyên Đề</h3>
+                        <h3 class="text-left orange-text font-roboto-light"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Chuyên Đề</h3>
                         <p>
-                            <button class="btn btn-warning  box-shadown-darkblue">Viết bài mới</button>
+                            <a href="{{ route('mypost.danhsachchuyende') }}" class="btn btn-primary box-shadown-darkblue"><i class="fa fa-list-ol" aria-hidden="true"></i> Danh sách</a>
+                            <a href="{{route('mypost.writepost',['type' => 'chuyende'])}}" class="btn btn-warning  box-shadown-darkblue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Viết bài mới</a>
                         </p>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item box-shadown-darkblue no-border-radius">
-                                <a class="nav-link " id="home-tab" data-toggle="tab" href="#topicchuyende" role="tab"
-                                   aria-controls="home" aria-selected="true">Chủ đề</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#topicchuyende" role="tab"
+                                   aria-controls="home" aria-selected="true"><i class="fa fa-list-ol" aria-hidden="true"></i> Chủ đề</a>
                             </li>
                             <li class="nav-item box-shadown-darkblue no-border-radius">
-                                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#publicchuyende"
-                                   role="tab" aria-controls="profile" aria-selected="false">Bài đăng đã xuất bản</a>
+                                <a class="nav-link " id="profile-tab" data-toggle="tab" href="#publicchuyende"
+                                   role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-check-circle" aria-hidden="true"></i> Bài đăng đã xuất bản</a>
                             </li>
                             <li class="nav-item box-shadown-darkblue no-border-radius">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#unpublishchuyende" role="tab"
@@ -192,12 +195,12 @@
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade " id="topicchuyende" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="topicchuyende" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
                                     <div class="loader"></div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade show active" id="publicchuyende" role="tabpanel"
+                            <div class="tab-pane fade " id="publicchuyende" role="tabpanel"
                                  aria-labelledby="profile-tab">
                                 <div class="wrapper-for-loading padding-top-30 padding-bottom-10    ">
                                     <div class="loader"></div>

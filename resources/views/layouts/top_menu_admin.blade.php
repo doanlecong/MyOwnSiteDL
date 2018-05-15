@@ -21,7 +21,7 @@
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('logout') }}">Logout <img class="icon-small ml-auto" src="{{asset('icon/si-glyph-sign-out.svg')}}"> </a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a>
                 </div>
             </li>
         </ul>

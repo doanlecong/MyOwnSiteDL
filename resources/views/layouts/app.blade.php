@@ -49,7 +49,7 @@
                 <h4 class="slogan" style="font-family: Lobster; font-weight: lighter">Hãy sống với đam mê.</h4>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
+                <i class="fa fa-bars" aria-hidden="true"></i> Menu
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">

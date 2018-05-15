@@ -65,8 +65,8 @@
                                 </td>
                                 <td>{{ $topic->created_at }}</td>
                                 <td>
-                                    <a href="{{route('topic.edit', $topic->id)}}" class="btn btn-warning">Edit</a>
-                                    <a href="{{route('topic.delete', $topic->id) }}" class="btn btn-danger" onclick="return confirm('Mày có muốn xóa thật không ?')">Delete</a>
+                                    <a href="{{route('topic.edit', $topic->id)}}" class="btn btn-warning box-shadown-superdarkblue">Edit</a>
+                                    <a href="{{route('topic.delete', $topic->id) }}" class="btn btn-danger box-shadown-superdarkblue" onclick="return confirm('Mày có muốn xóa thật không ?')">Delete</a>
                                 </td>
                             </tr>
                         @endforeach

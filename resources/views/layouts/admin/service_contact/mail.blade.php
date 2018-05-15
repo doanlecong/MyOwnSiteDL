@@ -25,7 +25,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="col-md-12">
-                            <form action="{{ route('dichvu.saveMail',$serviceContact->id) }}" method="POST" novalidate enctype="application/x-www-form-urlencoded">
+                            <form action="{{ route('dichvu.saveMail',$serviceContact->id) }}" method="POST" novalidate
+                                  enctype="application/x-www-form-urlencoded">
                                 {{ csrf_field() }}
                                 @if($serviceContact->mailService)
                                     <?php $mail = $serviceContact->mailService; ?>
@@ -37,23 +38,28 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label for="title">Tiều Đề :</label>
-                                            <input class="form-control" type="text" required name="title" value= <?php if($mail) echo $mail->title; ?>>
+                                            <input class="form-control" type="text" required name="title"
+                                                   value= <?php if ($mail) echo $mail->title; ?>>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="email">Email :</label>
-                                            <input class="form-control" type="email" readonly name="email" value="{{ $serviceContact->email }}">
+                                            <input class="form-control" type="email" readonly name="email"
+                                                   value="{{ $serviceContact->email }}">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="nguoinhan">Tên Người Nhận :</label>
-                                            <input class="form-control" type="text" readonly name="nguoinhan" value="{{ $serviceContact->name }}">
+                                            <input class="form-control" type="text" readonly name="nguoinhan"
+                                                   value="{{ $serviceContact->name }}">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="dichvu">Dich Vu :</label>
-                                            <input class="form-control" type="text" disabled name="dichvu" value="{{ $arrService[$serviceContact->service_name] }}">
+                                            <input class="form-control" type="text" disabled name="dichvu"
+                                                   value="{{ $arrService[$serviceContact->service_name] }}">
                                         </div>
                                         <div class="col-md-12">
                                             <label for="des">Mô tả :</label>
-                                            <textarea class="form-control" disabled name="nguoinhan">{{ $serviceContact->service_description }}</textarea>
+                                            <textarea class="form-control" disabled
+                                                      name="nguoinhan">{{ $serviceContact->service_description }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +67,8 @@
                                     <div class="row">
                                         <div class="col-md-8">
                                             <label for="">Nội dung:</label>
-                                            <textarea id="contentFormail" name="contentEmail" class="form-control" required><?php if($mail) echo $mail->content; ?></textarea>
+                                            <textarea id="contentFormail" name="contentEmail" class="form-control"
+                                                      required><?php if ($mail) echo $mail->content; ?></textarea>
                                         </div>
 
                                         <div class="col-md-4">
@@ -73,18 +80,17 @@
                                                 <option value="{{'3'}}">Catalo cho bảng giá dịch vụ logo</option>
                                             </select>
                                             <label for="fileAttach">Thời gian gửi:</label>
-                                            <input class="form-control" type="datetime-local" name="timesend" value="{{ date('Y-m-d', strtotime($mail->time_to_send)).'T'.date('H:i', strtotime($mail->time_to_send)) }}">
+                                            <input class="form-control" type="datetime-local" name="timesend"
+                                                   value="{{ $mail ? date('Y-m-d', strtotime($mail->time_to_send)).'T'.date('H:i', strtotime($mail->time_to_send)): ''}}">
 
                                             <div class="devider-line"></div>
                                             <label>Allow to Send Mail:</label>
-                                            <div class="btn-group btn-group-toggle btn-light" data-toggle="buttons">
-                                                <label class="btn  {{ ($mail->allow_send == 'Y' ? 'active btn-primary' : '') }}">
-                                                    <input type="radio" name="allow_send" id="option1" value="Y" autocomplete="off" {{ ($mail->allow_send == 'Y' ? 'checked' : '') }}>Allow
-                                                </label>
-                                                <label class="btn {{ ($mail->allow_send == 'N' ? 'active btn-danger' : '') }}">
-                                                    <input type="radio" name="allow_send" id="option2" value="N" autocomplete="off" {{ ($mail->allow_send == 'N' ? 'checked' : '') }}>Wait
-                                                </label>
-                                            </div>
+                                            <br>
+                                            <label class="form-check"><input type="radio" name="allow_send"  id="option1" value="Y"
+                                                          autocomplete="off" {{ ($mail && $mail->allow_send == 'Y') ? 'checked' : '' }}>Allow</label><br>
+                                            <label class="form-check"><input type="radio" name="allow_send"  id="option2" value="N"
+                                                          autocomplete="off" {{ ($mail && $mail->allow_send == 'N') ? 'checked' : '' }}>Wait</label>
+
                                         </div>
                                     </div>
 
@@ -108,7 +114,7 @@
     </script>
     <script>
         var editor_config = {
-            path_absolute : "",
+            path_absolute: "",
             selector: "textarea[id=contentFormail]",
             theme: 'modern',
             plugins: 'print preview searchreplace emoticons autolink ' +
@@ -119,9 +125,9 @@
             toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | emoticons | fontselect',
             image_advtab: true,
             templates: [
-                { title: 'Website Template', content: 'Test 1' },
-                { title: 'Mobile Template', content: 'Test 2' },
-                { title: 'Logo Template', content: 'Test 3' }
+                {title: 'Website Template', content: 'Test 1'},
+                {title: 'Mobile Template', content: 'Test 2'},
+                {title: 'Logo Template', content: 'Test 3'}
             ],
             codesample_languages: [
                 {text: 'HTML/XML', value: 'markup'},
@@ -134,8 +140,8 @@
                 {text: 'C', value: 'c'},
                 {text: 'C#', value: 'csharp'},
                 {text: 'C++', value: 'cpp'},
-                {text:"jsx",value:"jsx"},
-                {text:"JSON",value:"json"}
+                {text: "jsx", value: "jsx"},
+                {text: "JSON", value: "json"}
             ],
             content_css: [
                 '//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700,900,900i&amp;subset=vietnamese',
@@ -143,9 +149,9 @@
             ],
             relative_urls: false,
             height: 400,
-            file_browser_callback : function(field_name, url, type, win) {
+            file_browser_callback: function (field_name, url, type, win) {
                 var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
-                var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+                var y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
 
                 var cmsURL = editor_config.path_absolute + route_prefix + '?field_name=' + field_name;
                 if (type == 'image') {
@@ -155,12 +161,12 @@
                 }
 
                 tinyMCE.activeEditor.windowManager.open({
-                    file : cmsURL,
-                    title : 'Filemanager',
-                    width : x * 0.8,
-                    height : y * 0.8,
-                    resizable : "yes",
-                    close_previous : "no"
+                    file: cmsURL,
+                    title: 'Filemanager',
+                    width: x * 0.8,
+                    height: y * 0.8,
+                    resizable: "yes",
+                    close_previous: "no"
                 });
             }
         };

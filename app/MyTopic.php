@@ -17,6 +17,10 @@ class MyTopic extends Model
         return $count;
     }
 
+    public function countPost() {
+        return ['numPost' => $this->posts()->count()];
+    }
+
     public static function getArrayTags(MyTopic $topic)
     {
         $arrTags = [];
@@ -25,7 +29,9 @@ class MyTopic extends Model
         }
         return $arrTags;
     }
-
+    public function posts() {
+        return $this->hasMany('App\MyPost','my_topics_id');
+    }
     // Relationship functions
     public function typePost()
     {

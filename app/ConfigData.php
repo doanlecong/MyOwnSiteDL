@@ -8,6 +8,11 @@ class ConfigData
     public static $imageWidthForRepresent = 400;
     public static $imageHeightForRepresent = 300;
     public static $maximumContactPerDay = 20;
+    public static $typeBlog = 'blog';
+    public static $typeSerie = 'serie';
+    public static $typeChuyende = 'chuyende';
+    public static $unPublish = 'N';
+    public static $publish = 'Y';
     // Dành cho lúc tao mới chỉnh sửa thông tin Tag
 
     public static function arrKeyValuePostType() {
@@ -17,15 +22,16 @@ class ConfigData
             'S' => 'Serie Bài Viết'
         ];
     }
+
     public static function arrConventionPostType() {
         return [
             'B', 'C' ,'S'
         ];
     }
     public static function getConvention($type =''){
-        if($type =='blog') return static::arrConventionPostType()[0];
-        else if($type == 'serie') return static::arrConventionPostType()[2];
-        else if($type == 'chuyende') return static::arrConventionPostType()[1];
+        if($type == static::$typeBlog) return static::arrConventionPostType()[0];
+        else if($type == static::$typeSerie) return static::arrConventionPostType()[2];
+        else if($type == static::$typeChuyende) return static::arrConventionPostType()[1];
     }
     public static function arrDataForFileManagement($controlerName = '', $actionName = '', $purpose = '', $external_id, $file_type = '', $file_name = '', $file_path = '', $file_size, $image_zize = '')
     {
