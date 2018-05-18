@@ -20,7 +20,12 @@ class MyTopic extends Model
     public function countPost() {
         return ['numPost' => $this->posts()->count()];
     }
-
+    public static function findBySlug($slug, $type){
+        return MyTopic::where('slug',$slug)->where('type_posts',$type)->first();
+    }
+    public static function findByType($type, $amount = 0) {
+        return MyTopic::where('type_posts',$type)->take($amount)->get();
+    }
     public static function getArrayTags(MyTopic $topic)
     {
         $arrTags = [];

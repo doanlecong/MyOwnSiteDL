@@ -64,6 +64,7 @@ class TopicController extends Controller
         $topic = new MyTopic();
         $topic->title = $request->title;
         $topic->type_posts = $request->type_post;
+        $topic->slug = $request->slug;
         $topic->description = Purifier::clean($request->description);
 
         if($request->hasFile('image_name') && $request->file('image_name')->isValid()){
@@ -151,6 +152,7 @@ class TopicController extends Controller
         if($topic) {
             $topic->title = $request->title;
             $topic->type_posts = $request->type_post;
+            $topic->slug = $request->slug;
             $topic->description = Purifier::clean($request->description);
 
             if($request->hasFile('image_name')) {

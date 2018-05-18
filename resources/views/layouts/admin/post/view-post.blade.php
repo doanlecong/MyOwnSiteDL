@@ -113,20 +113,31 @@
                         {{--<button class="btn btn-primary btn-block  box-shadown-superdarkblue" onclick="closeView(event)">Close This</button>--}}
                     {{--</div>--}}
                     <div class="contentPost container content-post-show" id="contentPost">
-                        <h3>{{ $post->id }}</h3>
-                        @if( $post->status == "Y" )
-                            <h3 class="text-danger text-center border-around-blue padding-top-10 padding-bottom-10">{{ "Đã xuất bản " ." | ".date('Y-m-d h:iA', strtotime($post->time_publish)) }}</h3>
-                        @else
-                            <h3 class="text-danger text-center border-around-blue padding-top-10 padding-bottom-10">{{ "Đang viết" }}</h3>
-                        @endif
+                        <div style="max-width: 800px;">
+                            <h3>{{ $post->id }}</h3>
+                            @if( $post->status == "Y" )
+                                <h3 class="text-danger text-center border-around-blue padding-top-10 padding-bottom-10">{{ "Đã xuất bản " ." | ".date('Y-m-d h:iA', strtotime($post->time_publish)) }}</h3>
+                            @else
+                                <h3 class="text-danger text-center border-around-blue padding-top-10 padding-bottom-10">{{ "Đang viết" }}</h3>
+                            @endif
 
-                        <h3>{{ $post->title }}</h3>
-                        <p>
-                            {!! $post->description !!}
-                        </p>
-                        <p>
-                            <?php echo $post->content; ?>
-                        </p>
+                            <h1>{{ $post->title }}</h1>
+                            <p style="font-weight: 900; font-size: 20px;">
+                                {!! strip_tags($post->description) !!}
+                            </p>
+                            <p>
+                                @foreach($post->tags as $tag)
+                                    <span class="badge badge-pill badge-primary" title=" {{ $tag->name }} " style="cursor: pointer;">#{{$tag->abbrev}}</span>
+                                @endforeach
+                            </p>
+                            <p>
+                                Published at : {{ date('Y/m/d h:i a', strtotime($post->created_at)) }}
+                            </p>
+                            <p>
+                                <?php echo $post->content; ?>
+                            </p>
+                        </div>
+
                     </div>
 
                 </div>

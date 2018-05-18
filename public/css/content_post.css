@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 .content-post-show {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
@@ -15,7 +13,7 @@
 .content-post-show a::before {
   position: absolute;
   bottom: -2px;
-  content: "\2714";
+  content: "";
   left: -15px;
   display: block;
 }

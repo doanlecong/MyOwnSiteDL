@@ -8,198 +8,88 @@
     </nav>
 @endsection
 @section('content')
-    <div class="container border-top-blue">
-        <div class="row">
-            <div class="col-sm col-md-8 serie-first-col no-padding-left no-padding-right">
-                <div class="serie-list">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small>3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small>Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a> <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        </a> <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        </a> <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                </ul>
-                            </nav>
+    <div class="shade-light-blue"></div>
+    <div class="container border-top-blue topic_bottom_purple ">
+        <div class="row mb-3 ">
+            <div class="col-sm col-md-8 no-padding-left no-padding-right ">
+                @foreach($posts as $post)
+                    <div class="row mt-2 ml-2 mr-2 border-top-purple-thin background-litle-tranparent box-shadown-darkblue">
+                        <div class="col-sm-3">
+                            @if($post->hinhdaidien != null && $post->hinhdaidien != "NULL" )
+                                <img src="{{ $post->hinhdaidien }}" alt="{{ $post->title }}" class="image-full-height image-full-width" title="{{ $post->title }}">
+                            @else
+                                <img src="{{ asset('upload/images/blankimage.jpg') }}" class="image-full-height image-full-width" title="{{ $post->title }}">
+                            @endif
+                        </div>
+                        <div class="col-sm-9">
+                            <h5 class="font-roboto font-weight-bold white-text mt-3">
+                                <a class="text-light animate-bottom text-shadown-black" href="{{ route('serie.showBaiViet',$post->slug.".html") }}">{{ $post->title }}</a>
+                            </h5>
+                            <small class="text-light font-weight-bold background-orange" style="font-size: 90%;">
+                                <i class="fa fa-flag" aria-hidden="true"></i>
+                                <a class="white-text" href="{{ route('serie.showTopic',$post->topic->slug.".html") }}">{{$post->topic->title}}</a>
+                            </small>
+                            @foreach($post->tags as $tag)
+                                <span style="cursor: pointer;" class="badge badge-primary box-shadown-darkblue" title="{{ $tag->name }}"><i class="fa fa-hashtag" aria-hidden="true"></i> {{ $tag->abbrev }}</span>
+                            @endforeach
+                            <p class="font-roboto-light white-text">
+                                {{ mb_substr(strip_tags($post->description), 0, 130) }}
+                            </p>
                         </div>
                     </div>
-                </div>
+                @endforeach
+                {{ $posts->links() }}
             </div>
-            <div class="col-sm col-md-4 serie-second-col no-padding-right">
+            <div class="col-sm col-md-4">
                 <div class="row mb-sm-5">
                     <div class="col no-padding-left-right">
-                        <h2>Ban muon tim hieu gi ?</h2>
-                        <hr>
-                        <h5>Chuyen muc nho 1</h5>
+                        <h2 class="font-roboto-light text-primary mt-3"><i class="fa fa-hashtag" aria-hidden="true"></i> Chủ đề cùng thể loại</h2>
+                        <div class="shade-light-blue"></div>
+                        <div class="border-top-blue mb-3"></div>
                         <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Cras justo odio
-                                <span class="badge badge-primary badge-pill">14</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Cras justo odio
-                                <span class="badge badge-primary badge-pill">14</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Cras justo odio
-                                <span class="badge badge-primary badge-pill">14</span>
-                            </li>
+                            @foreach($topics as $topic)
+                                <li class="list-group-item d-flex justify-content-between align-items-center no-border-radius border-top-blue-m mb-2 background-litle-white">
+                                    <span class="white-text">
+                                        <i class="fa fa-hashtag" aria-hidden="true"></i>
+                                        <a class="animate-bottom-nocontent white-text" href="{{ route('serie.showTopic', $topic->slug.".html") }}">{{ $topic->title }}</a>
+                                    </span>
+                                    <span style="padding: 7px;" class="badge badge-primary badge-pill box-shadown-darkblue">{{ $topic->posts()->count() }} bài</span>
+                                </li>
+                            @endforeach
                         </ul>
-                        <h5>Chuyen muc nho 2</h5>
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Cras justo odio
-                                <span class="badge badge-primary badge-pill">14</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Cras justo odio
-                                <span class="badge badge-primary badge-pill">14</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Cras justo odio
-                                <span class="badge badge-primary badge-pill">14</span>
-                            </li>
-                        </ul>
-                        <hr>
-                        <button class="btn-outline-primary btn-lg btn-block">Xem het danh sach</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col no-padding-left-right">
-                        <h2>Bai dang moi nhat</h2>
-                        <hr>
-                        <ul class="list-group">
-                            <li class="list-group-item no-padding-left-right">
-                                <div class="row">
-                                    <div class="col-sm-3 no-padding-right">
-                                        <img src="http://via.placeholder.com/100x100" class="img-fluid image-full-width">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <h6>Dasadaslfkaflkafkalsf</h6>
-                                        <hr>
-                                        <p>dkasfasfaslfkl;fksld;fksdl;fksf</p>
-                                        <button class="btn btn-outline-primary">Chi tiết</button>
-                                    </div>
+                        <h2 class="font-roboto-light white-text mt-3"><i class="fa fa-bolt" aria-hidden="true"></i> Mới Nhất Đây</h2>
+                        <div class="shade-white"></div>
+                        <div class="border-top-blue mb-3"></div>
+                        @foreach($newestPosts as $newPost)
+                            <div class="row background-litle-tranparent mb-3 border-top-purple-thin">
+                                <div class="col-sm-4">
+                                    @if($newPost->hinhdaidien != null && $newPost->hinhdaidien != "NULL" )
+                                        <img src="{{ $newPost->hinhdaidien }}" alt="{{ $newPost->title }}" class=" image-full-width padding-top-20" title="{{ $newPost->title }}">
+                                    @else
+                                        <img src="{{ asset('upload/images/blankimage.jpg') }}" class="image-full-width padding-top-20" title="{{ $newPost->title }}">
+                                    @endif
                                 </div>
-                            </li>
-                            <li class="list-group-item no-padding-left-right">
-                                <div class="row">
-                                    <div class="col-sm-3 no-padding-right">
-                                        <img src="http://via.placeholder.com/100x100" class="img-fluid image-full-width">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <p><h6>Dasadaslfkaflkafk</h6></p>
-                                        <hr>
-                                        <p>dkasfasfaslfkl;fksld;fksdl;fksf</p>
-                                        <button class="btn btn-outline-primary">Chi tiết</button>
-                                    </div>
+                                <div class="col-sm-8 no-padding-right">
+                                    <h5 class="font-roboto font-weight-bold white-text mt-3">
+                                        <a class="text-light animate-bottom text-shadown-black" href="{{ route('serie.showBaiViet',$newPost->slug.".html") }}">{{ $newPost->title }}</a>
+                                    </h5>
+                                    <small class="text-light font-weight-bold background-orange" style="font-size: 90%;">
+                                        <i class="fa fa-flag" aria-hidden="true"></i>
+                                        <a class="white-text" href="{{ route('serie.showTopic',$newPost->topic->slug.".html") }}">{{$newPost->topic->title}}</a>
+                                    </small>
+                                    @foreach($newPost->tags as $tag)
+                                        <span style="cursor: pointer;" class="badge badge-primary box-shadown-darkblue" title="{{ $tag->name }}"><i class="fa fa-hashtag" aria-hidden="true"></i> {{ $tag->abbrev }}</span>
+                                    @endforeach
+                                    <p class="font-roboto-light white-text">
+                                        {{ mb_substr(strip_tags($newPost->description), 0, 80) }}
+                                    </p>
                                 </div>
-                            </li>
-                            <li class="list-group-item no-padding-left-right">
-                                <div class="row">
-                                    <div class="col-sm-3 no-padding-right">
-                                        <img src="http://via.placeholder.com/100x100" class="img-fluid image-full-width">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <h6>Dasadaslfkaflkafkalsfak</h6>
-                                        <hr>
-                                        <p>dkasfasfaslfkl;fksld;fksdl;fk</p>
-                                        <button class="btn btn-outline-primary mb-1">Chi tiết</button>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

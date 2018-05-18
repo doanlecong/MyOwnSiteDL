@@ -24,7 +24,10 @@
                             <div class="col-md-6 no-padding-left">
                                 <label for="title" class="text-danger">Tiêu đề :</label>
                                 <input class="form-control" name="title" type="text"
-                                       placeholder="Nhập tiêu đề cho kiểu bài viết" required>
+                                       placeholder="Nhập tiêu đề cho kiểu bài viết" required><br>
+                                <label for="slug" class="text-danger">Slug(Link viet tat) :</label>
+                                <input class="form-control" name="slug" type="text"
+                                       placeholder="link-viet-tat" required>
                             </div>
                             <div class="col-md-6 no-padding-right">
                                 <label for="type_post" class="text-danger">Bài Viết Thuộc :</label>

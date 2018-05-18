@@ -32,6 +32,10 @@ class MyPost extends Model
         }
         return true;
     }
+    public static function findBySlug($slug, $type){
+        return MyPost::where('slug',$slug)->where('type_posts',$type)->first();
+    }
+
     public static function getArrTagSelected(MyPost $post) {
         $arrTags = [];
         foreach ($post->tags as $tag) {
@@ -57,6 +61,18 @@ class MyPost extends Model
         $post->type_posts = ConfigData::getConvention($type);
         return $post;
     }
+
+    public static function findPreviosPost(MyPost $post, $amount = 0 ){
+        // Find any posts have same topic whose id less than current post
+        $type = $post->type_posts;
+        return MyPost::where('id','<',$post->id)->where('type_posts', $type)->where('my_topics_id',$post->my_topics_id)->take($amount)->get();
+    }
+
+    public static function findForwardPost(MyPost $post, $amount = 0 ) {
+        // Find any posts have same topic whose id id greater than current post
+        return MyPost::where('id','>', $post->id)->where('type_posts', $post->type_posts)->where('my_topics_id',$post->my_topics_id)->take($amount)->get();
+    }
+
     protected $table = 'my_posts';
 
     public function topic()

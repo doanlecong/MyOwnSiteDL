@@ -1,3 +1,4 @@
+<div class="shade-blue"></div>
 <div class="footer">
     <div class="container border-top-blue no-padding-left-right padding-top-20">
         <div class="row">
@@ -18,43 +19,6 @@
             </div>
         </div>
         <div class="devider-line"></div>
-        <div class="row">
-            <div class="col">
-                <p>
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                    <span><a href="#">Laravel</a></span>/
-                </p>
-            </div>
-        </div>
-        <hr>
         <div class="row">
             <div class="col-8">
                 <h3 class="danhmuc">MY OWN SITE</h3>

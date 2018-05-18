@@ -1,4 +1,15 @@
 @extends('layouts.admin')
+@section('script')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css">
+    <link rel="stylesheet" href="/css/content_post.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        hljs.initLineNumbersOnLoad();
+    </script>
+@endsection
+
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -219,6 +230,20 @@
             </div>
         </div>
     </div>
+    <div class="modal" id="modalShowPostList" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 1200px;">
+            <div class="modal-content no-border-radius">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Danh Sách Post Trong Chủ Đề</h5>
+                </div>
+                <div class="modal-body" id="contentForPostList">
+                    <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 @section('scriptTail')
@@ -316,7 +341,43 @@
         $(document).on('click', '.pagination .page-item a', function (e) {
             getJsonPaginate($(this).attr('href'), e);
             e.preventDefault();
-        })
+        });
+        $(document).on('click', '.view-now', function (e) {
+            // console.log('Helllo');
+            var type = $(this).attr('data-type');;
+            var id = $(this).attr('data-id');
+            $('#contentForPostList').html('<div class="wrapper-for-loading padding-top-30 padding-bottom-10">\n' +
+                '                        <div class="loader"></div>\n' +
+                '                    </div>');
+            $.ajax({
+                "async": true,
+                "crossDomain": true,
+                "url": "/authorized/view-instance-post/" + type + "/" + id,
+                "method": "GET",
+            }).done(function (data) {
+                $('#contentForPostList').html(data);
+                $("pre > code").each(function () {
+                    hljs.highlightBlock(this);
+                    hljs.lineNumbersBlock(this);
+                })
+            })
+        });
+        $(document).on('click','.view-post-list', function (e) {
+           $("#modalShowPostList").modal('show');
+           var type = $(this).attr('data-type');
+           var id = $(this).attr('data-id');
+           $('#contentForPostList').html('<div class="wrapper-for-loading padding-top-30 padding-bottom-10">\n' +
+                '                        <div class="loader"></div>\n' +
+                '                    </div>');
+           $.ajax({
+               "async": true,
+               "crossDomain": true,
+               "url": "/authorized/get-list-post/" + type + "/" + id,
+               "method": "GET",
+           }).done(function (data) {
+               $('#contentForPostList').html(data);
+           })
+        });
     </script>
 
 @endsection

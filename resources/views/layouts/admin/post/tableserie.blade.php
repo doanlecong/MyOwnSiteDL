@@ -16,8 +16,8 @@
             <tr>
                 <th scope="row">{{ $blog->id }}</th>
                 <td>{{ $blog->title }}</td>
-                <td>{{ $blog->slug }}</td>
-                <td title="{{strip_tags($blog->description)}}">{{ substr(strip_tags($blog->description),0, 100) }}</td>
+                <td title="{{ $blog->slug }}">{{ mb_substr($blog->slug,0, 30) }}</td>
+                <td title="{{strip_tags($blog->description)}}">{{ mb_substr(strip_tags($blog->description),0, 100) }}</td>
                 <td>
                     @if($blog->hinhdaidien != null && $blog->hinhdaidien != 'NULL')
                         <div>

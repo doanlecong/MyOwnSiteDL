@@ -19,7 +19,7 @@
                 <th scope="row">{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->slug }}</td>
-                <td title="{{strip_tags($post->description)}}">{{ substr(strip_tags($post->description),0, 30) }}</td>
+                <td title="{{strip_tags($post->description)}}">{{ mb_substr(strip_tags($post->description),0, 30) }}</td>
                 <td>
                     @if($post->hinhdaidien != null && $post->hinhdaidien != 'NULL')
                         <div>

@@ -83,7 +83,7 @@ class MyPostController extends Controller
         $myPost = MyPost::find($id);
         if ($myPost) {
             return response(
-                view('layouts.admin.post.view-in-page', ['myblog' => $myPost]),
+                view('layouts.admin.post.view-in-page', ['myblog' => $myPost,'type' => $type]),
                 200,
                 ['Content-Type', ConfigData::getContentTypeResponseBaseFileType('json')]
             );
@@ -150,7 +150,8 @@ class MyPostController extends Controller
             $topics = MyTopic::where('type_posts', ConfigData::getConvention($type))
                 ->orderBy('updated_at', 'desc')->get();
             $arrTagSelected = MyPost::getArrTagSelected($myPost);
-            $previousPosts = MyPost::select(['id','title'])->with('topic')->where('type_posts', $type)->orderBy('my_topics_id', 'desc')->get();
+            $previousPosts = MyPost::with('topic')
+                ->where('my_topics_id', $myPost->my_topics_id)->orderBy('my_topics_id', 'desc')->get();
             return view('layouts.admin.post.editpost')
                 ->withTags($tags)
                 ->withType($type)
@@ -244,7 +245,7 @@ class MyPostController extends Controller
     private function getMyBlog($isPublish)
     {
         $myblogs = MyPost::where('type_posts', ConfigData::getConvention('blog'))
-            ->where('status', $isPublish)->orderBy('updated_at', 'desc')->paginate(5);
+            ->where('status', $isPublish)->orderBy('updated_at', 'desc')->paginate(10);
         return response(
             view('layouts.admin.post.tableblog', ['myblogs' => $myblogs, 'type' => ConfigData::$typeBlog]),
             200,
@@ -255,7 +256,7 @@ class MyPostController extends Controller
     private function getMySerie($isPublish)
     {
         $myserie = MyPost::where('type_posts', ConfigData::getConvention('serie'))
-            ->where('status', $isPublish)->orderBy('updated_at', 'desc')->paginate(5);
+            ->where('status', $isPublish)->orderBy('updated_at', 'desc')->paginate(10);
         return response(
             view('layouts.admin.post.tableserie', ['myblogs' => $myserie, 'type' => ConfigData::$typeSerie]),
             200,
@@ -266,7 +267,7 @@ class MyPostController extends Controller
     private function getMyChuyende($isPublish)
     {
         $mychuyende = MyPost::where('type_posts', ConfigData::getConvention('chuyende'))
-            ->where('status', $isPublish)->orderBy('updated_at', 'desc')->paginate(5);
+            ->where('status', $isPublish)->orderBy('updated_at', 'desc')->paginate(10);
         return response(
             view('layouts.admin.post.tablechuyende', ['myblogs' => $mychuyende, 'type' => ConfigData::$typeChuyende]),
             200,

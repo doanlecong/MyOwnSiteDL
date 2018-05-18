@@ -22,6 +22,7 @@
                             <th>ID</th>
                             <th>Title</th>
                             <th>Description</th>
+                            <th>Slug</th>
                             <th>Belong To</th>
                             <th>Representive Image</th>
                             <th>Taggable</th>
@@ -33,9 +34,10 @@
                         @foreach($myTopic as $topic)
                             <tr>
                                 <td>{{ $topic->id}}</td>
-                                <td>{{ $topic->title }}</td>
-                                <td><span title="{{ $topic->description }}">{{ substr(strip_tags($topic->description), 0, 50) }} {{ strlen($topic->description) > 50 ? "..." : "" }}</span></td>
+                                <td title="{{ $topic->title }}">{{ mb_substr($topic->title,0, 30) }}</td>
+                                <td><span title="{{ $topic->description }}">{{ mb_substr(strip_tags($topic->description), 0, 50) }} {{ strlen($topic->description) > 50 ? "..." : "" }}</span></td>
                                 {{--<td>{{ substr($topic->description, 0, 50) }}</td>--}}
+                                <td title="{{$topic->slug}}">{{ substr($topic->slug,0, 20) }}</td>
                                 <td><span class="btn btn-outline-primary box-shadown-darkblue" >{{ $topic->typePost->title }}</span></td>
                                 <td>
                                     @if($topic->image_name != null && $topic->image_name != 'NULL')

@@ -13,21 +13,11 @@
 Route::get('/404.html   ', function (){
     return view('layouts.admin.404');
 })->name('404');
-Route::get('/', function () {
-    return view('welcome');
-})->name('homepage');
+Route::get('/', 'HomePageController@index')->name('homepage');
 
 Route::get('/lien-he.html', function () {
     return view('lienhe');
 })->name('lienhe');
-
-Route::get('/my-blog.html', function () {
-    return view('myblog');
-})->name('myblog');
-
-Route::get('/serie-baiviet.html', function() {
-    return view('serie');
-})->name('serie-bv');
 
 Route::get('/dich-vu.html', function () {
     return view('dichvu');
@@ -51,6 +41,21 @@ Route::get('getImagePublic/{filename}/{place}', 'ImagePublicController@showImage
 
 Route::post('lienhe/store','LienHeController@store')->name('lienhe.store');
 //For bên front end dich vu lien he //
+
+Route::get('/my-blog.html', 'MyBlogPublicController@index')->name('myblog');
+
+Route::get('my-blog/{topic}', 'MyBlogPublicController@showTopic')->name('blog.showTopic');
+Route::get('my-blog/bai-viet/{slug}','MyBlogPublicController@showBaiViet')->name('blog.showBaiViet');
+
+Route::get('/serie.html', 'MySeriePublicController@index')->name('serie-bv');
+Route::get('serie/{topic}','MySeriePublicController@showTopic')->name('serie.showTopic');
+Route::get('serie/bai-viet/{slug}','MySeriePublicController@showBaiViet')->name('serie.showBaiViet');
+
+Route::get('/chuyen-de.html', 'MyChuyendePublicController@index')->name('chuyende');
+Route::get('chuyen-de/{topic}','MyChuyendePublicController@showTopic')->name('chuyende.showTopic');
+Route::get('chuyen-de/bai-viet/{slug}','MyChuyendePublicController@showBaiViet')->name('chuyende.showBaiViet');
+
+
 
 Route::middleware('auth')->prefix('authorized')->group(function () {
     Route::get('lienhe/', 'LienHeController@index')->name('lienhe.index');
@@ -118,7 +123,7 @@ Route::prefix('authorized')->group(function() {
     Route::get('tag/{id}/delele', 'TagController@delete')->name('tag.delete');
 
     Route::resource('topic', 'TopicController');
-    Route::get('topic/{id}/delete', 'TopicController@delele')->name('topic.delete');
+    Route::get('topic/{id}/delete', 'TopicController@delete')->name('topic.delete');
     Route::get('topic/{filename}/image','TopicController@getImageTopic')->name('topic.getImage');
 
 

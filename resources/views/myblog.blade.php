@@ -8,218 +8,77 @@
     </nav>
 @endsection
 @section('content')
-    <div class="container border-top-blue no-padding-left-right">
-        <div class="jumbotron">
-            <div class="card_header_gradient">
-                Bài viết mới trong tuần này !
+    <div class="container border-top-blue no-padding-left-right no-padding-top">
+        <div class="row padding-top-10 padding-bottom-40 border-left-blue border-right-blue " id="chuderow">
+            <div class="col-12">
+                <h3 class="text-center text-light font-lobster text-shadown-black padding-bottom-10">
+                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Bài Viết Mới Trong Thời Gian Gần Đây
+                </h3>
             </div>
-            <img src="{{ asset('upload/images/my_blog_1.jpg') }}" class="image-full-width" style="max-height: 500px;">
-            <h1 class="display-4 title_baiviet">Chào buổi sáng đầu tuần.</h1>
-            <p class="lead">Chào buổi sáng , thênh thang bước chân trên đường... Những lời ca trong bài hát Chào buổi sáng được thể hiện bởi ca sĩ Hoàng Hải đường như tiếp thêm năng lượng cho một ngày mới với nhiều năng lương vui tươi ..</p>
-            <hr class="my-4">
-            <p>Một tuần mới lại bắt đầu , một công việc mới , một khởi đầu mới :></p>
-            <a class="btn btn-primary btn-lg " href="#" role="button">Đọc nào</a>
-        </div>
-        <h2 class="card_header_gradient lead" >Những bài viết còn đó đó , mời bạn đọc xem thêm.</h2>
-        <div class="background-blue border-top-blue padding-around">
-            <h3 class="text-center font-lobster text-light">Bắt đầu một tuần mới hiệu quả</h3>
-            <div class="row font-roboto">
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_2.jpg')}}" alt="Card image cap">
-                        <div class="card-body ">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_2.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_2.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-sm-4 no-padding-left-right">
+                @if($newestPost->hinhdaidien != null &&  $newestPost->hinhdaidien != "NULL")
+                    <img src="{{$newestPost->hinhdaidien}}" alt="{{ $newestPost->title }}" class="image-full-width">
+                @else
+                    <img src="{{ asset('upload/images/blankimage.jpg') }}" alt="{{ $newestPost->title }}"
+                         class="image-full-width">
+                @endif
             </div>
-            <nav aria-label="..." class="text-center">
-                <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="col-sm-8 padding-top-30 background-litle-tranparent border-top-blue-m padding-leftright-10">
+                <h1 class="text-shadown-lightblue text-light font-roboto-light"><a class="text-light" style="text-decoration: none;" href="{{ route('blog.showBaiViet',$newestPost->slug.".html") }}" >{{ $newestPost->title }}</a></h1>
+                @foreach($newestPost->tags as $tg)
+                    <span class="badge badge-light text-primary box-shadown-darkblue scale-onetwo" title="{{ $tg->name }}">{{ $tg->abbrev }}</span>
+                @endforeach
+                <p class="text-light font-roboto-light font-weight-bold">
+                    {{ strip_tags($newestPost->description) }}
+                </p>
+            </div>
         </div>
-        <div class="background-blue border-top-blue padding-around">
-            <h3 class="text-center font-lobster text-light">Giữa tuần là những niềm vui</h3>
-            <div class="row font-roboto">
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_3.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+        <div class="shade-blue"></div>
+        <div class="border-top-blue"></div>
+        <h2 class="mb-0 text-primary mt-4 mb-4 text-center font-roboto-light" >Những bài viết còn đó đó , mời bạn đọc xem thêm.</h2>
+        <?php $countTopic = count($topics); ?>
+        @foreach($topics as $key => $topic)
+            <?php $isOdd = ($key%2 == 0); ?>
+            <div class=" padding-leftright-10 padding-bottom-10 padding-top-30 {{ ($isOdd) ? "border-top-purple topic_bottom_purple" :"border-top-blue topic_blue" }}">
+                <div class="row">
+                    <div class="col-sm-4 background-litle-tranparent padding-top-20 padding-bottom-10 mb-2">
+                        <h4 class="font-roboto-light text-center text-light">
+                            <a class="animate-bottom-nocontent text-light" href="{{ route('blog.showTopic', $topic->slug.".html") }}">{{ $topic->title }}</a>
+                        </h4>
+                        @foreach($topic->tags as $tag)
+                            <span title="{{ $tag->name }}" class="badge badge-primary box-shadown-darkblue">{{ $tag->abbrev }}</span>
+                        @endforeach
+                        <img src="{{ $topic->image_name }}" class="image-full-width scale-onetwo">
+                        <p class="text-20 font-roboto-light text-light">Có : {{ $topic->posts()->count() }} bài</p>
+                        <p class="font-roboto-light text-light">{{ mb_substr(strip_tags($topic->description),0 ,50) }}</p>
+                        <a href="{{ route('blog.showTopic', $topic->slug.".html") }}" class="btn btn-primary box-shadown-darkblue">Danh Sách</a>
                     </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_3.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_3.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+                    <div class="col-sm-8">
+                        @foreach($topic->posts()->take(3)->get() as $post)
+                            <div class="row padding-bottom-10 {{ $isOdd ? "border-top-purple-thin": "border-top-blue-m" }}">
+                                <div class="col-sm-3 no-padding-right no-padding-left">
+                                    @if($post->hinhdaidien != null && $post->hinhdaidien != "NULL")
+                                        <img src="{{ $post->hinhdaidien }}" class="image-full-width image-full-height">
+                                    @else
+                                        <img src="{{ asset('upload/images/blankimage.jpg') }}" class="image-full-width image-full-height">
+                                    @endif
+                                </div>
+                                <div class="col-sm-9 background-litle-tranparent padding-top-10">
+                                    <h5 class="font-roboto-light text-light"><a class="text-light animate-bottom-nocontent" href="{{ route('blog.showBaiViet', $post->slug.".html") }}">{{ $post->title }}</a></h5>
+                                    @foreach($post->tags as $tag)
+                                        <span title="{{ $tag->name }}" class="badge badge-primary text-light">{{ $tag->abbrev }}</span>
+                                    @endforeach
+                                    <p class="font-roboto-light text-light">
+                                        {{ mb_substr(strip_tags($post->description),0,130) }}
+                                    </p>
+                                </div>
+                            </div>
+                        @endforeach
+                        <a href="{{ route('blog.showTopic', $topic->slug.".html") }}" class="btn btn-primary box-shadown-darkblue btn-block text-20 text-light">Xem Danh Sách</a>
                     </div>
                 </div>
             </div>
-            <nav aria-label="..." class="text-center">
-                <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="background-orange border-top-orange padding-around">
-            <h3 class="text-center font-lobster text-light">Cuối tuần thì tràn đầy sảng khoái</h3>
-            <div class="row font-roboto">
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_4.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_4.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_4.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <nav aria-label="...">
-                <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="background-purple border-top-purple padding-around">
-            <h3 class="text-center font-lobster text-light" >Vi vu muôn nơi ngày chủ nhật</h3>
-            <div class="row font-roboto">
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_5.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_5.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="image-full-width" src="{{asset('upload/images/my_blog_5.jpg')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <nav aria-label="...">
-                <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+            <div class="{{ $isOdd ? "shade-blue":" shade-purple"}}"></div>
+        @endforeach
     </div>
 @endsection

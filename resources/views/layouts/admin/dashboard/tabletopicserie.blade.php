@@ -17,14 +17,14 @@
                 <th scope="row">{{ $topic->id }}</th>
                 <td>{{ $topic->title }}</td>
                 <td>
-                    <span title="{{ $topic->description }}">{{ substr(strip_tags($topic->description), 0, 50) }} {{ strlen($topic->description) > 50 ? "..." : "" }}</span>
+                    <span title="{{ $topic->description }}">{{ mb_substr(strip_tags($topic->description), 0, 50) }} {{ strlen($topic->description) > 50 ? "..." : "" }}</span>
                 </td>
                 <td>
                     <?php $countPost = $topic->posts()->count();?>
                     {{ $countPost }}
                     @if($countPost > 0)
                         <button title="Danh Sach"
-                                class="btn btn-primary border-around-blue box-shadown-darkblue view-post-list"
+                                class="btn btn-primary border-around-blue box-shadown-darkblue view-post-list"  data-type="{{ $type }}"
                                 data-id="{{$topic->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i></button>
                     @endif
                 </td>

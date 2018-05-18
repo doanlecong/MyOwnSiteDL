@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Purifier;
 class ConfigData
 {
     public static $nullValueForString = "NULL";
@@ -46,6 +46,15 @@ class ConfigData
             'file_name' => $file_name,
             'image_size' => $image_zize
         ];
+    }
+
+    public static function convertLink($link) {
+        $cleanLink = strip_tags(Purifier::clean($link));
+        $arr = explode('.',$cleanLink);
+        if (count($arr) == 2 ) {
+            return $arr[0];
+        }
+        return false;
     }
     public static function getArrayService() {
         return [

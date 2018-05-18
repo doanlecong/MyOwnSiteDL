@@ -51,7 +51,7 @@
                     <div class="shade-orange"></div>
                     <div class="card-body background-litle-tranparent">
                         <h4 class="card-title text-center text-shadown-black padding-top-30" style="color: #ffb60a !important;">Thứ nhất</h4>
-                        <p class="card-text font-roboto-light">
+                        <p class="card-text font-roboto-light ">
                             Mình thích thì mình làm thôi. Sao phải xoắn chứ. Sống có mấy đâu nên phải sống hết mình
                         </p>
                     </div>

@@ -132,7 +132,7 @@
                                                             value="0">Chọn một bài viết trước đó
                                                     </option>
                                                     @foreach($previousPosts as $post)
-                                                        <option value="{{ $post->id }}">{{ $post->title }}
+                                                        <option value="{{ $post->id }}">{{ $post->id }}--{{ $post->title }}
                                                             -- {{ $post->topic->title }}</option>
                                                     @endforeach
                                                 @endif
@@ -317,7 +317,7 @@
             ],
             font_formats:  'Roboto=roboto, avant garde cursive times',
             relative_urls: false,
-            height: 800,
+            height: 600,
             file_browser_callback: function (field_name, url, type, win) {
                 var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
                 var y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;

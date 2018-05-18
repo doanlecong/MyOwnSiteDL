@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('script')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css">
+    <link rel="stylesheet" href="/css/content_post.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
     <script>
@@ -94,7 +95,7 @@
                     <div class="container padding-leftright-10 sticky-top">
                         <button class="btn btn-primary btn-block  box-shadown-superdarkblue" onclick="closeView(event)">Close This</button>
                     </div>
-                    <div class="contentPost container" id="contentPost">
+                    <div class="contentPost container" id="contentPost" style="width: 800px;">
                         <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
                             <div class="loader"></div>
                         </div>
@@ -163,7 +164,7 @@
         $(document).on('click', '.view-now', function (e) {
             // console.log('Helllo');
             var type = "{{ $typeBlog }}";
-            var id = e.target.getAttribute('data-id');
+            var id = $(this).attr('data-id');
             var viewHiddenPost = document.getElementById('viewPostHidden');
             var contentPost = document.getElementById('contentPost');
             viewHiddenPost.hidden = false;
@@ -185,14 +186,13 @@
         });
         $(document).on('click', '.view-post-list',function (e) {
             var type = "{{ $typeBlog }}";
-            var id = e.target.getAttribute('data-id');
+            var id = $(this).attr('data-id');
             var viewHiddenPost = document.getElementById('viewPostHidden');
             var contentPost = document.getElementById('contentPost');
             viewHiddenPost.hidden = false;
             contentPost.innerHTML = "<div class=\"wrapper-for-loading padding-top-30 padding-bottom-10\">\n" +
                 "                            <div class=\"loader\"></div>\n" +
                 "                        </div>";
-            console.log(id + '| '+ "/authorized/get-list-post/" + type + "/" + id)
             $.ajax({
                 "async": true,
                 "crossDomain": true,
