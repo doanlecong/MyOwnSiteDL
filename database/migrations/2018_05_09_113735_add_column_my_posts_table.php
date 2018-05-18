@@ -16,6 +16,7 @@ class AddColumnMyPostsTable extends Migration
         Schema::table('my_posts', function (Blueprint $table) {
             $table->string('status')->default('N')->comment('This has 3 states : N , D ,P');
             $table->integer('previous_post_id');
+            $table->dateTime('time_publish')->nullable();
         });
     }
 
