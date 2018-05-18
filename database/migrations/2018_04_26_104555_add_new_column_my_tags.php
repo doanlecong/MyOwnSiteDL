@@ -15,6 +15,7 @@ class AddNewColumnMyTags extends Migration
     {
         Schema::table('my_tags', function (Blueprint $table) {
             $table->string('abbrev',20);
+            $table->string('type_tag',1);
         });
     }
 
