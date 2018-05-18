@@ -17,7 +17,7 @@
     <title>My Own Site | Doan Le</title>
     @yield('scriptTop')
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-primary navbar-laravel navbar-top">
@@ -121,7 +121,7 @@
         @include('layouts.footer');
     </div>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ secure_asset('js/app.js') }}"></script>
     @yield('addScript')
 </body>
 </html>
