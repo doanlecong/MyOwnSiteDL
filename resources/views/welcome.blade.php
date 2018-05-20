@@ -52,9 +52,10 @@
                             <div class="card-header background-blue text-15 font-roboto-light white-text" title="{{ $post->title }}">
                                 {{ mb_substr($post->topic->title, 0, 40)}}{{ strlen($post->topic->title) > 40 ? "...": "" }}
                             </div>
-                            <div class="card-body">
+                            <div class="card-body background-litle-white">
                                 <blockquote class="blockquote mb-0">
-                                    <p>{{$post->title}}</p>
+                                    <img src="{{ $post->hinhdaidien }}" class="image-full-width out-line-blue" title="{{ $post->title }}">
+                                    <p class="mt-1">{{$post->title}}</p>
                                     <p>
                                         @foreach($post->tags as $tag)
                                             <span class="badge badge-pill badge-primary" title=" {{ $tag->name }} "
@@ -70,7 +71,7 @@
                 @endforeach
                 <div class="col mt-2">
                     <h5 class="text-right">
-                        <a title="Xem danh sách" href="{{ route('serie-bv') }}" class="btn background-litle-tranparent white-text out-line-blue"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        <a title="Xem danh sách" href="{{ route('serie-bv') }}" class="btn background-litle-tranparent white-text out-line-blue padding-around-20"><i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i></a>
                     </h5>
                 </div>
             </div>
@@ -87,9 +88,10 @@
                             <div class="card-header background-blue text-20 font-roboto-light white-text">
                                 {{ mb_substr($post->topic->title, 0, 30)}}{{ strlen($post->topic->title) > 30 ? "...": "" }}
                             </div>
-                            <div class="card-body">
+                            <div class="card-body background-litle-white">
                                 <blockquote class="blockquote mb-0">
-                                    <p>{{$post->title}}</p>
+                                    <img src="{{ $post->hinhdaidien }}" class="image-full-width out-line-blue" title="{{ $post->title }}">
+                                    <p class="mt-1">{{$post->title}}</p>
                                     <p>
                                         @foreach($post->tags as $tag)
                                             <span class="badge badge-pill badge-primary" title=" {{ $tag->name }} "
@@ -105,7 +107,7 @@
                 @endforeach
                 <div class="col mt-2">
                     <h5 class="text-right">
-                        <a title="Xem danh sách" href="{{ route('chuyende') }}" class="btn background-litle-tranparent white-text out-line-blue"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        <a title="Xem danh sách" href="{{ route('chuyende') }}" class="btn background-litle-tranparent white-text out-line-blue padding-around-20"><i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i></a>
                     </h5>
                 </div>
             </div>
