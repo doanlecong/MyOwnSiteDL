@@ -82,6 +82,6 @@
     <h3 class="text-center orange-text">No Data</h3>
 @endif
 <script id="dsq-count-scr" src="https://myownsite-1.disqus.com/count.js" async></script>
-<script>
+<script async>
     DISQUSWIDGETS.getCount({reset: true});
 </script>

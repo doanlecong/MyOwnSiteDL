@@ -20,7 +20,7 @@
                     @endif
                 </div>
                 <div class="col-sm-9">
-                    <h1 class="display-6 title_baiviet"><a style="text-decoration: none"  class="animate-bottom-nocontent" href="{{ route('blog.showBaiViet',$newestPost->slug.".html") }}">{{ $newestPost->title }}</a></h1>
+                    <h1 class="display-6 text-shadown-black"><a style="text-decoration: none"  class="animate-bottom-nocontent" href="{{ route('blog.showBaiViet',$newestPost->slug.".html") }}">{{ $newestPost->title }}</a></h1>
                     <p class="lead">{{ strip_tags($newestPost->description)."..." }}</p>
                 </div>
             </div>
@@ -48,7 +48,7 @@
             <div class="row">
                 @foreach($threePostSerie as $post)
                     <div class="col-md-4">
-                        <div class="card border border-dark box-shadown-light-dark" style="min-height: 300px;">
+                        <div class="card border border-primary box-shadown-light-dark" style="min-height: 300px;">
                             <div class="card-header background-blue text-15 font-roboto-light white-text" title="{{ $post->title }}">
                                 {{ mb_substr($post->topic->title, 0, 40)}}{{ strlen($post->topic->title) > 40 ? "...": "" }}
                             </div>
@@ -84,7 +84,7 @@
             <div class="row">
                 @foreach($threePostChuyende as $post)
                     <div class="col-md-4">
-                        <div class="card border border-dark" style="min-height: 300px;">
+                        <div class="card border border-primary" style="min-height: 300px;">
                             <div class="card-header background-blue text-20 font-roboto-light white-text">
                                 {{ mb_substr($post->topic->title, 0, 30)}}{{ strlen($post->topic->title) > 30 ? "...": "" }}
                             </div>

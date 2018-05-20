@@ -63,7 +63,7 @@
                                            href="{{ route('serie.showTopic', $topic->slug.".html") }}">{{ $topic->title }}</a>
                                     </span>
                                     <span style="padding: 7px;"
-                                          class="badge badge-primary badge-pill box-shadown-darkblue">{{ $topic->posts()->count() }}
+                                          class="badge badge-primary badge-pill box-shadown-darkblue">{{ $topic->posts()->where('status','Y')->count() }}
                                         bài</span>
                                 </li>
                             @endforeach
