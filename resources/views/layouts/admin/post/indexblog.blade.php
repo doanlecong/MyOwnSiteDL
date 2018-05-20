@@ -116,10 +116,13 @@
                 "url": (url == "") ? "{{ route('dashboard.getblog') }}" : url,
                 "method": "GET",
             }
-
+            $(e.target).closest('table').remove();
+            var div = $(e.target).closest('div');
+            $(e.target).closest('div').html("<div class=\"wrapper-for-loading padding-top-30 padding-bottom-10\">\n" +
+                "                        <div class=\"loader\"></div>\n" +
+                "                    </div>");
             $.ajax(settings).done(function (response) {
-                $(e.target).closest('div').html(response);
-                // console.log(response);
+                div.html(response);
             });
         }
 
