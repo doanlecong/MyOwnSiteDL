@@ -18,10 +18,12 @@ class CreateTableMyFileManagement extends Migration
             $table->string('filename');
             $table->string('filepath');
             $table->bigInteger('file_size');
-            $table->string('image_size');
+            $table->string('image_size')->nullable();
             $table->string('file_type', 10);
             $table->string('purpose');
             $table->string('external_id');
+            $table->string('controller_name')->nullable();
+            $table->string('action_name')->nullable();
 
             $table->timestamps();
         });

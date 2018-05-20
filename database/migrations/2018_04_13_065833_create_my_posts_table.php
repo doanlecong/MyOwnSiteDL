@@ -15,12 +15,16 @@ class CreateMyPostsTable extends Migration
     {
         Schema::create('my_posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('my_type_posts_id');
-            $table->integer('my_topics_id');
+            $table->string('type_posts',1);
+            $table->integer('my_topics_id')->nullable();
             $table->string('slug');
-            $table->integer('my_tags_id');
             $table->string('title');
-            $table->string('description');
+            $table->string('hinhdaidien')->nullable();
+            $table->mediumText('description');
+            $table->longText('content');
+            $table->string('status',1)->default('N');
+            $table->integer('previous_post_id')->nullable();
+            $table->dateTime('time_publish')->nullable();
 
             $table->timestamps();
         });

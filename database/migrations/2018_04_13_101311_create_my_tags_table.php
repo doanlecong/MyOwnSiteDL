@@ -17,6 +17,9 @@ class CreateMyTagsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
+            $table->string('abbrev',20);
+            $table->string('type_tag',1);
+
             $table->timestamps();
         });
     }

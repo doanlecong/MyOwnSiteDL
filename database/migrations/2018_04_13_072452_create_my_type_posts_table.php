@@ -17,7 +17,7 @@ class CreateMyTypePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
-
+            $table->string('convention',1)->nullable();
             $table->timestamps();
         });
     }

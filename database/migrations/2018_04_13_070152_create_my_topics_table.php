@@ -16,8 +16,10 @@ class CreateMyTopicsTable extends Migration
         Schema::create('my_topics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('description');
-
+            $table->mediumText('description');
+            $table->string('slug');
+            $table->string('type_posts',1);
+            $table->string('image_name');
 
             $table->timestamps();
         });

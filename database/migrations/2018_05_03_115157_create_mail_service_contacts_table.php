@@ -17,10 +17,12 @@ class CreateMailServiceContactsTable extends Migration
             $table->increments('id');
             $table->integer('my_service_contacts_id')->nullable();
             $table->string('file_attach')->nullable();
-            $table->text('content')->nullable();
+            $table->longText('content')->nullable();
             $table->string('title')->nullable();
             $table->string('email')->nullable();
-
+            $table->string('status',1)->default('N');
+            $table->string('allow_send',1)->default('N');
+            $table->dateTime('time_to_send');
 
             $table->timestamps();
         });

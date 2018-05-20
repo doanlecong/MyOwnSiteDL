@@ -20,6 +20,9 @@ class CreateMyServiceContactsTable extends Migration
             $table->integer('user_id');
             $table->string('service_name');
             $table->text('service_description');
+            $table->string('is_read',1)->nullable();
+            $table->string('is_reply',1)->nullable();
+
             $table->timestamps();
         });
     }

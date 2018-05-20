@@ -17,7 +17,7 @@ class CreateMyContactsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
-            $table->text('content');
+            $table->longText('content');
             $table->string('status',1)->default('N');
             $table->string('sendMail',1)->default('N');
 

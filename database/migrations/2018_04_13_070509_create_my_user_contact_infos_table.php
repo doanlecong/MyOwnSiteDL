@@ -17,7 +17,6 @@ class CreateMyUserContactInfosTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
-            $table->text('content');
             $table->string('remote_address');
             $table->string('user_agent');
             $table->timestamps();
