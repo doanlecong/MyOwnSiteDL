@@ -54,7 +54,8 @@
                             </div>
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0">
-                                    <p>{{$post->title}}</p>
+                                    <img src="{{ $post->hinhdaidien }}" class="image-full-width out-line-blue" title="{{ $post->title }}">
+                                    <p class="mt-1">{{$post->title}}</p>
                                     <p>
                                         @foreach($post->tags as $tag)
                                             <span class="badge badge-pill badge-primary" title=" {{ $tag->name }} "
@@ -89,7 +90,8 @@
                             </div>
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0">
-                                    <p>{{$post->title}}</p>
+                                    <img src="{{ $post->hinhdaidien }}" class="image-full-width out-line-blue" title="{{ $post->title }}">
+                                    <p class="mt-1">{{$post->title}}</p>
                                     <p>
                                         @foreach($post->tags as $tag)
                                             <span class="badge badge-pill badge-primary" title=" {{ $tag->name }} "
