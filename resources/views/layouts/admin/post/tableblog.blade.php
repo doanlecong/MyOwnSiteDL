@@ -6,6 +6,8 @@
             <th scope="col">Title</th>
             <th scope="col">Slug</th>
             <th scope="col">Description</th>
+            <th scope="col">Views</th>
+            <th scope="col">Còm men</th>
             <th scope="col">Hình đại diện</th>
             <th scope="col">Chủ đề</th>
             <th scope="col">Action</th>
@@ -17,7 +19,17 @@
                 <th scope="row">{{ $blog->id }}</th>
                 <td title="{{ $blog->title }}">{{ mb_substr($blog->title,0,30) }}</td>
                 <td title="{{ $blog->slug }}">{{ substr($blog->slug,0, 30) }}</td>
-                <td title="{{strip_tags($blog->description)}}">{{ mb_substr(strip_tags($blog->description),0, 100) }}</td>
+                <td title="{{strip_tags($blog->description)}}">{{ mb_substr(strip_tags($blog->description),0, 50) }}</td>
+                <td>
+                    @if($blog->countView)
+                        {{ $blog->countView->count }}
+                    @else
+                        0
+                    @endif
+                </td>
+                <td>
+                    <span class="disqus-comment-count" data-disqus-identifier="blog_{{$blog->slug.".html"}}">First article</span>
+                </td>
                 <td>
                     @if($blog->hinhdaidien != null && $blog->hinhdaidien != 'NULL')
                         <div>
@@ -70,3 +82,7 @@
 @else
     <h3 class="orange-text text-center">No Data</h3>
 @endif
+<script id="dsq-count-scr" src="https://myownsite-1.disqus.com/count.js" async></script>
+<script>
+    DISQUSWIDGETS.getCount({reset: true});
+</script>

@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-4 border-around-blue">
                 <div>
-                    <h4 class="text-left font-roboto-light padding-leftright-10 padding-top-10"><i class="fa fa-bolt" aria-hidden="true"></i> Bài mới nhất</h4>
+                    <h4 class="text-left font-roboto-light padding-leftright-10 padding-top-10"><i class="fa fa-bolt blue-text" aria-hidden="true"></i> Bài mới nhất</h4>
                     <div class="shade-blue"></div>
                     <div class="devider-line"></div>
                     <h3 class="text-left font-roboto-light animate-bottom-nocontent">{{ $newestPost->title }}</h3>
@@ -62,7 +62,7 @@
                     </p>
                     </p>
                     <a href="{{ route('blog.showBaiViet',$newestPost->slug.".html") }}"
-                       class="btn btn-primary text-light no-border-radius box-shadown-darkblue"><i class="fa fa-eye"
+                       class="btn btn-primary text-light no-border-radius out-line-blue"><i class="fa fa-eye"
                                                                                                    aria-hidden="true"></i>
                         Xem Típ</a>
                 </div>
@@ -81,7 +81,7 @@
                 @endif
             </div>
             <div class="col-sm-12 col-md-8">
-                <h4 class="text-left font-roboto-light"><i class="fa fa-book" aria-hidden="true"></i> Bài trước đó</h4>
+                <h4 class="text-left font-roboto-light"><i class="fa fa-book blue-text" aria-hidden="true"></i> Bài trước đó</h4>
                 @foreach($posts as $post)
                     <div class="row mb-2 padding-top-10 border-around-blue padding-bottom-10">
                         <div class="col-sm-4">

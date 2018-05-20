@@ -234,7 +234,7 @@
          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 1200px;">
             <div class="modal-content no-border-radius">
-                <div class="modal-header">
+                <div class="modal-header card_header_gradient">
                     <h5 class="modal-title" id="exampleModalLongTitle">Danh Sách Post Trong Chủ Đề</h5>
                 </div>
                 <div class="modal-body" id="contentForPostList">

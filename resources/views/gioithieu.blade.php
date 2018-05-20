@@ -8,7 +8,7 @@
     </nav>
 @endsection
 @section('content')
-    <div class="container border-top-blue no-padding-top no-padding-left-right">
+    <div class="container border-top-blue no-padding-top no-padding-left-right border-left-blue-m">
         <div class="row text-center background-darkblue text-light padding-around" id="thongtinbanthan">
             <div class="col-sm-4">
                 <img class="rounded embed-responsive my-image" src="{{ asset('upload/images/myseft.jpg') }}" alt="My Image">
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="shade-orange"></div>
-        <div class="row border-top-blue background-blue padding-around" id="mucdichtaotrang">
+        <div class="row border-top-blue padding-around" id="mucdichtaotrang">
             <div class="col-12 padding-bottom-40">
                 <h1 class="font-lobster text-light text-shadown-black text-center" style="color: #ffb60a !important;">Tại sao mình lại lập ra trang web này ?</h1>
             </div>

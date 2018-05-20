@@ -16,10 +16,10 @@
                 <th scope="row">{{$blog->id}}</th>
                 <td>{{ $blog->title }}</td>
                 <td>{{ $blog->slug }}</td>
-                <td title="{{strip_tags($blog->description)}}">{{ substr(strip_tags($blog->description),0, 100) }}</td>
+                <td title="{{strip_tags($blog->description)}}">{{ mb_substr(strip_tags($blog->description),0, 100) }}</td>
                 <td>
                     @if($blog->topic != null)
-                        <button class="btn btn-info box-shadown-darkblue">{{ $blog->topic->title }}</button>
+                        <button class="btn btn-info out-line-blue">{{ $blog->topic->title }}</button>
                     @else
                         <button class="btn btn-info box-shadown-darkblue">No Topic Selected.</button>
                     @endif

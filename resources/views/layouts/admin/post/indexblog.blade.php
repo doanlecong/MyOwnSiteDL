@@ -95,7 +95,7 @@
                     <div class="container padding-leftright-10 sticky-top">
                         <button class="btn btn-primary btn-block  box-shadown-superdarkblue" onclick="closeView(event)">Close This</button>
                     </div>
-                    <div class="contentPost container" id="contentPost" style="width: 800px;">
+                    <div class="contentPost container" id="contentPost" >
                         <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
                             <div class="loader"></div>
                         </div>

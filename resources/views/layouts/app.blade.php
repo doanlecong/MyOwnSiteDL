@@ -17,7 +17,7 @@
     <title>My Own Site | Doan Le</title>
     @yield('scriptTop')
     <!-- Styles -->
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-primary navbar-laravel navbar-top">
@@ -47,7 +47,7 @@
     <nav class="navbar navbar-expand-md navbar-primary navbar-laravel navbar-under-top sticky-top border-top-blue-m" id="navbar-under-top">
         <div class="container no-padding-left-right">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img class="img-fluid logo-full-size" src="{{ asset('upload/images/logo.png')}}">
+                <img class="img-fluid logo-full-size" src="{{ asset('upload/images/logo_1.png')}}">
             </a>
             <a class="navbar-brand slogan-title" href="{{ url('/') }}">
                 <h4 class="slogan" style="font-family: Lobster; font-weight: lighter">Hãy sống với đam mê.</h4>
@@ -111,7 +111,7 @@
         </div>
     </nav>
     @yield('superlink')
-    <div class="container">
+    <div class="container" id="breadcrumb">
         @yield('breadcrumb')
     </div>
     <main class="py-4">
@@ -121,7 +121,7 @@
         @include('layouts.footer');
     </div>
     <!-- Scripts -->
-    <script src="{{ secure_asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     @yield('addScript')
 </body>
 </html>

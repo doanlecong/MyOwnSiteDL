@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ConfigData;
 use App\MyPost;
 use App\MyTopic;
+use App\MyViewPost;
 use Illuminate\Http\Request;
 
 class MySeriePublicController extends Controller
@@ -12,8 +13,12 @@ class MySeriePublicController extends Controller
 
     public function index() {
         $topics  = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeSerie), 20);
-        $posts = MyPost::where('type_posts', ConfigData::getConvention(ConfigData::$typeSerie))->orderBy('created_at', 'asc')->paginate(10);
-        $newestPosts = MyPost::where('type_posts', ConfigData::getConvention(ConfigData::$typeSerie))->orderBy('created_at', 'desc')->take(3)->get();
+        $posts = MyPost::where('type_posts', ConfigData::getConvention(ConfigData::$typeSerie))
+            ->where('status','Y')
+            ->orderBy('time_publish', 'asc')->paginate(10);
+        $newestPosts = MyPost::where('type_posts', ConfigData::getConvention(ConfigData::$typeSerie))
+            ->where('status','Y')
+            ->orderBy('time_publish', 'desc')->take(3)->get();
         return view('serie')
             ->withTopics($topics)
             ->withPosts($posts)
@@ -27,8 +32,8 @@ class MySeriePublicController extends Controller
 
         if($topic) {
             $topics = MyTopic::findByType($typeSerie,10);
-            $posts = $topic->posts()->paginate(5);
-            $newestPost = $topic->posts()->orderby('created_at','desc')->first();
+            $posts = $topic->posts()->where('status','Y')->paginate(5);
+            $newestPost = $topic->posts()->where('status','Y')->orderby('time_publish','desc')->first();
             return view('show_topic_serie')
                 ->withTopic($topic)
                 ->withTopics($topics)
@@ -43,12 +48,19 @@ class MySeriePublicController extends Controller
         $typeSerie = ConfigData::getConvention(ConfigData::$typeSerie);
         $post = MyPost::findBySlug($slug, $typeSerie);
         if($post) {
+            if($post->countView){
+                MyViewPost::increase($post);
+            } else {
+                MyViewPost::addNew($post);
+            }
+            $count = MyViewPost::getCount($post);
             $topics = MyTopic::findByType($typeSerie, 10);
             $amount = 3;
             $previousPosts = MyPost::findPreviosPost($post, $amount);
             $forwardPosts = MyPost::findForwardPost($post, $amount);
             return view('show_post_serie')
                 ->withPost($post)
+                ->withCount($count)
                 ->withTopics($topics)
                 ->withPreviousPosts($previousPosts)
                 ->withForwardPosts($forwardPosts);

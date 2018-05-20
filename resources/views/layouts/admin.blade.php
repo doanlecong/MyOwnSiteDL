@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container-fluid container_admin" >
-        <div class="side-menu" id="side-menu">
+        <div class="side-menu topic_yellow" id="side-menu">
             @include('layouts.side_menu_admin')
         </div>
         <div class="main-content" id="main-content">

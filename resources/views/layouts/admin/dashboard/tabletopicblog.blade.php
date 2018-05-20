@@ -24,7 +24,7 @@
                     {{ $countPost }}
                     @if($countPost > 0)
                         <button title="Danh Sach"
-                                class="btn btn-primary border-around-blue box-shadown-darkblue view-post-list" data-type="{{ $type }}"
+                                class="btn btn-primary border-around-blue  out-line-blue view-post-list" data-type="{{ $type }}"
                                 data-id="{{$topic->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i></button>
                     @endif
                 </td>

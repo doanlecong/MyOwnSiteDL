@@ -53,9 +53,9 @@ class MyPost extends Model
         $post->hinhdaidien = $request->hinhdaidien;
         $post->previous_post_id  = ($request->previous_post_id == '0') ? null : $request->previous_post_id;
         $post->content = $request->contentPost;
-        if($request->saveType == 'Y') {
+        if($request->savetype == "Y") {
             $post->time_publish = date('Y-m-d H:i:s');
-        } else if($request->saveType == 'N') {
+        } else if($request->saveType == "N") {
             $post->time_publish =  null;
         }
         $post->type_posts = ConfigData::getConvention($type);
@@ -65,12 +65,17 @@ class MyPost extends Model
     public static function findPreviosPost(MyPost $post, $amount = 0 ){
         // Find any posts have same topic whose id less than current post
         $type = $post->type_posts;
-        return MyPost::where('id','<',$post->id)->where('type_posts', $type)->where('my_topics_id',$post->my_topics_id)->take($amount)->get();
+        return MyPost::where('id','<',$post->id)->where('type_posts', $type)
+            ->where('my_topics_id',$post->my_topics_id)
+            ->where('status','Y')->take($amount)->get();
     }
 
     public static function findForwardPost(MyPost $post, $amount = 0 ) {
         // Find any posts have same topic whose id id greater than current post
-        return MyPost::where('id','>', $post->id)->where('type_posts', $post->type_posts)->where('my_topics_id',$post->my_topics_id)->take($amount)->get();
+        return MyPost::where('id','>', $post->id)->where('type_posts', $post->type_posts)
+            ->where('my_topics_id',$post->my_topics_id)
+            ->where('status','Y')
+            ->take($amount)->get();
     }
 
     protected $table = 'my_posts';
@@ -84,7 +89,9 @@ class MyPost extends Model
     {
         return $this->belongsTo('App\MyTypePost', 'my_type_posts_id');
     }
-
+    public function countView(){
+        return $this->hasOne('App\MyViewPost','my_post_id');
+    }
     public function tags()
     {
         return $this->belongsToMany('App\MyTag');

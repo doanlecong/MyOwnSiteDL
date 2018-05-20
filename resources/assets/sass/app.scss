@@ -245,7 +245,7 @@
     .navbar-brand {
       .logo-full-size {
         width: 150px;
-        height: 70px;
+        height: 50px;
         -webkit-transition: all 0.3s;
         -moz-transition: all 0.3s;
         -o-transition: all 0.3s;
@@ -307,7 +307,9 @@
 .padding-around {
   padding: 40px;
 }
-
+.padding-around-20 {
+  padding: 20px;
+}
 .padding-leftright-10 {
   padding-left: 10px;
   padding-right: 10px;
@@ -380,6 +382,9 @@
 .border-top-blue-m {
   border-top: 5px solid $blue1 !important;
 }
+.border-left-blue-m {
+  border-left: 5px solid $blue1 !important;
+}
 .border-top-orange-m{
   border-top: 5px solid orange !important;
 }
@@ -418,6 +423,9 @@
 .border-top-purple-thin {
   border-top: 5px solid darkviolet !important;
 }
+.border-left-purple-thin {
+  border-left: 5px solid darkviolet !important;
+}
 .border-bottom-purple-thin {
   border-bottom: 5px solid darkviolet !important;
 }
@@ -444,9 +452,27 @@
 .background-white {
   background-color: white;
 }
+.out-line-blue {
+  outline: 0px solid $blue1;
+  outline-offset: -5px;
+  transition: all ease-in-out 0.2s;
+  &:hover {
+    outline: 3px solid dodgerblue;
+    outline-offset: 3px;
+  }
+}
 
+.out-line-white-big {
+  outline: 0px solid #32b9ff;
+  outline-offset: -5px;
+  transition: all ease-in-out 0.2s;
+  &:hover {
+    outline: 10px solid white;
+    outline-offset: 10px;
+  }
+}
 .background-gradient-orange-violet {
-  background: linear-gradient(to bottom right, #ffa066 34%, #ff3399 100%) !important;
+  background: linear-gradient(to bottom right, #ffa066a6 34%, #ff33999e 100%) !important;
 }
 
 .background-gradient-cyan-plum {
@@ -456,12 +482,14 @@
 .background-tranparent {
   background-color: rgba(41, 33, 33, 0.26) !important;
 }
-
+.background-tranparent-100 {
+  background-color: transparent !important;
+}
 .background-litle-tranparent {
   background-color: rgba(41, 33, 33, 0.49) !important;
 }
 .background-litle-white {
-  background-color: rgba(69, 67, 67, 0.69) !important;
+  background-color: rgba(218, 219, 220, 0.25) !important;
 }
 .font-lobster {
   font-family: Lobster;
@@ -481,7 +509,9 @@
 .blue-text {
   color: $blue1;
 }
-
+.purple-text {
+  color: #ba16fa !important;
+}
 .orange-text {
   color: $orange;
 }
@@ -497,7 +527,9 @@
 .text-20 {
   font-size: 20px;
 }
-
+.text-15 {
+  font-size: 15px !important;
+}
 .card-no-border {
   border: 0px;
 }
@@ -557,12 +589,12 @@
 }
 
 .box-shadown-darkblue {
-  &:hover {
-    transform: translate(0px, -3px);
-    box-shadow: 3px 6px 0px 1px #0056cc;
-  }
-  transition: all 100ms;
-}
+   &:hover {
+     transform: translate(0px, -3px);
+     box-shadow: 3px 6px 0px 1px #0056cc;
+   }
+   transition: all 100ms;
+ }
 
 .box-shadown-superdarkblue {
   &:hover {
@@ -571,7 +603,13 @@
   }
   transition: all 100ms;
 }
-
+.box-shadown-light-dark {
+  &:hover {
+    transform: translate(0px, -3px);
+    box-shadow: 3px 6px 15px 1px rgba(28, 28, 28, 0.63);
+  }
+  transition: all 100ms;
+}
 .box-shadown-purple-thin {
   box-shadow: 0px 2px 0px blueviolet;
 }
@@ -782,7 +820,7 @@
     content: '';
     width: 30px;
     height: 30px;
-    background: #4fb2ff;
+    background: cyan;
     bottom: -2.0em;
     z-index: 100;
   }
@@ -811,7 +849,7 @@
     content: '';
     width: 40px;
     height: 40px;
-    background: #0000fa;
+    background: #52c8ff;
     bottom: -2.5em;
     z-index: 100;
   }
@@ -868,7 +906,7 @@
     content: '';
     width: 30px;
     height: 30px;
-    background: #ffffff;
+    background: #8bfcff;
     bottom: -2.0em;
     z-index: 100;
   }
@@ -889,7 +927,8 @@
 
 // het cac class dung chung
 body {
-  background-color: whitesmoke;
+  background-image: url("/upload/images/background.png");
+  background-repeat: repeat;
   & > .container {
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -921,12 +960,6 @@ body {
 
 .footer {
   .container {
-    .danhmuc {
-      color: $orange;
-    }
-    .sdt {
-      color: $blue1;
-    }
     background-color: white;
     padding: 20px;
     .row {
@@ -959,6 +992,9 @@ div.card {
     margin-top: 20px;
   }
 }
+#breadcrumb {
+  box-shadow: 0px 1px 6px 0px rgba(124, 118, 128, 0.48);
+}
 
 .jumbotron {
   background-color: white;
@@ -975,15 +1011,18 @@ div.card {
   padding-top: 0px !important;
   text-shadow: none !important;
   #container-fluid {
-    background: linear-gradient(to bottom right, #66ffff -7%, #cc00cc 82%);
+    position: relative;
     min-height: 500px;
     max-height: 600px;
-    background-size: cover;
-    background-position: center;
+    padding-left: 0;
+    padding-right: 0;
+    background-image: url("/upload/images/background_tranparent.png");
+    background-repeat: repeat;
+    background-color: rgba(67, 100, 179, 0.75) !important;
+    background-blend-mode: lighten;
     .welcome_slogan {
       position: absolute;
-      left: 19.5%;
-      top: 28%;
+      height: 100%;
       h1 {
         font-size: 50px;
         .inner_h1 {
@@ -1119,6 +1158,8 @@ div.card {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-color: rgba(40, 136, 255, 0.39);
+  background-blend-mode: darken;
   .card {
     min-height: 550px;
     //max-height: 450px;
@@ -1268,8 +1309,6 @@ div.card {
     .py-4 {
       .container-fluid {
         .welcome_slogan {
-          top: 30% !important;
-          left: 0 !important;
           h1 {
             font-size: 32px !important;
             .inner_h1 {
@@ -1292,7 +1331,7 @@ div.card {
     .container {
       .navbar-brand {
         .logo-full-size {
-          width: 200px;
+          width: 150px !important;
           height: auto;
         }
       }
@@ -1435,18 +1474,8 @@ div.card {
     .py-4 {
       .container-fluid {
         .welcome_slogan {
-          left: 0% !important;
           h1 {
-            font-size: 38px;
-            .inner_h1 {
-              font-size: 64px;
-            }
-          }
-          p {
-            font-size: 22px;
-            .inner_p {
-              display: inline-block;
-            }
+            font-size: 32px !important;
           }
         }
       }
@@ -1515,8 +1544,9 @@ div.card {
     .py-4 {
       .container-fluid {
         .welcome_slogan {
-          left: 12% !important;
-          top: 38% !important;
+          h1{
+            font-size: 40px !important;
+          }
           p {
             font-size: 22px;
           }
@@ -1557,12 +1587,6 @@ div.card {
 @media only screen and (max-width: 1600px) {
   body {
     .py-4 {
-      .container-fluid {
-        .welcome_slogan {
-          top: 30%;
-          left: 14%;
-        }
-      }
       .dichvu-content {
         .row {
           .col-md-4 {

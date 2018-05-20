@@ -65,6 +65,8 @@
                     <p style="font-weight: 700; font-size: 20px;">
                         {!! strip_tags($post->description) !!}
                     </p>
+                    <span class="text-20"><i class="fa fa-eye blue-text"></i> {{ $count }}</span> @@@@ &nbsp;
+                    <span><a href="{{ request()->url() }}#disqus_thread">0 Òm men</a></span>
                     <p>
                         @foreach($post->tags as $tag)
                             <span class="badge badge-pill badge-primary" title=" {{ $tag->name }} "
@@ -74,9 +76,11 @@
                     <p>
                         Published at : {{ date('Y/m/d h:i a', strtotime($post->created_at)) }}
                     </p>
+                    <hr>
                     <p>
                         <?php echo $post->content; ?>
                     </p>
+                    <hr>
                 </div>
                 <div class="topic_bottom_purple mt-5">
                     <div class="row padding-top-30 padding-bottom-40">
@@ -142,7 +146,7 @@
                 @foreach($previousPosts as $previousPost)
                     <div class="padding-leftright-10 padding-top-10 padding-bottom-10">
                         <h4 class="text-left font-roboto-light padding-leftright-10 padding-top-10">
-                            <i class="fa fa-bolt" aria-hidden="true"></i>
+                            <i class="fa fa-bolt blue-text" aria-hidden="true"></i>
                             Bài liên quan
                         </h4>
                         <div class="shade-blue"></div>
@@ -164,7 +168,7 @@
                             {{ strip_tags(mb_substr($previousPost->description, 0, 150)) }}
                         </p>
                         <a href="{{ route('blog.showBaiViet',$previousPost->slug.".html") }}"
-                            class="btn btn-primary text-light no-border-radius box-shadown-darkblue">
+                            class="btn btn-primary text-light no-border-radius out-line-blue">
                             <i class="fa fa-eye" aria-hidden="true"></i>
                             Xem Típ
                         </a>
@@ -191,7 +195,7 @@
                             {{ strip_tags(mb_substr($forwardPost->description, 0, 150)) }}
                         </p>
                         <a href="{{ route('blog.showBaiViet',$forwardPost->slug.".html") }}"
-                           class="btn btn-primary text-light no-border-radius box-shadown-darkblue">
+                           class="btn btn-primary text-light no-border-radius out-line-blue">
                             <i class="fa fa-eye" aria-hidden="true"></i>
                             Xem Típ
                         </a>
@@ -202,7 +206,7 @@
 
         <div class="row mt-3 border-top-blue">
             <div class="col">
-                <h1 class="text-primary text-center font-roboto-light"> Comment Session !</h1>
+                <h1 class="text-primary text-center font-roboto-light"> Comment Section !</h1>
                 <div id="disqus_thread"></div>
                 <script>
 
@@ -221,6 +225,10 @@
                         s.setAttribute('data-timestamp', +new Date());
                         (d.head || d.body).appendChild(s);
                     })();
+                </script>
+                <script id="dsq-count-scr" src="https://myownsite-1.disqus.com/count.js" async></script>
+                <script>
+                    DISQUSWIDGETS.getCount({reset: true});
                 </script>
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 

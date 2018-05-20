@@ -36,11 +36,11 @@
                 cấp</h1>
             <div class="row" style="font-family: Roboto; font-weight: 300;">
                 <div class="col-md-4">
-                    <div class="card mb-3 box-shadow-orange dichvu-card card-no-border">
+                    <div class="card mb-3 box-shadow-orange dichvu-card card-no-border background-tranparent-100">
                         <div class="background-gradient-orange-violet card-header no-border-radius"><h4
                                     class="text-capitalize text-center text-light text-shadown-orange-thin">Phát triển <span
                                         style="display: inline-block">website</span></h4></div>
-                        <div class="card-body text-primary">
+                        <div class="card-body text-primary background-white">
                             <h5 class="card-title text-primary">Thiết kế website chuyên nghiệp</h5>
                             <p class="card-text text-justify">Cung cấp cho bạn dịch vụ thiết kế website chuyên nghiệp
                                 giá tốt, sự lựa chọn tốt nhất cho bạn, thiết kế website sạch, chuẩn SEO.</p>
@@ -74,16 +74,16 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mb-3 scale-onetwo dichvu-card card-no-border">
+                    <div class="card mb-3 scale-onetwo dichvu-card card-no-border background-tranparent-100">
                         <div class="card-header  background-gradient-orange-violet no-border-radius"><h4
                                     class="text-capitalize text-light text-center text-shadown-orange-thin ">Phát triển
                                 <span style="display: inline-block">ứng dụng di động</span></h4></div>
-                        <div class="card-body text-primary">
+                        <div class="card-body text-primary background-white">
                             <h5 class="card-title">Ứng dụng tuyệt vời mang lại nhiều trải nghiệm tốt cho người dùng</h5>
                             <p class="card-text text-justify">Trong sự bùng nổ của công nghệ, ứng dụng điện thoại mang
                                 lại nhiều lợi ích cho người dùng khi thế giới luôn luôn trong trạng thái kết nối</p>
                         </div>
-                        <div id="dich_vu_mobile_carousel" class="carousel slide carousel-fade" data-ride="carousel">
+                        <div id="dich_vu_mobile_carousel" class="carousel slide carousel-fade background-tranparent" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img class="d-block w-100" src="{{asset('upload/images/mobile_dichvu_1.jpg')}}"
@@ -112,11 +112,11 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mb-3 box-shadow-orange dichvu-card card-no-border">
+                    <div class="card mb-3 box-shadow-orange dichvu-card card-no-border background-tranparent-100">
                         <div class="card-header background-gradient-orange-violet no-border-radius"><h4
                                     class="text-danger text-capitalize text-center text-light text-shadown-orange-thin ">
                                 Thiết kế <span style="display: inline-block">logo, banner</span></h4></div>
-                        <div class="card-body text-primary">
+                        <div class="card-body text-primary background-white">
                             <h5 class="card-title">Hãy thể hiện dấu ấn của bạn bằng một logo hay banner chuyên
                                 nghiệp</h5>
                             <p class="card-text text-justify">Logo hay banner bạn mong muốn sẽ được thiết kế cẩn thận

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ConfigData;
 use App\MyPost;
 use App\MyTopic;
+use App\MyViewPost;
 use Illuminate\Http\Request;
 
 class MyChuyendePublicController extends Controller
@@ -23,8 +24,8 @@ class MyChuyendePublicController extends Controller
 
         if($topic) {
             $topics = MyTopic::findByType($typeChuyende,10);
-            $posts = $topic->posts()->paginate(5);
-            $newestPost = $topic->posts()->orderby('created_at','desc')->first();
+            $posts = $topic->posts()->where('status','Y')->paginate(5);
+            $newestPost = $topic->posts()->where('status','Y')->orderby('time_publish','desc')->first();
             return view('show_topic_chuyende')
                 ->withTopic($topic)
                 ->withTopics($topics)
@@ -40,12 +41,19 @@ class MyChuyendePublicController extends Controller
         $post = MyPost::findBySlug($slug, $typeChuyende);
 
         if($post) {
+            if($post->countView){
+                MyViewPost::increase($post);
+            } else {
+                MyViewPost::addNew($post);
+            }
+            $count = MyViewPost::getCount($post);
             $topics = MyTopic::findByType($typeChuyende, 7);
             $amount = 4;
             $previousPosts = MyPost::findPreviosPost($post, $amount);
             $forwardPosts = MyPost::findForwardPost($post, $amount);
             return view('show_post_chuyende')
                 ->withPost($post)
+                ->withCount($count)
                 ->withTopics($topics)
                 ->withPreviousPosts($previousPosts)
                 ->withForwardPosts($forwardPosts);
