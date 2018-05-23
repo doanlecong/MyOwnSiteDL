@@ -38,10 +38,9 @@
         <h2 class="mb-0 text-primary mt-4 mb-4 text-center font-roboto-light" >Những bài viết còn đó đó , mời bạn đọc xem thêm.</h2>
         <?php $countTopic = count($topics); ?>
         @foreach($topics as $key => $topic)
-            <?php $isOdd = ($key%2 == 0); ?>
-            <div class=" padding-leftright-10 padding-bottom-10 padding-top-30 {{ ($isOdd) ? "border-top-purple border-left-purple-thin" :"border-top-blue border-left-blue-m" }}">
+            <div class=" padding-leftright-10 padding-bottom-10 padding-top-30 border-top-blue border-left-blue-m">
                 <div class="row">
-                    <div class="col-sm-4 background-litle-white padding-top-20 padding-bottom-10 mb-2 {{ ($isOdd) ? "border-top-purple-thin " :"border-top-blue-m" }}">
+                    <div class="col-sm-4 background-litle-white padding-top-20 padding-bottom-10 mb-2 border-top-blue-m ">
                         <h4 class="font-roboto font-weight-bold text-center text-dark">
                             <a class="animate-bottom-nocontent blue-text" href="{{ route('blog.showTopic', $topic->slug.".html") }}">{{ $topic->title }}</a>
                         </h4>
@@ -55,10 +54,10 @@
                     </div>
                     <div class="col-sm-8">
                         @foreach($topic->posts()->where('status','Y')->take(3)->get() as $post)
-                            <div class="row padding-bottom-10 {{ $isOdd ? "border-top-purple-thin": "border-top-blue-m" }}">
-                                <div class="col-sm-3 no-padding-right no-padding-left">
+                            <div class="row padding-bottom-10 border-top-blue-m">
+                                <div class="col-sm-3 no-padding-right no-padding-left padding-top-10">
                                     @if($post->hinhdaidien != null && $post->hinhdaidien != "NULL")
-                                        <img src="{{ $post->hinhdaidien }}" class="image-full-width image-full-height">
+                                        <img src="{{ $post->hinhdaidien }}" class="image-full-width ">
                                     @else
                                         <img src="{{ asset('upload/images/blankimage.jpg') }}" class="image-full-width image-full-height">
                                     @endif
@@ -80,7 +79,9 @@
                     </div>
                 </div>
             </div>
-            <div class="{{ $isOdd ? "shade-blue":" shade-purple"}}"></div>
+            @if( ($key + 1 ) != $countTopic)
+                <div class="shade-blue"></div>
+            @endif
         @endforeach
     </div>
 @endsection

@@ -35,8 +35,8 @@
                     <div class="col-sm-8 no-padding-right">
                         @foreach($topic->posts()->where('status','Y')->take(3)->get() as $post)
                             <div class="row border-top-blue-m background-litle-white mb-3">
-                                <div class="col-sm-4 no-padding-left">
-                                    <img src="{{ $post->hinhdaidien }}" class="image-full-width image-full-height scale-onetwo" alt="{{ $post->title }}">
+                                <div class="col-sm-4 no-padding-left padding-top-20">
+                                    <img src="{{ $post->hinhdaidien }}" class="image-full-width scale-onetwo" alt="{{ $post->title }}">
                                 </div>
                                 <div class="col-sm-8 ">
                                     <h5 class="font-roboto-light font-weight-bold mt-2 text-20">
@@ -67,8 +67,8 @@
                     <div class="col-sm-8">
                         @foreach($topic->posts()->where('status','Y')->take(3)->get() as $post)
                             <div class="row border-top-purple-thin background-litle-white mb-3">
-                                <div class="col-sm-4 no-padding-left">
-                                    <img src="{{ $post->hinhdaidien }}" class="image-full-width image-full-height scale-onetwo" alt="{{ $post->title }}">
+                                <div class="col-sm-4 no-padding-left padding-top-20">
+                                    <img src="{{ $post->hinhdaidien }}" class="image-full-width scale-onetwo" alt="{{ $post->title }}">
                                 </div>
                                 <div class="col-sm-8">
                                     <h5 class="font-roboto-light text-20 font-weight-bold mt-2">

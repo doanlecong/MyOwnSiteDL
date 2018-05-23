@@ -14,7 +14,7 @@
             <div class="col-sm col-md-8 no-padding-left no-padding-right ">
                 @foreach($posts as $post)
                     <div class="row mt-2 ml-2 mr-2  border-left-blue-m background-litle-white box-shadown-light-dark">
-                        <div class="col-sm-3 no-padding-left">
+                        <div class="col-sm-3 no-padding-left padding-top-20">
                             @if($post->hinhdaidien != null && $post->hinhdaidien != "NULL" )
                                 <img src="{{ $post->hinhdaidien }}" alt="{{ $post->title }}"
                                      class=" image-full-width " title="{{ $post->title }}">

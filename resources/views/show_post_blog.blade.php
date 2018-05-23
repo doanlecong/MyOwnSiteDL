@@ -58,8 +58,8 @@
                     {{--@if( $post->status == "Y" )--}}
                     {{--<h3 class="text-danger text-center border-around-blue padding-top-10 padding-bottom-10">{{ "Đã xuất bản " ." | ".date('Y-m-d h:iA', strtotime($post->time_publish)) }}</h3>--}}
                     {{--@else--}}
-                    {{--<h3 class="text-danger text-center border-around-blue padding-top-10 padding-bottom-10">{{ "Đang viết" }}</h3>--}}
-                    {{--@endif--}}
+                        {{--<h3 class="text-danger text-center border-around-blue padding-top-10 padding-bottom-10">{{ "Đang viết" }}</h3>--}}
+                        {{--@endif--}}
 
                     <h1 class="text-primary">{{ $post->title }}</h1>
                     <p style="font-weight: 700; font-size: 20px;">
