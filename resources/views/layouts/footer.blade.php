@@ -1,6 +1,6 @@
-<div class="shade-blue"></div>
+
 <div class="footer">
-    <div class="container border-top-blue no-padding-left-right padding-top-20  no-padding-bottom background-tranparent">
+    <div class="container no-padding-left-right padding-top-20 no-padding-bottom background-tranparent">
         <div class="row">
             <div class="col-sm">
                 <img src="{{ asset('upload/images/php.png') }}" alt="Image">
@@ -18,7 +18,7 @@
                 <img src="{{ asset('upload/images/nodejs.png') }}" alt="Image">
             </div>
         </div>
-        <div class="border-top-blue mt-3"></div>
+        <div class="border-top-blue-m mt-3"></div>
         <div class="row background-tranparent" style="background-color: #838383">
             <div class="col-12 background-litle-white">
                 <h3 class=" text-center">

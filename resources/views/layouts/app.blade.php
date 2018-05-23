@@ -117,7 +117,7 @@
     <main class="py-4">
         @yield('content')
     </main>
-    <div class="container">
+    <div class="container-fluid background-tranparent  border-top-blue-m " style="background-image: url('upload/images/footerbackground.png');background-position: center bottom; background-repeat: no-repeat; background-size: cover">
         @include('layouts.footer');
     </div>
     <!-- Scripts -->
