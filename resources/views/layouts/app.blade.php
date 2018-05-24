@@ -37,8 +37,8 @@
                         <a class="nav-link ml-auto btn btn-outline-primary" href="{{ route('admin') }}">Admin Page</a>
                         <a class="nav-link ml-auto btn btn-outline-primary" href="{{ route('logout') }}">Logout</a>
                     </ul>
-                @else
-                    <a class="nav-link ml-auto" href="/login">Login</a>
+                {{--@else--}}
+                    {{--<a class="nav-link ml-auto" href="/login">Login</a>--}}
                 @endif
 
             </div>

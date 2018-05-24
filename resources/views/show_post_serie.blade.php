@@ -115,16 +115,16 @@
                         @else
                             <div class="row padding-top-10 ">
                                 @foreach($topics as $tp)
-                                    <div class="col-6  mt-2 ">
+                                    <div class="col-sm-6  mt-2 ">
                                         <div class="row border-top-purple-thin mb-3 background-litle-tranparent padding-top-30">
-                                            <div class="col-3 no-padding-right">
+                                            <div class="col-sm-3 no-padding-right">
                                                 @if($tp->image_name != null && $tp->image_name != "NULL")
                                                     <img src="{{ $tp->image_name }}" class="image-full-width scale-onetwo" alt="{{$tp->title}}">
                                                 @else
                                                     <img src="{{ asset('upload/images/blankimage.jpg')}}" class="image-full-width scale-onetwo" alt="{{$tp->title}}">
                                                 @endif
                                             </div>
-                                            <div class="col-9 ">
+                                            <div class="col-sm-9 ">
                                                 <h5 class="text-left font-roboto-light">
                                                     <a class="{{ $tp->id == $post->my_topics_id ? "yellow-text font-weight-bold" : "white-text" }} animate-bottom-nocontent" href="{{ route('serie.showTopic', $tp->slug.".html") }}"><i class="fa fa-hashtag" aria-hidden="true"></i> {{ $tp->title }}</a>
                                                 </h5>
