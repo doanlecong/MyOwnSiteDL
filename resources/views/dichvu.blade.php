@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+    {{ " | Dịch vụ mà bạn đang có nhu cầu" }}
+@endsection
+
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

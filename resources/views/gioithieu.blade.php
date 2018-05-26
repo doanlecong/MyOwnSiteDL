@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+    {{ " | Một chút về bản thân tác giả" }}
+@endsection
+
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

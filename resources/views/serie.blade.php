@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+    {{ " | Những bài viết về một chủ đề nào đó mang tính tổng văn quát " }}
+@endsection
+
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

@@ -14,12 +14,24 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('icon/icon_web_hay_song_voi_dam_me_1.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>My Own Site | Doan Le</title>
+    <title>Doan Lee
+        @yield('title')
+    </title>
     @yield('scriptTop')
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div id="fb-root"></div>
+    <div id="fb-root"></div>
+    <script async>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <nav class="navbar navbar-expand-md navbar-primary navbar-laravel navbar-top">
         <div class="container text-center">
             <div class="collapse navbar-collapse" id="navbarSupportedContentHidden">
@@ -117,7 +129,7 @@
     <main class="py-4">
         @yield('content')
     </main>
-    <div class="container-fluid background-tranparent  border-top-blue-m " style="background-image: url('upload/images/footerbackground.png');background-position: center bottom; background-repeat: no-repeat; background-size: cover">
+    <div class="container-fluid background-tranparent  border-top-blue-m " style="background-image: url('{{ asset('upload/images/footerbackground.png') }}');background-position: center bottom; background-repeat: no-repeat; background-size: cover">
         @include('layouts.footer');
     </div>
     <!-- Scripts -->

@@ -1,12 +1,22 @@
 @extends('layouts.app')
 
 @section('metadata')
+    <meta property="og:url" content="{{ request()->url() }}"/>
+    <meta property="og:type" content="{{ $post->topic->title }}"/>
+    <meta property="og:title" content="{{ $post->title }}"/>
+    <meta property="og:description" content="{{ mb_substr(strip_tags($post->description),0, 200) }}"/>
+    <meta property="og:image" content="{{ request()->root().$post->hinhdaidien }}"/>
     <meta name="{{$post->title}}" content="{{ strip_tags($post->description) }}">
     @foreach($post->tags as $tag)
         <meta name="{{$tag->name}}" content="{{$tag->description}}">
         <meta name="{{$tag->abbrev}}" content="{{$tag->name}}">
     @endforeach
 @endsection
+
+@section('title')
+    {{ " | ".$post->title }}
+@endsection
+
 @section('scriptTop')
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
@@ -22,9 +32,9 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Trang Chủ</a></li>
-            <li class="breadcrumb-item" aria-current="page"><a href="{{route('myblog')}}">My Serie</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="{{route('serie-bv')}}">My Serie</a></li>
             <li class="breadcrumb-item active" aria-current="page">
-                <a href="{{route('blog.showTopic',$post->topic->slug.".html")}}">{{ mb_substr($post->topic->title, 0, 20) }}</a>
+                <a href="{{route('serie.showTopic',$post->topic->slug.".html")}}">{{ mb_substr($post->topic->title, 0, 20) }}</a>
             </li>
             <li class="breadcrumb-item">{{ mb_substr($post->title, 0, 50) }} {{ strlen($post->title)> 50 ? "...": "" }}</li>
         </ol>
@@ -55,12 +65,6 @@
         <div class="row">
             <div class="col-sm-12 col-md-9">
                 <div class="contentPost container content-post-show" id="contentPost">
-                    {{--@if( $post->status == "Y" )--}}
-                    {{--<h3 class="text-danger text-center border-around-blue padding-top-10 padding-bottom-10">{{ "Đã xuất bản " ." | ".date('Y-m-d h:iA', strtotime($post->time_publish)) }}</h3>--}}
-                    {{--@else--}}
-                    {{--<h3 class="text-danger text-center border-around-blue padding-top-10 padding-bottom-10">{{ "Đang viết" }}</h3>--}}
-                    {{--@endif--}}
-
                     <h1 class="text-primary">{{ $post->title }}</h1>
                     <p style="font-weight: 700; font-size: 20px;">
                         {!! strip_tags($post->description) !!}
@@ -76,6 +80,12 @@
                     <p>
                         Published at : {{ date('Y/m/d h:i a', strtotime($post->created_at)) }}
                     </p>
+                    <div class="fb-share-button" data-href="{{ request()->url() }}" data-layout="button_count"
+                         data-size="large" data-mobile-iframe="true">
+                        <a target="_blank"
+                           href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                           class="fb-xfbml-parse-ignore">Chia sẻ</a>
+                    </div>
                     <hr>
                     <p>
                         <?php echo $post->content; ?>
@@ -90,21 +100,25 @@
                                     <div class="row  border-top-purple-thin mt-2 padding-top-10 background-litle-tranparent box-shadown-purple-thin">
                                         <div class="col-3 no-padding-right">
                                             @if($tp->image_name != null && $tp->image_name != "NULL")
-                                                <img src="{{ $tp->image_name }}" class="image-full-width scale-onetwo" alt="{{$tp->title}}">
+                                                <img src="{{ $tp->image_name }}" class="image-full-width scale-onetwo"
+                                                     alt="{{$tp->title}}">
                                             @else
-                                                <img src="{{ asset('upload/images/blankimage.jpg')}}" class="image-full-width scale-onetwo" alt="{{$tp->title}}">
+                                                <img src="{{ asset('upload/images/blankimage.jpg')}}"
+                                                     class="image-full-width scale-onetwo" alt="{{$tp->title}}">
                                             @endif
                                         </div>
                                         <div class="col-9 no-padding-right">
                                             <h5 class="text-left text-light font-roboto-light">
-                                                <a class="{{ $tp->id == $post->my_topics_id ? "yellow-text font-weight-bold" : "white-text" }} animate-bottom-nocontent" href="{{ route('serie.showTopic', $tp->slug.".html") }}">{{ $tp->title }}</a>
+                                                <a class="{{ $tp->id == $post->my_topics_id ? "yellow-text font-weight-bold" : "white-text" }} animate-bottom-nocontent"
+                                                   href="{{ route('serie.showTopic', $tp->slug.".html") }}">{{ $tp->title }}</a>
                                             </h5>
                                             <p class="text-light font-roboto-light">
                                                 {{ strip_tags($tp->description) }}
                                             </p>
                                             <p>
                                                 @foreach($tp->tags as $tg)
-                                                    <span title="{{ $tg->name }}" class="badge badge-pill badge-primary box-shadown-darkblue">{{ $tg->abbrev }}</span>
+                                                    <span title="{{ $tg->name }}"
+                                                          class="badge badge-pill badge-primary box-shadown-darkblue">{{ $tg->abbrev }}</span>
                                                 @endforeach
                                             </p>
 
@@ -119,22 +133,30 @@
                                         <div class="row border-top-purple-thin mb-3 background-litle-tranparent padding-top-30">
                                             <div class="col-sm-3 no-padding-right">
                                                 @if($tp->image_name != null && $tp->image_name != "NULL")
-                                                    <img src="{{ $tp->image_name }}" class="image-full-width scale-onetwo" alt="{{$tp->title}}">
+                                                    <img src="{{ $tp->image_name }}"
+                                                         class="image-full-width scale-onetwo" alt="{{$tp->title}}">
                                                 @else
-                                                    <img src="{{ asset('upload/images/blankimage.jpg')}}" class="image-full-width scale-onetwo" alt="{{$tp->title}}">
+                                                    <img src="{{ asset('upload/images/blankimage.jpg')}}"
+                                                         class="image-full-width scale-onetwo" alt="{{$tp->title}}">
                                                 @endif
                                             </div>
                                             <div class="col-sm-9 ">
                                                 <h5 class="text-left font-roboto-light">
-                                                    <a class="{{ $tp->id == $post->my_topics_id ? "yellow-text font-weight-bold" : "white-text" }} animate-bottom-nocontent" href="{{ route('serie.showTopic', $tp->slug.".html") }}"><i class="fa fa-hashtag" aria-hidden="true"></i> {{ $tp->title }}</a>
+                                                    <a class="{{ $tp->id == $post->my_topics_id ? "yellow-text font-weight-bold" : "white-text" }} animate-bottom-nocontent"
+                                                       href="{{ route('serie.showTopic', $tp->slug.".html") }}"><i
+                                                                class="fa fa-hashtag"
+                                                                aria-hidden="true"></i> {{ $tp->title }}</a>
                                                 </h5>
-                                                <span class="white-text"><i class="fa fa-flag"></i> {{ $tp->posts()->count() }} bài</span>
+                                                <span class="white-text"><i
+                                                            class="fa fa-flag"></i> {{ $tp->posts()->count() }}
+                                                    bài</span>
                                                 <p class="text-light font-roboto-light">
                                                     {{ strip_tags($tp->description) }}
                                                 </p>
                                                 <p>
                                                     @foreach($tp->tags as $tg)
-                                                        <span title="{{ $tg->name }}" class="badge badge-pill badge-primary box-shadown-darkblue">{{ $tg->abbrev }}</span>
+                                                        <span title="{{ $tg->name }}"
+                                                              class="badge badge-pill badge-primary box-shadown-darkblue">{{ $tg->abbrev }}</span>
                                                     @endforeach
                                                 </p>
                                             </div>
@@ -157,7 +179,8 @@
                         <div class="shade-blue"></div>
                         <div class="devider-line"></div>
                         <h4 class="text-left font-roboto-light ">
-                            <a class="blue-text animate-bottom-nocontent" href="{{ route('serie.showBaiViet',$previousPost->slug.".html") }}">{{ $previousPost->title }}</a>
+                            <a class="blue-text animate-bottom-nocontent"
+                               href="{{ route('serie.showBaiViet',$previousPost->slug.".html") }}">{{ $previousPost->title }}</a>
                         </h4>
                         <small>Publish at : {{ date('Y/m/d h:i a', strtotime($previousPost->created_at)) }}</small>
                         <p>
@@ -167,7 +190,8 @@
                             @endforeach
                         </p>
                         <p>
-                            <img src="{{ $previousPost->hinhdaidien }}" class="image-full-width box-shadown-darkblue scale-onetwo"
+                            <img src="{{ $previousPost->hinhdaidien }}"
+                                 class="image-full-width box-shadown-darkblue scale-onetwo"
                                  alt="{{ $previousPost->title}}">
                         <p class="text-justify">
                             {{ strip_tags(mb_substr($previousPost->description, 0, 150)) }}
@@ -184,7 +208,8 @@
                         <div class="shade-blue"></div>
                         <div class="devider-line"></div>
                         <h4 class="text-left font-roboto-light">
-                            <a class="blue-text animate-bottom-nocontent" href="{{ route('serie.showBaiViet',$forwardPost->slug.".html") }}" >{{ $forwardPost->title }}</a>
+                            <a class="blue-text animate-bottom-nocontent"
+                               href="{{ route('serie.showBaiViet',$forwardPost->slug.".html") }}">{{ $forwardPost->title }}</a>
                         </h4>
                         <small>Publish at : {{ date('Y/m/d h:i a', strtotime($forwardPost->created_at)) }}</small>
                         <p>
@@ -194,7 +219,8 @@
                             @endforeach
                         </p>
                         <p>
-                            <img src="{{ $forwardPost->hinhdaidien }}" class="image-full-width box-shadown-darkblue scale-onetwo"
+                            <img src="{{ $forwardPost->hinhdaidien }}"
+                                 class="image-full-width box-shadown-darkblue scale-onetwo"
                                  alt="{{ $forwardPost->title}}">
                         <p>
                             {{ strip_tags(mb_substr($forwardPost->description, 0, 150)) }}
@@ -224,7 +250,7 @@
                         this.page.identifier = "serie_{{ $post->slug.".html" }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                     };
 
-                    (function() { // DON'T EDIT BELOW THIS LINE
+                    (function () { // DON'T EDIT BELOW THIS LINE
                         var d = document, s = d.createElement('script');
                         s.src = 'https://myownsite-1.disqus.com/embed.js';
                         s.setAttribute('data-timestamp', +new Date());
@@ -235,7 +261,8 @@
                 <script>
                     DISQUSWIDGETS.getCount({reset: true});
                 </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                        powered by Disqus.</a></noscript>
             </div>
 
         </div>

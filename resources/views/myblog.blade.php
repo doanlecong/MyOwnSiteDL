@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+    {{ " | Một vài phút ngẫu hững cũng như tâm sư vớ vẩn " }}
+@endsection
+
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

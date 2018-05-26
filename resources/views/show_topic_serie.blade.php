@@ -8,11 +8,15 @@
     @endforeach
 @endsection
 
+@section('title')
+    {{ " | ".$topic->title }}
+@endsection
+
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Trang Chủ</a></li>
-            <li class="breadcrumb-item" aria-current="page"><a href="{{route('myblog')}}">My Serie</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="{{route('serie-bv')}}">My Serie</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $topic->title }}</li>
         </ol>
     </nav>

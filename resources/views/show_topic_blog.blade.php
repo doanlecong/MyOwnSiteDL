@@ -8,6 +8,10 @@
     @endforeach
 @endsection
 
+@section('title')
+    {{ " | ".$topic->title }}
+@endsection
+
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

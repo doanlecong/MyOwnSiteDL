@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ " | Danh sách những ngôn ngữ lập trình thịnh hành" }}
+@endsection
+
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

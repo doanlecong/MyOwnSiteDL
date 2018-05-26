@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title')
+    {{ " | Hãy sống với đam mê ☺ " }}
+@endsection
 @section('content')
     <div id="container-fluid" class="container-fluid justify-content-center border-top-blue border-bottom-bluethin">
         <div class="welcome_slogan d-flex justify-content-center align-items-center text-light background-tranparent">

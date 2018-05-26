@@ -232,7 +232,7 @@
 .shink_navbar {
   padding-top: 0px !important;
   padding-bottom: 0px;
-  background-color: rgba(77, 185, 226, 0.87);
+  background-color: #007bff;
   -webkit-transition: background-color 0.2s;
   -moz-transition: background-color 0.2s;
   -ms-transition: background-color 0.2s;
@@ -734,6 +734,9 @@
     transform: scale(1.05) !important;
     z-index: 3;
   }
+  -webkit-transition:transform ease-in-out 0.3s ;
+  -moz-transition: transform ease-in-out 0.3s;
+  -o-transition: transform ease-in-out 0.3s;
   transition: transform ease-in-out 0.3s;
 }
 
