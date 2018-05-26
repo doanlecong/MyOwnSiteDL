@@ -1,1 +1,67 @@
-.content-post-show{padding-top:10px!important;padding-bottom:10px!important}.content-post-show a{text-decoration:none;position:relative;-webkit-transition:color .2s ease-out;transition:color .2s ease-out}.content-post-show a:before{position:absolute;bottom:-2px;content:"";left:-15px;display:block}.content-post-show a:after{position:absolute;bottom:-2px;content:"";left:1px;display:block;width:0;height:3px;background:#bc70fa;-webkit-transition:width .3s ease-in-out;transition:width .3s ease-in-out}.content-post-show a:hover:after{width:100%}.content-post-show a:hover{color:#bc70fa}.content-post-show pre{border:2px solid #1e90ff;-webkit-transition:-webkit-box-shadow .2s ease-in-out;transition:-webkit-box-shadow .2s ease-in-out;transition:box-shadow .2s ease-in-out;transition:box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out}.content-post-show pre:hover{-webkit-box-shadow:3px 3px 0 1px #0000fa;box-shadow:3px 3px 0 1px #0000fa}.content-post-show pre code{padding-top:10px;padding-bottom:10px}.content-post-show pre code table tbody{font-size:1.1em}.content-post-show pre code table tbody tr td.hljs-ln-numbers{padding-right:15px}
+.content-post-show {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.content-post-show a {
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: color ease-out 0.2s;
+  transition: color ease-out 0.2s;
+}
+
+.content-post-show a::before {
+  position: absolute;
+  bottom: -2px;
+  content: "";
+  left: -15px;
+  display: block;
+}
+
+.content-post-show a::after {
+  position: absolute;
+  bottom: -2px;
+  content: '';
+  left: 1px;
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #bc70fa;
+  -webkit-transition: width ease-in-out .3s;
+  transition: width ease-in-out .3s;
+}
+
+.content-post-show a:hover::after {
+  width: 100%;
+}
+
+.content-post-show a:hover {
+  color: #bc70fa;
+}
+
+.content-post-show pre {
+  border: 2px solid  dodgerblue;
+  -webkit-transition: -webkit-box-shadow ease-in-out 0.2s;
+  transition: -webkit-box-shadow ease-in-out 0.2s;
+  transition: box-shadow ease-in-out 0.2s;
+  transition: box-shadow ease-in-out 0.2s, -webkit-box-shadow ease-in-out 0.2s;
+}
+
+.content-post-show pre:hover {
+  -webkit-box-shadow: 3px 3px 0px 1px #0000fa;
+          box-shadow: 3px 3px 0px 1px #0000fa;
+}
+
+.content-post-show pre code {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.content-post-show pre code table tbody {
+  font-size: 1.1em;
+}
+
+.content-post-show pre code table tbody tr td.hljs-ln-numbers {
+  padding-right: 15px;
+}
+

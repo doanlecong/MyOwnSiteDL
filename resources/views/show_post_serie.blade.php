@@ -113,7 +113,7 @@
                                                    href="{{ route('serie.showTopic', $tp->slug.".html") }}">{{ $tp->title }}</a>
                                             </h5>
                                             <p class="text-light font-roboto-light">
-                                                {{ strip_tags($tp->description) }}
+                                                {{ mb_substr(strip_tags($tp->description),0 ,100).(strlen(strip_tags($tp->description)) > 100 ? "...":"") }}
                                             </p>
                                             <p>
                                                 @foreach($tp->tags as $tg)
@@ -151,7 +151,7 @@
                                                             class="fa fa-flag"></i> {{ $tp->posts()->count() }}
                                                     bài</span>
                                                 <p class="text-light font-roboto-light">
-                                                    {{ strip_tags($tp->description) }}
+                                                    {{ mb_substr(strip_tags($tp->description),0 ,100).(strlen(strip_tags($tp->description)) > 100 ? "...":"") }}
                                                 </p>
                                                 <p>
                                                     @foreach($tp->tags as $tg)

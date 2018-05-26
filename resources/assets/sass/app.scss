@@ -173,6 +173,8 @@
             font-size: medium;
             font-weight: normal;
             box-shadow: 0px 0px 0px 0px white;
+            text-transform: uppercase;
+            font-family: "Century";
 
           }
           &:hover {
@@ -193,7 +195,10 @@
               -moz-transition: background 0.5s;
               -ms-transition: background 0.5s;
               -o-transition: background 0.5s;
-              transition: background 0.5s;
+              transition: background 0.2s;
+              text-transform: uppercase;
+              font-family: "Century";
+              font-weight: normal;
               &:hover {
                 background-color: #1879ff;
                 color: white;
@@ -752,24 +757,19 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  &::after, &::before {
+  &::before {
     position: absolute;
     content: '';
-    width: 40px;
+    width: 70px;
     height: 40px;
     background: #ff6d0d;
     bottom: -2.5em;
     z-index: 100;
   }
   &::before {
-    right: 48.5%;
-    -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
-    clip-path: polygon(0 0, 99% 100%, 100% 0);
-  }
-  &::after {
-    left: 50.5%;
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-    clip-path: polygon(0 0, 0 100%, 100% 0);
+    right: -20px;
+    -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
   }
   &:hover::after, &:hover::before {
     background: #ff9f5a;
@@ -818,26 +818,21 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  &::after, &::before {
+  &::before {
     position: absolute;
     content: '';
-    width: 30px;
+    width: 50px;
     height: 30px;
     background: cyan;
     bottom: -2.0em;
     z-index: 100;
   }
   &::before {
-    right: 48.5%;
-    -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
-    clip-path: polygon(0 0, 99% 100%, 100% 0);
+    right: -10px;
+    -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
   }
-  &::after {
-    left: 50.5%;
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-    clip-path: polygon(0 0, 0 100%, 100% 0);
-  }
-  &:hover::after, &:hover::before {
+  &:hover::before {
     background: #5ce2ff;
   }
 }
@@ -847,26 +842,21 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  &::after, &::before {
+  &::before {
     position: absolute;
     content: '';
-    width: 40px;
+    width: 70px;
     height: 40px;
     background: #52c8ff;
     bottom: -2.5em;
     z-index: 100;
   }
   &::before {
-    right: 48.5%;
-    -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
-    clip-path: polygon(0 0, 99% 100%, 100% 0);
+    right: -20px;
+    -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
   }
-  &::after {
-    left: 50.5%;
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-    clip-path: polygon(0 0, 0 100%, 100% 0);
-  }
-  &:hover::after, &:hover::before {
+  &:hover::before {
     background: #4fb2ff;
   }
 }
@@ -876,26 +866,21 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  &::after, &::before {
+  &::before {
     position: absolute;
     content: '';
-    width: 40px;
+    width: 70px;
     height: 40px;
     background: #882d88;
     bottom: -2.5em;
     z-index: 100;
   }
   &::before {
-    right: 48.5%;
-    -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
-    clip-path: polygon(0 0, 99% 100%, 100% 0);
+    right: -20px;
+    -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
   }
-  &::after {
-    left: 50.5%;
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-    clip-path: polygon(0 0, 0 100%, 100% 0);
-  }
-  &:hover::after, &:hover::before {
+  &:hover::before {
     background: #eb50eb;
   }
 }
@@ -904,26 +889,21 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  &::after, &::before {
+  &::before {
     position: absolute;
     content: '';
-    width: 30px;
+    width: 60px;
     height: 30px;
     background: #8bfcff;
     bottom: -2.0em;
     z-index: 100;
   }
   &::before {
-    right: 48%;
-    -webkit-clip-path: polygon(0 0, 99% 100%, 100% 0);
-    clip-path: polygon(0 0, 99% 100%, 100% 0);
+    right: -20px;
+    -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
   }
-  &::after {
-    left: 51.5%;
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-    clip-path: polygon(0 0, 0 100%, 100% 0);
-  }
-  &:hover::after, &:hover::before {
+  &:hover::before {
     background: #a7eb9f;
   }
 }

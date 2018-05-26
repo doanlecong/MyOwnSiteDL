@@ -70,7 +70,7 @@ class TopicController extends Controller
         if($request->hasFile('image_name') && $request->file('image_name')->isValid()){
             $image = $request->file('image_name');
             $filename = uniqid().time().'.'.$image->getClientOriginalExtension();
-            $placeToSave = public_path('images/'.$filename);
+            $placeToSave = base_path('images/'.$filename); //public_path('images/'.$filename)
             Image::make($image)
                 ->resize(ConfigData::$imageWidthForRepresent,ConfigData::$imageHeightForRepresent)
                 ->save($placeToSave);
@@ -158,7 +158,7 @@ class TopicController extends Controller
             if($request->hasFile('image_name')) {
                 $image = $request->file('image_name');
                 $filename = uniqid().time().'.'.$image->getClientOriginalExtension();
-                $placeToSave = public_path('images/'.$filename);
+                $placeToSave = base_path('images/'.$filename);
                 Image::make($image)->resize(400,300)->save($placeToSave);
                 $topic->image_name = '/images/'.$filename;
             }

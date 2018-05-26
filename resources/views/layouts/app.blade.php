@@ -105,19 +105,19 @@
                     }
                 ?>
                 <ul class="navbar-nav ml-auto ul-list">
-                    <li class="nav-item "><a class="nav-link {{ $isBlog ? "selected" : ""}} " href="{{ route('myblog') }}">My Blog</a></li>
-                    <li class="nav-item "><a class="nav-link {{ $isSerie ? "selected" : ""}}" href="{{ route('serie-bv') }}">Serie Bài Viết</a></li>
-                    <li class="nav-item "><a class="nav-link {{ $isChuyende ? "selected" : ""}}" href="{{ route('chuyende') }}">Chuyên Đề</a></li>
+                    <li class="nav-item "><a class="nav-link {{ $isBlog ? "selected" : ""}} " href="{{ route('myblog') }}">MY BLOG</a></li>
+                    <li class="nav-item "><a class="nav-link {{ $isSerie ? "selected" : ""}}" href="{{ route('serie-bv') }}" >SERIE BÀI VIẾT</a></li>
+                    <li class="nav-item "><a class="nav-link {{ $isChuyende ? "selected" : ""}}" href="{{ route('chuyende') }}" >CHUYÊN ĐỀ</a></li>
                     <li class="nav-item dropdown ">
-                        <a class="nav-link {{ $isDichvu ? "selected" : ""}} dropdown-toggle" href="{{ route('dichvu') }}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dịch Vụ</a>
+                        <a class="nav-link {{ $isDichvu ? "selected" : ""}} dropdown-toggle" href="{{ route('dichvu') }}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DỊCH VỤ</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('dichvu') }}">Thiết kế phát Triển Website</a>
-                            <a class="dropdown-item" href="{{ route('dichvu') }}">Phát triển Ứng dụng di động</a>
-                            <a class="dropdown-item" href="{{ route('dichvu') }}">Thiết kế Logo</a>
+                            <a class="dropdown-item" href="{{ route('dichvu') }}" >Thiết kế phát Triển Website</a>
+                            <a class="dropdown-item" href="{{ route('dichvu') }}" >Phát triển Ứng dụng di động</a>
+                            <a class="dropdown-item" href="{{ route('dichvu') }}" >Thiết kế Logo</a>
                         </div>
                     </li>
-                    <li class="nav-item "><a class="nav-link {{ $isGioithieu ? "selected" : ""}}" href="{{ route('gioithieu') }}">Giới Thiệu</a></li>
-                    <li class="nav-item "><a class="nav-link {{ $isLienhe ? "selected" : ""}}" href="{{ route('lienhe') }}">Liên Hệ</a></li>
+                    <li class="nav-item "><a class="nav-link {{ $isGioithieu ? "selected" : ""}}" href="{{ route('gioithieu') }}" style="text-transform: uppercase">Giới Thiệu</a></li>
+                    <li class="nav-item "><a class="nav-link {{ $isLienhe ? "selected" : ""}}" href="{{ route('lienhe') }}" style="text-transform: uppercase">Liên Hệ</a></li>
                 </ul>
             </div>
         </div>
