@@ -102,6 +102,10 @@ Route::middleware('auth')->prefix('authorized')->group(function () {
     Route::put('save-post/{type}/{id}','MyPostController@updatePost')->name('mypost.updatePost');
 
 
+    // Route for topic
+
+    Route::get('get-topic/{type}','TopicController@getTopic')->name('topic.getTopic');
+
     // route helper check for post
 
     Route::post('check-title-post/{type}','MyPostController@checkTitle')->name('mypost.checkTitle');

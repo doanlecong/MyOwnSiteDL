@@ -15,72 +15,98 @@
             <div class="card-body">
                 <a href="{{ route('topic.create') }}" class="btn btn-outline-primary box-shadown-darkblue" >Thêm Mới Chủ Đề</a>
                 <div class="devider-line"></div>
-                @if(count($myTopic) > 0)
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Slug</th>
-                            <th>Belong To</th>
-                            <th>Representive Image</th>
-                            <th>Taggable</th>
-                            <th>Created Time</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($myTopic as $topic)
-                            <tr>
-                                <td>{{ $topic->id}}</td>
-                                <td title="{{ $topic->title }}">{{ mb_substr($topic->title,0, 30) }}</td>
-                                <td><span title="{{ $topic->description }}">{{ mb_substr(strip_tags($topic->description), 0, 50) }} {{ strlen($topic->description) > 50 ? "..." : "" }}</span></td>
-                                {{--<td>{{ substr($topic->description, 0, 50) }}</td>--}}
-                                <td title="{{$topic->slug}}">{{ substr($topic->slug,0, 20) }}</td>
-                                <td><span class="btn btn-outline-primary box-shadown-darkblue" >{{ $topic->typePost->title }}</span></td>
-                                <td>
-                                    @if($topic->image_name != null && $topic->image_name != 'NULL')
-                                        <div>
-                                            <img src="{{$topic->image_name}}" data-toggle="modal" data-target="#modalShowImage{{$topic->id}}" style="width: 50px; height: 40px;">
-                                            <div class="modal" id="modalShowImage{{$topic->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered modal-lg " role="document">
-                                                    <div class="modal-content no-border-radius">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLongTitle">Hình Chủ Đề</h5>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <img src="{{ $topic->image_name }}"style="width: 100%;height: auto;">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <img src="{{asset('upload/images/notfound1.png')}}" class="rounded" style="width: 50px; height: 50px;">
-                                    @endif
-                                </td>
-                                <td>
-                                    @foreach($topic->tags as $tag)
-                                        <span class="badge badge-pill badge-primary" title="{{ $tag->description }}" style="cursor: pointer;">{{ $tag->abbrev }}</span>
-                                    @endforeach
-                                </td>
-                                <td>{{ $topic->created_at }}</td>
-                                <td>
-                                    <a href="{{route('topic.edit', $topic->id)}}" class="btn btn-warning box-shadown-superdarkblue">Edit</a>
-                                    <a href="{{route('topic.delete', $topic->id) }}" class="btn btn-danger box-shadown-superdarkblue" onclick="return confirm('Mày có muốn xóa thật không ?')">Delete</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                    <div class="text-center">
-                        {!! $myTopic->links(); !!}
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item box-shadown-darkblue no-border-radius">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#topicBlog" role="tab"
+                           aria-controls="home" aria-selected="true"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Blog</a>
+                    </li>
+                    <li class="nav-item box-shadown-darkblue no-border-radius">
+                        <a class="nav-link " id="profile-tab" data-toggle="tab" href="#topicSerie"
+                           role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-check-circle" aria-hidden="true"></i> Serie</a>
+                    </li>
+                    <li class="nav-item box-shadown-darkblue no-border-radius">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#topicChuyende" role="tab"
+                           aria-controls="profile" aria-selected="false"><i class="fa fa-pause" aria-hidden="true"></i> Chuyên đề</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active " id="topicBlog" role="tabpanel"
+                         aria-labelledby="home-tab">
+                        <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
+                            <div class="loader"></div>
+                        </div>
                     </div>
-                @else
-                    <h3>Hiện Chưa có dữ liệu nào trong bảng</h3>
-                @endif
+                    <div class="tab-pane fade " id="topicSerie" role="tabpanel"
+                         aria-labelledby="profile-tab">
+                        <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="topicChuyende" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="wrapper-for-loading padding-top-30 padding-bottom-10">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+@endsection
+
+@section('scriptTail')
+    <script>
+        function getJsonPaginate(url = "", e) {
+            var data = "";
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": url,
+                "method": "GET",
+            }
+            console.log(e.target);
+            console.log($(e.target).closest('.table'));
+            $(e.target).closest('table').remove();
+            var div = $(e.target).closest('div');
+            $(e.target).closest('div').html("<div class=\"wrapper-for-loading padding-top-30 padding-bottom-10\">\n" +
+                "                        <div class=\"loader\"></div>\n" +
+                "                    </div>");
+            $.ajax(settings).done(function (response) {
+                div.html(response);
+            });
+        }
+        $(document).ready(function () {
+            $.ajax({
+                "async": true,
+                "crossDomain": true,
+                "url": "{{ route('topic.getTopic',$typeBlog) }}",
+                "method": "GET",
+            }).done(function (data) {
+                $('#topicBlog').html(data);
+            });
+
+            $.ajax({
+                "async": true,
+                "crossDomain": true,
+                "url": "{{ route('topic.getTopic', $typeSerie)}}",
+                "method": "GET",
+            }).done(function (data) {
+                $('#topicSerie').html(data);
+            });
+
+            $.ajax({
+                "async": true,
+                "crossDomain": true,
+                "url": "{{ route('topic.getTopic', $typeChuyende) }}",
+                "method": "GET",
+            }).done(function (data) {
+                $('#topicChuyende').html(data);
+            });
+
+        });
+
+        $(document).on('click', '.pagination .page-item a', function (e) {
+            getJsonPaginate($(this).attr('href'), e);
+            e.preventDefault();
+        });
+    </script>
 @endsection

@@ -35,9 +35,37 @@ class TopicController extends Controller
     public function index()
     {
         $myTopic = MyTopic::orderBy('type_posts','asc')->paginate(10);
-        return view('layouts.admin.topic.index')->withMyTopic($myTopic);
+        $typeBlog = ConfigData::getConvention(ConfigData::$typeBlog);
+        $typeSerie = ConfigData::getConvention(ConfigData::$typeSerie);
+        $typeChuyende = ConfigData::getConvention(ConfigData::$typeChuyende);
+        return view('layouts.admin.topic.index')
+            ->withMyTopic($myTopic)
+            ->withTypeBlog($typeBlog)
+            ->withTypeSerie($typeSerie)
+            ->withTypeChuyende($typeChuyende);
     }
 
+
+    /**
+     * Get Table Topic by type of topic
+     * AJAX request
+     * Return HTML
+     */
+    public function getTopic($type){
+        if(in_array($type, ConfigData::arrConventionPostType())){
+            $myTopic = MyTopic::where('type_posts',$type)->paginate(5);
+            return  response(
+                view('layouts.admin.topic.table_topic', ['myTopic' => $myTopic, 'type' => $type]),
+                200,
+                ['Content-Type', ConfigData::getContentTypeResponseBaseFileType('json')]
+            );
+        }
+        return response(
+            view('layouts.admin.post.notfound'),
+            200,
+            ['Content-Type', ConfigData::getContentTypeResponseBaseFileType('json')]
+        );
+    }
     /**
      * Show the form for creating a new resource.
      *
