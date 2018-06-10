@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ConfigData;
 use App\MyPost;
+use App\MyTopic;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
@@ -16,9 +17,15 @@ class HomePageController extends Controller
             ->where('status','Y')->orderBy('time_publish','desc')->take(3)->get();
         $threePostChuyende = MyPost::where('type_posts',ConfigData::getConvention(ConfigData::$typeChuyende))
             ->where('status','Y')->orderBy('time_publish','desc')->take(3)->get();
+        $topicsBlog = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeBlog), 10);
+        $topicsSerie = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeSerie), 10);
+        $topicsChuyende = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeChuyende), 10);
         return view('welcome')
             ->withNewestPost($newestPost)
             ->withThreePostSerie($threePostSerie)
-            ->withThreePostChuyende($threePostChuyende);
+            ->withThreePostChuyende($threePostChuyende)
+            ->withTopicsBlog($topicsBlog)
+            ->withTopicsSerie($topicsSerie)
+            ->withTopicsChuyende($topicsChuyende);
     }
 }

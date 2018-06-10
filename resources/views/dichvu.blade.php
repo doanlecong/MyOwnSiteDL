@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('scriptTop')
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+@endsection
 @section('title')
     {{ " | Dịch vụ mà bạn đang có nhu cầu" }}
 @endsection
@@ -18,7 +20,7 @@
 
 @section('content')
 
-    <div class="container dichvu-content border-top-blue no-padding-left-right no-padding-top no-padding-bottom">
+    <div data-aos="fade-up" class="container dichvu-content border-top-blue no-padding-left-right no-padding-top no-padding-bottom">
         @if ($errors->any())
             <div class="devider-line"></div>
             <div class="alert alert-danger">
@@ -40,9 +42,9 @@
             <h1 class="text-center text-light padding-bottom-10 font-lobster text-shadown-orange">Dịch vụ chúng tôi cung
                 cấp</h1>
             <div class="row" style="font-family: Roboto; font-weight: 300;">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="flip-left" >
                     <div class="card mb-3 box-shadow-orange dichvu-card card-no-border background-tranparent-100">
-                        <div class="background-gradient-orange-violet card-header no-border-radius"><h4
+                        <div class="background-aninate-orange-violet padding-around-20 no-border-radius"><h4
                                     class="text-capitalize text-center text-light text-shadown-orange-thin">Phát triển <span
                                         style="display: inline-block">website</span></h4></div>
                         <div class="card-body text-primary background-white">
@@ -78,9 +80,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-3 scale-onetwo dichvu-card card-no-border background-tranparent-100">
-                        <div class="card-header  background-gradient-orange-violet no-border-radius"><h4
+                <div class="col-md-4" data-aos="fade-up">
+                    <div  class="card mb-3 scale-onetwo dichvu-card card-no-border background-tranparent-100">
+                        <div class="background-aninate-lime-purple padding-around-20 no-border-radius"><h4
                                     class="text-capitalize text-light text-center text-shadown-orange-thin ">Phát triển
                                 <span style="display: inline-block">ứng dụng di động</span></h4></div>
                         <div class="card-body text-primary background-white">
@@ -116,9 +118,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-3 box-shadow-orange dichvu-card card-no-border background-tranparent-100">
-                        <div class="card-header background-gradient-orange-violet no-border-radius"><h4
+                <div class="col-md-4" data-aos="flip-right">
+                    <div  class="card mb-3 box-shadow-orange dichvu-card card-no-border background-tranparent-100">
+                        <div class="background-aninate-orange-violet padding-around-20 no-border-radius"><h4
                                     class="text-danger text-capitalize text-center text-light text-shadown-orange-thin ">
                                 Thiết kế <span style="display: inline-block">logo, banner</span></h4></div>
                         <div class="card-body text-primary background-white">
@@ -167,7 +169,7 @@
             <h3 class="text-center text-capitalize text-light font-lobster text-shadown-blue">Điều bạn tìm kiếm từ một
                 dịch vụ</h3>
             <div class="row mt-3">
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 mb-2" data-aos="fade-up">
                     <div class="card card-no-border box-shadown-darkblue">
                         <img class="image-full-width scale-onetwo" src="{{ asset('upload/images/chatluong_slogan_5.png') }}"
                              alt="Card image cap">
@@ -181,7 +183,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 mb-2" data-aos="fade-up">
                     <div class="card card-no-border box-shadown-darkblue">
                         <img class="image-full-width scale-onetwo" src="{{ asset('upload/images/chatluong_slogan_1.png') }}"
                              alt="Card image cap">
@@ -195,7 +197,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 mb-2" data-aos="fade-up">
                     <div class="card card-no-border box-shadown-darkblue">
                         <img class="image-full-width scale-onetwo" src="{{ asset('upload/images/chatluong_slogan_3.jpg') }}"
                              alt="Card image cap">
@@ -209,7 +211,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 mb-2" data-aos="fade-up">
                     <div class="card card-no-border box-shadown-darkblue">
                         <img class="image-full-width scale-onetwo" src="{{ asset('upload/images/chatluong_slogan_2.jpg') }}"
                              alt="Card image cap">
@@ -227,9 +229,9 @@
         </div>
         <div class="shade-orange"></div>
     </div>
-    <div id="thanhqua" class="container-fluid" style="background-color: white; padding: 0px;">
+    <div  id="thanhqua" class="container-fluid" style="background-color: white; padding: 0px;">
         {{-- Danh cho giao dien nam ngang phai tai sao --}}
-        <div id="taisao" class="border-top-blue">
+        <div  id="taisao" class="border-top-blue">
             <div class="bg-blue"></div>
             <div class="bg-image image_taisao_1" id="image_slogan"></div>
             <div class="auto-container no-padding-left-right">
@@ -239,7 +241,7 @@
                             kiếm từ một dịch vụ</h1>
                         <div class="devider-line"></div>
                         <div class="row mt-3">
-                            <div class="block" data-content="1">
+                            <div class="block" data-content="1" data-aos="fade-up">
                                 <div class="row">
                                     <div class="col-4 no-padding-left-right">
                                         <img src="{{ asset('upload/images/chat_luong_easy.jpg') }}"
@@ -256,7 +258,7 @@
                                 </div>
                             </div>
 
-                            <div class="block" data-content="2">
+                            <div class="block" data-content="2" data-aos="fade-up">
                                 <div class="row">
                                     <div class="col-4 no-padding-left-right">
                                         <img src="{{ asset('upload/images/chatluong_slogan_1.png') }}"
@@ -274,7 +276,7 @@
                                 </div>
                             </div>
 
-                            <div class="block" data-content="3">
+                            <div class="block" data-content="3" data-aos="fade-up">
                                 <div class="row">
                                     <div class="col-4 no-padding-left-right">
                                         <img src="{{ asset('upload/images/chatluong_slogan_3.jpg') }}"
@@ -291,7 +293,7 @@
                                 </div>
                             </div>
 
-                            <div class="block" data-content="4">
+                            <div class="block" data-content="4" data-aos="fade-up">
                                 <div class="row">
                                     <div class="col-4 no-padding-left-right">
                                         <img src="{{ asset('upload/images/chatluong_slogan_2.jpg') }}"
@@ -321,7 +323,8 @@
             <h1 class="dichvu_slogan text-center text-capitalize text-light font-lobster text-shadown-purple">Những dự
                 án đã được hiện thực</h1>
             <h3 class="text-center font-lobster yellow-text text-shadown-purple">
-                ***************************************</h3>
+                *********************
+            </h3>
             <div class="row mt-3">
                 <div class="col-lg" id="paralax_duan">
                     <div id="title" class="slide header">
@@ -560,6 +563,15 @@
 
 @endsection
 @section('addScript')
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 1000,
+            easing: 'ease-in-sine',
+            delay: 100,
+        });
+    </script>
     <script>
         function validateForm() {
             var name = document.getElementById('name_nguoi');

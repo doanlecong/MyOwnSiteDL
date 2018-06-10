@@ -28,7 +28,7 @@
                         @endforeach
                         <p class="text-20 text-dark"><small>Publish at : <i class="fa fa-clock-o purple-text fa-2x"></i> {{ date('Y/m/d h:i a',strtotime($topic->created_at)) }}</small></p>
                         <img src="{{ $topic->image_name }}" class="image-full-width scale-onetwo box-shadown-darkblue" alt="{{ $topic->title }}">
-                        <p class="text-dark mt-3 text-20"><i class="fa fa-flag purple-text"></i> {{ $topic->posts()->count() }} bài</p>
+                        <p class="text-dark mt-3 text-20"><i class="fa fa-flag purple-text"></i> {{ $topic->posts()->where('status','Y')->count() }} bài</p>
                         <p class="text-dark text-15 mt-3">
                             {{ mb_substr(strip_tags($topic->description), 0, 100) }}
                         </p>
@@ -103,7 +103,7 @@
                         @endforeach
                         <p class="text-20 text-dark"><small>Publish at : <i class="fa fa-clock-o fa-2x purple-text"></i> {{ date('Y/m/d h:i a',strtotime($topic->created_at)) }}</small></p>
                         <img src="{{ $topic->image_name }}" class="image-full-width scale-onetwo box-shadown-darkblue" alt="{{ $topic->title }}">
-                        <p class="text-dark m-3 text-20"><i class="fa fa-flag purple-text"></i>  {{ $topic->posts()->count() }} bài</p>
+                        <p class="text-dark m-3 text-20"><i class="fa fa-flag purple-text"></i>  {{ $topic->posts()->where('status','Y')->count() }} bài</p>
                         <p class="text-dark text-15 mt-3">
                             {{ mb_substr(strip_tags($topic->description), 0, 100) }}
                         </p>

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('description')
+    {{ $topic->title . " ". $topic->description}}
+@endsection
 @section('metadata')
     <meta name="{{$topic->title}}" content="{{ strip_tags($topic->description) }}">
     @foreach($topic->tags as $tag)
@@ -46,30 +48,37 @@
         <h2 class="text-center font-roboto-light text-shadown-black mb-5 text-primary padding-leftright-10">Danh sách các bài trong chủ đề</h2>
         <div class="row">
             <div class="col-sm-12 col-md-4 border-around-blue">
-                <div>
-                    <h4 class="text-left font-roboto-light padding-leftright-10 padding-top-10"><i class="fa fa-bolt blue-text" aria-hidden="true"></i> Bài mới nhất</h4>
-                    <div class="shade-blue"></div>
-                    <div class="devider-line"></div>
-                    <h3 class="text-left font-roboto-light animate-bottom-nocontent">{{ $newestPost->title }}</h3>
-                    <small>Publish at : {{ date('Y/m/d h:i a', strtotime($newestPost->created_at)) }}</small>
-                    <p>
-                        @foreach($newestPost->tags as $tag)
-                            <span title="{{ $tag->name }}" style="cursor: pointer;"
-                                  class="badge-pill badge-primary badge box-shadown-superdarkblue">#{{ $tag->abbrev }}</span>
-                        @endforeach
-                    </p>
-                    <p>
-                        <img src="{{ $newestPost->hinhdaidien }}" class="image-full-width box-shadown-darkblue scale-onetwo"
-                             alt="{{ $newestPost->title}}">
-                    <p>
-                        {{ strip_tags($newestPost->description) }}
-                    </p>
-                    </p>
-                    <a href="{{ route('blog.showBaiViet',$newestPost->slug.".html") }}"
-                       class="btn btn-primary text-light no-border-radius out-line-blue"><i class="fa fa-eye"
-                                                                                                   aria-hidden="true"></i>
-                        Xem Típ</a>
-                </div>
+                @if($newestPost != null)
+                    <div>
+                        <h4 class="text-left font-roboto-light padding-leftright-10 padding-top-10"><i class="fa fa-bolt blue-text" aria-hidden="true"></i> Bài mới nhất</h4>
+                        <div class="shade-blue"></div>
+                        <div class="devider-line"></div>
+                        <h3 class="text-left font-roboto-light animate-bottom-nocontent">{{ $newestPost->title }}</h3>
+                        <small>Publish at : {{ date('Y/m/d h:i a', strtotime($newestPost->created_at)) }}</small>
+                        <p>
+                            @foreach($newestPost->tags as $tag)
+                                <span title="{{ $tag->name }}" style="cursor: pointer;"
+                                      class="badge-pill badge-primary badge box-shadown-superdarkblue">#{{ $tag->abbrev }}</span>
+                            @endforeach
+                        </p>
+                        <p>
+                            <img src="{{ $newestPost->hinhdaidien }}" class="image-full-width box-shadown-darkblue scale-onetwo"
+                                 alt="{{ $newestPost->title}}">
+                        <p>
+                            {{ strip_tags($newestPost->description) }}
+                        </p>
+                        </p>
+                        <a href="{{ route('blog.showBaiViet',$newestPost->slug.".html") }}"
+                           class="btn btn-primary text-light no-border-radius out-line-blue"><i class="fa fa-eye"
+                                                                                                aria-hidden="true"></i>
+                            Xem Típ</a>
+                    </div>
+                @else
+                    <div>
+                        <h4 class="text-left font-roboto-light padding-leftright-10 padding-top-10"><i class="fa fa-bolt blue-text" aria-hidden="true"></i> Bài viết sẽ có trong thời gian sớm nhất</h4>
+                    </div>
+                @endif
+
                 @if(count($topics) >= 2)
                     <div class="shade-blue"></div>
                     <div class="devider-line"></div>
@@ -86,25 +95,29 @@
             </div>
             <div class="col-sm-12 col-md-8">
                 <h4 class="text-left font-roboto-light"><i class="fa fa-book blue-text" aria-hidden="true"></i> Bài trước đó</h4>
-                @foreach($posts as $post)
-                    <div class="row mb-2 padding-top-10 border-around-blue padding-bottom-10">
-                        <div class="col-sm-4">
-                            <img src="{{ $post->hinhdaidien }}" alt="{{ $post->title }}"
-                                 class="image-full-width scale-onetwo box-shadown-darkblue">
-                        </div>
-                        <div class="col-sm-8">
-                            <h4 class="text-left font-roboto-light">
-                                <a class="animate-bottom" href="{{ route('blog.showBaiViet',$post->slug.".html") }}">{{ $post->title }}</a>
-                            </h4>
+                @if(!empty($posts) && count($posts) > 0)
+                    @foreach($posts as $post)
+                        <div class="row mb-2 padding-top-10 border-around-blue padding-bottom-10">
+                            <div class="col-sm-4">
+                                <img src="{{ $post->hinhdaidien }}" alt="{{ $post->title }}"
+                                     class="image-full-width scale-onetwo box-shadown-darkblue">
+                            </div>
+                            <div class="col-sm-8">
+                                <h4 class="text-left font-roboto-light">
+                                    <a class="animate-bottom" href="{{ route('blog.showBaiViet',$post->slug.".html") }}">{{ $post->title }}</a>
+                                </h4>
 
-                            <p>
-                                {{ strip_tags(mb_substr($post->description, 0, 130))}}{{ (strlen($post->description)> 130) ? "...":"" }}
-                            </p>
-                            <span class="text-primary text-right"><small>Publish at : {{ date('Y/m/d h:i a',strtotime($post->created_at)) }}</small></span>
+                                <p>
+                                    {{ strip_tags(mb_substr($post->description, 0, 130))}}{{ (strlen($post->description)> 130) ? "...":"" }}
+                                </p>
+                                <span class="text-primary text-right"><small>Publish at : {{ date('Y/m/d h:i a',strtotime($post->created_at)) }}</small></span>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
-                <div class="text-center">{{ $posts->links() }}</div>
+                    @endforeach
+                @else
+                    <h3 class="text-center blue-text ">Sắp có rồi !</h3>
+                @endif
+                    <div class="text-center">{{ $posts->links() }}</div>
             </div>
         </div>
     </div>

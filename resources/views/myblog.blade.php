@@ -53,7 +53,7 @@
                             <span title="{{ $tag->name }}" class="badge badge-primary box-shadown-darkblue mb-2">{{ $tag->abbrev }}</span>
                         @endforeach
                         <img src="{{ $topic->image_name }}" class="image-full-width scale-onetwo">
-                        <p class="text-20 font-roboto-light text-dark mt-2"><i class="fa fa-flag purple-text"></i> {{ $topic->posts()->count() }} bài</p>
+                        <p class="text-20 font-roboto-light text-dark mt-2"><i class="fa fa-flag purple-text"></i> {{ $topic->posts()->where('status','Y')->count() }} bài</p>
                         <p class="font-roboto-light text-dark">{{ mb_substr(strip_tags($topic->description),0 ,50) }}</p>
                         <a href="{{ route('blog.showTopic', $topic->slug.".html") }}" class="btn background-litle-tranparent white-text border-left-blue-m box-shadown-light-dark"><i class="fa fa-bars"></i> Danh Sách</a>
                     </div>

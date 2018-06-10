@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#6c0fdd">
     <meta name="author" content="Doan Le">
-    <meta name="description" content="Blog , Programming, PHP, Java, .Net,Ruby">
+    <meta name="description" content="Blog , Programming, PHP, Java, .Net,Ruby @yield('description')">
+    <meta name="robots" content="index">
     <!-- For Metadata -->
     @yield('metadata')
     <!-- CSRF Token -->
@@ -105,11 +106,38 @@
                     }
                 ?>
                 <ul class="navbar-nav ml-auto ul-list">
-                    <li class="nav-item "><a class="nav-link {{ $isBlog ? "selected" : ""}} " href="{{ route('myblog') }}">MY BLOG</a></li>
-                    <li class="nav-item "><a class="nav-link {{ $isSerie ? "selected" : ""}}" href="{{ route('serie-bv') }}" >SERIE BÀI VIẾT</a></li>
-                    <li class="nav-item "><a class="nav-link {{ $isChuyende ? "selected" : ""}}" href="{{ route('chuyende') }}" >CHUYÊN ĐỀ</a></li>
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link {{ $isDichvu ? "selected" : ""}} dropdown-toggle" href="{{ route('dichvu') }}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DỊCH VỤ</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ $isBlog ? "selected" : ""}} " href="{{ route('myblog') }}">MY BLOG</a>
+                        @if(!empty($topicsBlog) && count($topicsBlog) > 0)
+                            <div class="dropdown-menu">
+                                @foreach($topicsBlog as $topic)
+                                    <a class="dropdown-item" href="{{ route('blog.showTopic',$topic->slug.".html") }}" > {{ $topic->title }}</a>
+                                @endforeach
+                            </div>
+                        @endif
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ $isSerie ? "selected" : ""}}" href="{{ route('serie-bv') }}">SERIE BÀI VIẾT</a>
+                        @if(!empty($topicsSerie) && count($topicsSerie) > 0)
+                            <div class="dropdown-menu">
+                                @foreach($topicsSerie as $topic)
+                                    <a class="dropdown-item" href="{{ route('serie.showTopic',$topic->slug.".html") }}" > {{ $topic->title }}</a>
+                                @endforeach
+                            </div>
+                        @endif
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link {{ $isChuyende ? "selected" : ""}}" href="{{ route('chuyende') }}">CHUYÊN ĐỀ</a>
+                        @if(!empty($topicsChuyende) && count($topicsChuyende) > 0)
+                            <div class="dropdown-menu">
+                                @foreach($topicsChuyende as $topic)
+                                    <a class="dropdown-item" href="{{ route('chuyende.showTopic',$topic->slug.".html") }}" > {{ $topic->title }}</a>
+                                @endforeach
+                            </div>
+                        @endif
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  {{ $isDichvu ? "selected" : ""}} dropdown-toggle" href="{{ route('dichvu') }}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DỊCH VỤ</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="{{ route('dichvu') }}" >Thiết kế phát Triển Website</a>
                             <a class="dropdown-item" href="{{ route('dichvu') }}" >Phát triển Ứng dụng di động</a>

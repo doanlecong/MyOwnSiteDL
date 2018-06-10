@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('description')
+    {{ $topic->title . " ". $topic->description}}
+@endsection
 @section('metadata')
     <meta name="{{$topic->title}}" content="{{ strip_tags($topic->description) }}">
     @foreach($topic->tags as $tag)

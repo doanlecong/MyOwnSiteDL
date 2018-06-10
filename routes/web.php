@@ -10,17 +10,38 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/404.html   ', function (){
-    return view('layouts.admin.404');
-})->name('404');
+use App\MyTopic;
+use App\ConfigData;
+
+Route::get('/404.html', function (){
+    $topicsBlog = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeBlog), 10);
+    $topicsSerie = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeSerie), 10);
+    $topicsChuyende = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeChuyende), 10);
+    return view('404notfound')
+        ->withTopicsBlog($topicsBlog)
+        ->withTopicsSerie($topicsSerie)
+        ->withTopicsChuyende($topicsChuyende);
+})->name('404-public');
 Route::get('/', 'HomePageController@index')->name('homepage');
 
 Route::get('/lien-he.html', function () {
-    return view('lienhe');
+    $topicsBlog = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeBlog), 10);
+    $topicsSerie = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeSerie), 10);
+    $topicsChuyende = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeChuyende), 10);
+    return view('lienhe')
+        ->withTopicsBlog($topicsBlog)
+        ->withTopicsSerie($topicsSerie)
+        ->withTopicsChuyende($topicsChuyende);
 })->name('lienhe');
 
 Route::get('/dich-vu.html', function () {
-    return view('dichvu');
+    $topicsBlog = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeBlog), 10);
+    $topicsSerie = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeSerie), 10);
+    $topicsChuyende = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeChuyende), 10);
+    return view('dichvu')
+        ->withTopicsBlog($topicsBlog)
+        ->withTopicsSerie($topicsSerie)
+        ->withTopicsChuyende($topicsChuyende);
 })->name('dichvu');
 
 Route::get('/chuyen-de.html', function() {
@@ -28,7 +49,13 @@ Route::get('/chuyen-de.html', function() {
 })->name('chuyende');
 
 Route::get('/gioi-thieu.html', function() {
-    return view('gioithieu');
+    $topicsBlog = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeBlog), 10);
+    $topicsSerie = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeSerie), 10);
+    $topicsChuyende = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeChuyende), 10);
+    return view('gioithieu')
+        ->withTopicsBlog($topicsBlog)
+        ->withTopicsSerie($topicsSerie)
+        ->withTopicsChuyende($topicsChuyende);
 })->name('gioithieu');
 Route::get('/logout', function() {
     auth()->logout();
@@ -58,6 +85,10 @@ Route::get('chuyen-de/bai-viet/{slug}','MyChuyendePublicController@showBaiViet')
 
 
 Route::middleware('auth')->prefix('authorized')->group(function () {
+    Route::get('/404', function (){
+        return view('layouts.admin.404');
+    })->name('404');
+
     Route::get('lienhe/', 'LienHeController@index')->name('lienhe.index');
     Route::get('lienhe/{id}/dadoc','LienHeController@doclienhe')->name('lienhe.dadoc');
     Route::get('lienhe/{id}/delete','LienHeController@delete')->name('lienhe.delete');

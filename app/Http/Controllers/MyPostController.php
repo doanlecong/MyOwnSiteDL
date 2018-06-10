@@ -274,4 +274,13 @@ class MyPostController extends Controller
             ['Content-Type', ConfigData::getContentTypeResponseBaseFileType('json')]
         );
     }
+
+    public function deletePost($type, $id) {
+        $myPost = MyPost::where('type_posts', ConfigData::getConvention($type))->where('id',$id)->first();
+        if($myPost != null) {
+            $myPost->delete();
+            return redirect()->route('dashboard.index');
+        }
+        return redirect()->route('404');
+    }
 }

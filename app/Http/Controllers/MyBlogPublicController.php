@@ -16,10 +16,15 @@ class MyBlogPublicController extends Controller
             ->where('status','Y')
             ->orderby('time_publish','desc')->first();
         $topics = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeBlog), 10);
-
+        $topicsBlog = $topics;
+        $topicsSerie = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeSerie), 10);
+        $topicsChuyende = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeChuyende), 10);
         return view('myblog')
             ->withNewestPost($newestPost)
-            ->withTopics($topics);
+            ->withTopics($topics)
+            ->withTopicsBlog($topicsBlog)
+            ->withTopicsSerie($topicsSerie)
+            ->withTopicsChuyende($topicsChuyende);
     }
 
     public function showTopic($topic) {
@@ -30,14 +35,20 @@ class MyBlogPublicController extends Controller
         if($topic) {
             $topics = MyTopic::findByType($typeBlog,10);
             $posts = $topic->posts()->where('status','Y')->paginate(5);
-            $newestPost = $topic->posts()->orderby('created_at','desc')->first();
+            $newestPost = $topic->posts()->where('status','Y')->orderby('created_at','desc')->first();
+            $topicsBlog = $topics;
+            $topicsSerie = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeSerie), 10);
+            $topicsChuyende = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeChuyende), 10);
             return view('show_topic_blog')
                 ->withTopic($topic)
                 ->withTopics($topics)
                 ->withPosts($posts)
-                ->withNewestPost($newestPost);
+                ->withNewestPost($newestPost)
+                ->withTopicsBlog($topicsBlog)
+                ->withTopicsSerie($topicsSerie)
+                ->withTopicsChuyende($topicsChuyende);
         }
-        return redirect()->route('404');
+        return redirect()->route('404-public');
 
     }
 
@@ -57,14 +68,20 @@ class MyBlogPublicController extends Controller
             $amount = 2;
             $previousPosts = MyPost::findPreviosPost($post, $amount);
             $forwardPosts = MyPost::findForwardPost($post, $amount);
+            $topicsBlog = $topics;
+            $topicsSerie = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeSerie), 10);
+            $topicsChuyende = MyTopic::findByType(ConfigData::getConvention(ConfigData::$typeChuyende), 10);
             return view('show_post_blog')
                 ->withPost($post)
                 ->withCount($count)
                 ->withTopics($topics)
                 ->withPreviousPosts($previousPosts)
-                ->withForwardPosts($forwardPosts);
+                ->withForwardPosts($forwardPosts)
+                ->withTopicsBlog($topicsBlog)
+                ->withTopicsSerie($topicsSerie)
+                ->withTopicsChuyende($topicsChuyende);
         }
-        return redirect()->route('404');
+        return redirect()->route('404-public');
 
     }
 }

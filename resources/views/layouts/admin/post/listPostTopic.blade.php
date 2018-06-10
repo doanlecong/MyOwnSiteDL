@@ -52,13 +52,6 @@
                             at </button> <span>{{ date('Y/m/d h:ia', strtotime($post->time_publish)) }}</span>
                     @endif
                 </td>
-                {{--<td>--}}
-                    {{--@if($post->topic != null)--}}
-                        {{--<button class="btn btn-info box-shadown-darkblue">{{ $post->topic->title }}</button>--}}
-                    {{--@else--}}
-                        {{--<button class="btn btn-info box-shadown-darkblue">No Topic Selected.</button>--}}
-                    {{--@endif--}}
-                {{--</td>--}}
                 <td>
                     <button title="View Now" class="btn btn-primary box-shadown-darkblue view-now" data-type="{{ $type }}"
                             data-id="{{ $post->id }}"><i class="fa fa-bolt" aria-hidden="true"></i>
@@ -66,7 +59,7 @@
                     <a title="Edit Post" href="{{ route('mypost.editpost',['type' => $type,'id' => $post->id]) }}"
                        class="btn btn-warning box-shadown-darkblue"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     <a title="Delete Post" href="{{ route('mypost.delete',['type' => $type,'id' => $post->id]) }}"
-                       class="btn btn-danger box-shadown-darkblue"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                       onclick="return confirm('Mày có muốn xóa thật không ?')" class="btn btn-danger box-shadown-darkblue"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 </td>
             </tr>
         @endforeach

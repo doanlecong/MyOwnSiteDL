@@ -72,7 +72,7 @@
                     <a title="Edit" href="{{ route('mypost.editpost',['type' => $type,'id' => $blog->id]) }}"
                        class="btn btn-warning box-shadown-darkblue"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     <a title="Delete" href="{{ route('mypost.delete',['type' => $type,'id' => $blog->id]) }}"
-                       class="btn btn-danger box-shadown-darkblue"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                       onclick="return confirm('Mày có muốn xóa thật không ?')" class="btn btn-danger box-shadown-darkblue"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 </td>
             </tr>
         @endforeach

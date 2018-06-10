@@ -30,7 +30,7 @@
                     <a href="{{ route('mypost.editpost',['type' => $type,'id' => $blog->id]) }}"
                        class="btn btn-warning box-shadown-darkblue">Edit</a>
                     <a href="{{ route('mypost.delete',['type' => $type,'id' => $blog->id]) }}"
-                       class="btn btn-danger box-shadown-darkblue">Delete</a>
+                       onclick="return confirm('Mày có muốn xóa thật không ?')" class="btn background-gradient-orange-violet white-text box-shadown-darkblue">Delete</a>
                 </td>
             </tr>
         @endforeach

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('description')
+    {{ $post->title . " ". $post->description}}
+@endsection
 @section('metadata')
     <meta property="og:url" content="{{ request()->url() }}"/>
     <meta property="og:type" content="{{ $post->topic->title }}"/>
@@ -17,8 +19,15 @@
 @endsection
 
 @section('scriptTop')
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+<?php
+    $date = date('w');
+?>
+@if(intval($date)%2 == 0 )
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
+@else
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+@endif
+
     <link rel="stylesheet" href="/css/content_post.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
