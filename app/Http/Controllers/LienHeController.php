@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\MyContact;
 use App\MyUserContactInfo;
 use Illuminate\Http\Request;
-use Validator;
+    use Validator;
 use Purifier;
 
 class LienHeController extends Controller

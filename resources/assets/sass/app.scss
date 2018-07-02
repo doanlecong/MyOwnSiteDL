@@ -150,8 +150,8 @@
         transition: color 0.2s;
       }
       .logo-full-size {
-        width: 200px;
-        height: 80px;
+        width: 150px;
+        height: 60px;
         -webkit-transition: all ease-in-out 0.5s;
         -moz-transition: all ease-in-out 0.5s;
         -o-transition: all ease-in-out 0.5s;
@@ -174,7 +174,7 @@
             font-weight: normal;
             box-shadow: 0px 0px 0px 0px white;
             text-transform: capitalize;
-            font-family: "Century";
+            font-family: 'Roboto', sans-serif;
           }
           &:hover {
             background: #1879ff;
@@ -188,11 +188,11 @@
             & .dropdown-menu {
               display: block;
             }
-          }
+        }
           .dropdown-menu {
-            box-shadow:  0px 8px 16px 0px rgba(0, 0, 0, 0.53);
+            box-shadow:  0px 8px 16px 0px rgba(90, 80, 80, 0.53);
             border-radius: 0px !important;
-            background: #fbfbfb;
+            background: rgba(61, 224, 217, 0.51);
             padding: 0;
             border: 0px;
             .dropdown-item {
@@ -201,7 +201,7 @@
               font-size: medium;
               font-weight: 400;
               border: 0;
-              color: $blue1;
+              color: white;
               padding: 20px auto;
               &:hover {
                 background-color: #1879ff;
@@ -241,14 +241,14 @@
 .shink_navbar {
   padding-top: 0px !important;
   padding-bottom: 0px;
-  background-color: #007bff;
-  -webkit-transition: background-color 0.2s;
-  -moz-transition: background-color 0.2s;
-  -ms-transition: background-color 0.2s;
-  -o-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+  background-image: linear-gradient(to left, #00e2ed, #00d5f1, #00c7f2, #00b8f0, #12a9eb);
+  -webkit-transition: background-image 0.2s;
+  -moz-transition: background-image 0.2s;
+  -ms-transition: background-image 0.2s;
+  -o-transition: background-image 0.2s;
+  transition: background-image 0.2s;
   &:hover {
-    background-color: #4fb2ff;
+    background-image: linear-gradient(to right, #4feaf2, #30def4, #07d1f5, #00c4f5, #0cb6f2);
   }
   .container {
     .navbar-brand {
@@ -344,6 +344,20 @@
   border-radius: 0px !important;
 }
 
+.btn-white {
+  color: #fff;
+  background-color: rgba(231, 231, 231, 0.53);
+  border-color: rgba(201, 201, 201, 0.61);
+  &:hover {
+    color: #fff;
+    background-color: rgba(209, 209, 209, 0.53);
+    border-color: #fafafa;
+  }
+}
+
+.btn-round {
+  border-radius: 30px !important;
+}
 // dung cho loading animation
 .wrapper-for-loading {
   width: 100%;
@@ -387,7 +401,9 @@
 .border-top {
   border-top: 18px solid !important;
 }
-
+.border-top-white-m {
+  border-top: 2px solid white !important;
+}
 .border-top-blue-m {
   border-top: 5px solid $blue1 !important;
 }
@@ -438,8 +454,18 @@
 .border-bottom-purple-thin {
   border-bottom: 5px solid darkviolet !important;
 }
+.border-bottom-white-thin {
+  border-bottom: 1px solid white !important;
+}
+
+
 .border-around-blue {
   border: 1px dashed $blue1;
+}
+
+.border-inset-bg-light-gray {
+  background-color: rgba(128, 128, 128, 0.49);
+  box-shadow: inset 1px 1px 5px 1px rgba(128, 128, 128, 0.36);
 }
 
 .background-blue {
@@ -557,6 +583,51 @@
     background-position: 100%;
   }
 }
+.hover-gray {
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: #dddddd;
+  }
+}
+
+.hover-blue {
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: $light_blue;
+  }
+}
+.hover-cyan {
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: #3ad8f2;
+  }
+}
+.hover-white {
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+}
+.shadow-lg {
+  box-shadow: 1px 1px 20px 2px rgba(172, 172, 172, 0.35);
+}
+
 .background-gradient-orange-violet {
   background: linear-gradient(to bottom right, #ffa066a6 34%, #ff33999e 100%) !important;
 }
@@ -565,6 +636,13 @@
   background: linear-gradient(to bottom right, #5ce2ff 34%, #c6a1ff 100%) !important;
 }
 
+.background-gradient-light-blue {
+  background-image: linear-gradient(to left, #00e2ed, #00d5f1, #00c7f2, #00b8f0, #12a9eb);
+}
+
+.background-gradient-dark-cyan {
+  background-image: linear-gradient(to right bottom, #008189, #008091, #007f99, #007ea0, #087ca6);
+}
 .background-tranparent {
   background-color: rgba(41, 33, 33, 0.26) !important;
 }
@@ -589,6 +667,28 @@
   font-family: Roboto;
   font-weight: 300;
 }
+
+.text-hover-white {
+  -webkit-transition: color 0.2s ease;
+  -moz-transition: color 0.2s ease;
+  -ms-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  &:hover {
+    color: white;
+  }
+}
+.text-hover-cyan {
+  -webkit-transition: color 0.2s ease;
+  -moz-transition: color 0.2s ease;
+  -ms-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  &:hover {
+    color: #00b8f0;
+  }
+}
+
 .white-text {
   color: #ffffff !important;
 }
@@ -601,7 +701,9 @@
 .orange-text {
   color: $orange;
 }
-
+.cyan-text {
+  color: #00b8f0;
+}
 .yellow-text {
   color: #ffe229 !important;
 }
@@ -692,7 +794,7 @@
 .box-shadown-light-dark {
   &:hover {
     transform: translate(0px, -3px);
-    box-shadow: 3px 6px 15px 1px rgba(28, 28, 28, 0.63);
+    box-shadow: 3px 6px 15px 1px rgba(118, 118, 118, 0.37);
   }
   transition: all 100ms;
 }
@@ -1076,17 +1178,20 @@ div.card {
   text-shadow: none !important;
   #container-fluid {
     position: relative;
-    min-height: 500px;
-    max-height: 600px;
+    min-height: 700px;
+    max-height: 700px;
     padding-left: 0;
     padding-right: 0;
-    background-image: url("/upload/images/background_tranparent.png");
-    background-repeat: repeat;
-    background-color: rgba(67, 100, 179, 0.75) !important;
-    background-blend-mode: lighten;
+    background-image: url("/upload/images/motivation_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: rgba(63, 141, 194, 0.74) !important;
+    background-blend-mode: luminosity ;
     .welcome_slogan {
       position: absolute;
       height: 100%;
+      width: 100%;
       h1 {
         font-size: 50px;
         .inner_h1 {
@@ -1122,10 +1227,6 @@ div.card {
       .col-md-4 {
         .card {
           border-color: white;
-          &:hover {
-            transform: translate(0px, -3px);
-            box-shadow: 3px 6px 0px 1px rgb(92, 127, 255);
-          }
           border-radius: 0px;
           transition: all 100ms;
           img {
@@ -1218,14 +1319,14 @@ div.card {
 }
 
 #mucdichtaotrang {
-  background-image: url("/upload/images/mucdich.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color: rgba(40, 136, 255, 0.39);
-  background-blend-mode: darken;
+  //background-image: url("/upload/images/mucdich.jpg");
+  //background-size: cover;
+  //background-repeat: no-repeat;
+  //background-position: center center;
+  //background-color: rgba(40, 136, 255, 0.39);
+  //background-blend-mode: darken;
   .card {
-    min-height: 550px;
+    min-height: 480px;
     //max-height: 450px;
   }
 }
@@ -1447,7 +1548,7 @@ div.card {
   .my-image {
     margin-bottom: 15px;
     border-radius: 100% !important;
-    width: 75%;
+    width: 260px;
     margin: 12%;
     filter: grayscale(40) blur(5px);
   }

@@ -22,7 +22,7 @@
                             <th>Tên</th>
                             <th>Email</th>
                             <th>Nội Dung</th>
-                            <th>Đọc ? </th>
+                            <th>Đọc ?</th>
                             <th>Trả lời ?</th>
                             <th>Created Time</th>
                             <th>Action</th>
@@ -51,8 +51,12 @@
                                 </td>
                                 <td>{{ $contact->created_at }}</td>
                                 <td>
-                                    <button onclick="setDocLienHe({{$contact->id}})" class="btn btn-warning" {{ ($contact->status == "Y") ? 'disabled': '' }}>Đã đọc</button>
-                                    <button onclick="deleteLienHe({{$contact->id}})" class="btn btn-danger">Delete</button>
+                                    <button onclick="setDocLienHe({{$contact->id}})"
+                                            class="btn btn-warning" {{ ($contact->status == "Y") ? 'disabled': '' }}>Đã
+                                        đọc
+                                    </button>
+                                    <button onclick="deleteLienHe({{$contact->id}})" class="btn btn-danger">Delete
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach
@@ -75,21 +79,21 @@
             var button = event.target;
             event.stopPropagation();
             $.ajax({
-                url: "/authorized/lienhe/"+id+"/dadoc",
+                url: "/authorized/lienhe/" + id + "/dadoc",
                 type: 'GET',
                 success: function (data) {
-                    if(data.success == true) {
+                    if (data.success == true) {
                         swal({
                             title: "Success !",
                             text: data.msg,
                             icon: "success",
                             button: "Đóng thôi !",
                         });
-                        document.getElementById('column'+id).innerText = 'Đã đọc';
+                        document.getElementById('column' + id).innerText = 'Đã đọc';
                         button.disabled = true;
                     }
                 },
-                error:function (e) {
+                error: function (e) {
                     // console.log(e);
                     swal({
                         title: "Opp !",
@@ -100,53 +104,53 @@
                 }
             })
         }
-         function deleteLienHe(id) {
-             event.stopPropagation();
-             swal({
-                 title: "Muốn xóa hả mày ?",
-                 text: "Một khi mày xóa thì éo có lấy lại được đâu con chóa !!",
-                 icon: "warning",
-                 buttons: true,
-                 dangerMode: true,
-             }).then((value) => {
-                 if (value) {
-                     $.ajax({
-                         url: "/authorized/lienhe/"+id+"/delete",
-                         type:"GET",
-                         success: function (data) {
-                             if(data.success == true) {
-                                 swal({
-                                     title: "Success !",
-                                     text: data.msg,
-                                     icon: "success",
-                                     button: "Đóng thôi !",
-                                 });
-                                 var tr = document.getElementById('row'+id);
-                                 var tbody = tr.parentNode;
-                                 tbody.removeChild(tr);
-                             } else {
+        function deleteLienHe(id) {
+            // event.stopPropagation();
+            swal({
+                title: "Muốn xóa hả mày ?",
+                text: "Một khi mày xóa thì éo có lấy lại được đâu con chóa !!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((value) => {
+                if (value) {
+                    $.ajax({
+                        url: "/authorized/lienhe/" + id + "/delete",
+                        type: "GET",
+                        success: function (data) {
+                            if (data.success == true) {
+                                swal({
+                                    title: "Success !",
+                                    text: data.msg,
+                                    icon: "success",
+                                    button: "Đóng thôi !",
+                                });
+                                var tr = document.getElementById('row' + id);
+                                var tbody = tr.parentNode;
+                                tbody.removeChild(tr);
+                            } else {
 
-                             }
-                         },
-                         error: function(e) {
-                             swal({
-                                 title: "Opp !",
-                                 text: e.responseJSON.msg,
-                                 icon: "error",
-                                 button: "Đóng thôi !",
-                             });
-                         }
-                     })
-                 } else {
-                     swal({
-                         title: "Mày rảnh vậy !!",
-                         icon: "info",
-                         button: "Tắt đi con chóa!",
-                         closeOnClickOutside: false
-                     });
-                 }
-             })
+                            }
+                        },
+                        error: function (e) {
+                            swal({
+                                title: "Opp !",
+                                text: e.responseJSON.msg,
+                                icon: "error",
+                                button: "Đóng thôi !",
+                            });
+                        }
+                    })
+                } else {
+                    swal({
+                        title: "Mày rảnh vậy !!",
+                        icon: "info",
+                        button: "Tắt đi con chóa!",
+                        closeOnClickOutside: false
+                    });
+                }
+            })
 
-         }
+        }
     </script>
 @endsection

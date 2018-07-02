@@ -201,7 +201,26 @@ class ServiceContactController extends Controller
      */
     public function delete($id)
     {
+        $service_contact = MyServiceContact::find($id);
+        if($service_contact) {
+            if($service_contact->serviceFile != null) {
+                try {
+                    Storage::disk('local')->delete($service_contact->serviceFile->file_name);
+                } catch (\Exception $e){
 
+                }
+                $service_contact->serviceFile->delete();
+            }
+            $service_contact->delete();
+            return response()->json([
+                'success' => true,
+                'msg' => "Đã xóa bài viết và File Liên Quan !",
+            ],200);
+        }
+        return response()->json([
+            'success' => false,
+            'msg' => "Éo tìm thấy mày ơi",
+        ],404);
     }
     /**
      * Remove the specified resource from storage.

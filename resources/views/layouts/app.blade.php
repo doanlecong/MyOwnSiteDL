@@ -65,7 +65,7 @@
             <a class="navbar-brand slogan-title" href="{{ url('/') }}">
                 <h4 class="slogan" style="font-family: Lobster; font-weight: lighter">Hãy sống với đam mê.</h4>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler btn btn-white white-text " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars" aria-hidden="true"></i> Menu
             </button>
 
@@ -111,7 +111,7 @@
                         @if(!empty($topicsBlog) && count($topicsBlog) > 0)
                             <div class="dropdown-menu">
                                 @foreach($topicsBlog as $topic)
-                                    <a class="dropdown-item" href="{{ route('blog.showTopic',$topic->slug.".html") }}" > {{ $topic->title }}</a>
+                                    <a class="dropdown-item" title="{{ $topic->title }}" href="{{ route('blog.showTopic',$topic->slug.".html") }}" >{{ mb_substr($topic->title,0 ,30)}}{{ strlen($topic->title) > 30 ? "...":"" }}</a>
                                 @endforeach
                             </div>
                         @endif
@@ -121,7 +121,7 @@
                         @if(!empty($topicsSerie) && count($topicsSerie) > 0)
                             <div class="dropdown-menu">
                                 @foreach($topicsSerie as $topic)
-                                    <a class="dropdown-item" href="{{ route('serie.showTopic',$topic->slug.".html") }}" > {{ $topic->title }}</a>
+                                    <a class="dropdown-item" title="{{ $topic->title }}" href="{{ route('serie.showTopic',$topic->slug.".html") }}" > {{ mb_substr($topic->title,0 ,30)}}{{ strlen($topic->title) > 30 ? "...":"" }}</a>
                                 @endforeach
                             </div>
                         @endif
@@ -131,7 +131,7 @@
                         @if(!empty($topicsChuyende) && count($topicsChuyende) > 0)
                             <div class="dropdown-menu">
                                 @foreach($topicsChuyende as $topic)
-                                    <a class="dropdown-item" href="{{ route('chuyende.showTopic',$topic->slug.".html") }}" > {{ $topic->title }}</a>
+                                    <a class="dropdown-item" title="{{ $topic->title }}"  href="{{ route('chuyende.showTopic',$topic->slug.".html") }}" > {{ mb_substr($topic->title,0 ,30)}}{{ strlen($topic->title) > 30 ? "...":"" }}</a>
                                 @endforeach
                             </div>
                         @endif

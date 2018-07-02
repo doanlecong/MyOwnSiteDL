@@ -83,7 +83,7 @@ class ConfigData
         'svg' => 'image/svg+xml',
         'doc' => 'application/msword',
         'dot' => 'application/msword',
-        'json' => 'application/json',
+            'json' => 'application/json',
 
         'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'dotx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.template',

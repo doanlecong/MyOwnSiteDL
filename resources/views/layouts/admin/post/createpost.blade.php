@@ -110,15 +110,15 @@
                                                 @endforeach
                                             </select>
                                             <label for="description">Hình đại diện</label>
-                                            <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <a id="lfm" data-input="hinhdaidien" data-preview="holder"
-                                                   class="btn btn-primary text-light box-shadown-superdarkblue">
-                                                    <i class="fa fa-picture-o"></i> Choose
-                                                </a>
-                                            </span>
-                                                <input id="hinhdaidien" class="form-control" type="text" name="hinhdaidien">
-                                            </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                        <a id="lfm" data-input="hinhdaidien" data-preview="holder"
+                                                           class=" btn-primary text-light box-shadown-superdarkblue">
+                                                            <i class="fa fa-picture-o"></i> Choose
+                                                        </a>
+                                                    </span>
+                                                    <input id="hinhdaidien" class="form-control" type="text" name="hinhdaidien">
+                                                </div>
                                             <img id="holder" style="margin-top:15px;max-height:100px;">
                                             <hr>
                                             <label for="">Bài Viết Trước Đó :</label>

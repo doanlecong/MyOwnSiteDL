@@ -33,7 +33,7 @@
                         </thead>
                         <tbody>
                         @foreach($myServiceContact as $service)
-                            <tr>
+                            <tr id="row{{$service->id }}">
                                 <td>{{ $service->id}}</td>
                                 <td>{{ $service->name }}</td>
                                 <td>{{ $service->email }}</td>
@@ -90,7 +90,7 @@
                                 </td>
                                 <td>
                                     <a href="{{route('dichvu.show', $service->id)}}" class="btn btn-warning">View</a>
-                                    <a href="{{route('dichvu.delete', $service->id) }}" class="btn btn-danger" onclick="return confirm('Mày có muốn xóa thật không ?')">Delete</a>
+                                    <button class="btn btn-danger  box-shadown-superdarkblue" onclick="deleteLienHe({{$service->id}})"><i class="fa fa-trash"></i></button>
                                 </td>
                             </tr>
                         @endforeach
@@ -105,4 +105,57 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scriptTail')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function deleteLienHe(id) {
+            // event.stopPropagation();
+            swal({
+                title: "Muốn xóa hả mày ?",
+                text: "Một khi mày xóa thì éo có lấy lại được đâu con chóa !!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((value) => {
+                if (value) {
+                    $.ajax({
+                        url: "/authorized/delete_dich_vu/" + id ,
+                        type: "GET",
+                        success: function (data) {
+                            if (data.success == true) {
+                                swal({
+                                    title: "Success !",
+                                    text: data.msg,
+                                    icon: "success",
+                                    button: "Đóng thôi !",
+                                });
+                                var tr = document.getElementById('row' + id);
+                                var tbody = tr.parentNode;
+                                tbody.removeChild(tr);
+                            } else {
+
+                            }
+                        },
+                        error: function (e) {
+                            swal({
+                                title: "Opp !",
+                                text: e.responseJSON.msg,
+                                icon: "error",
+                                button: "Đóng thôi !",
+                            });
+                        }
+                    })
+                } else {
+                    swal({
+                        title: "Mày rảnh vậy !!",
+                        icon: "info",
+                        button: "Tắt đi con chóa!",
+                        closeOnClickOutside: false
+                    });
+                }
+            })
+
+        }
+    </script>
 @endsection

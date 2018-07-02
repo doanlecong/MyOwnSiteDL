@@ -33,7 +33,7 @@ class MyPost extends Model
         return true;
     }
     public static function findBySlug($slug, $type){
-        return MyPost::where('slug',$slug)->where('type_posts',$type)->first();
+        return MyPost::where('slug',$slug)->where('type_posts',$type)->where('status',ConfigData::$publish)->first();
     }
 
     public static function getArrTagSelected(MyPost $post) {

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+    @extends('layouts.admin')
 @section('script')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css">
     <link rel="stylesheet" href="/css/content_post.css">

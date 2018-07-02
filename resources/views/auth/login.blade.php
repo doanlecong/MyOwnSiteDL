@@ -10,11 +10,11 @@
 @endsection
 
 @section('content')
-<div class="container border-top-blue">
+<div class="container border-top-blue no-padding-left-right no-padding-top no-padding-bottom" >
     <div class="row justify-content-center">
         <div class="col-md no-padding-left-right">
-            <div class="card">
-                <div class="card-header background-blue text-light">{{ __('Login') }}</div>
+            <div class="card card-no-border no-border-radius">
+                <div class="card-header no-border-radius card-no-border background-gradient-light-blue text-light text-20">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
