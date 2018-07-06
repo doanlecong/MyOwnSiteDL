@@ -18,15 +18,28 @@ class MyPost extends Model
         $count = MyPost::where('type_posts', ConfigData::getConvention($type))->where('status', $status)->count();
         return $count;
     }
-    public static function checkTitle($title){
-        $mypost = MyPost::where('title',$title)->first();
+    public static function checkTitle(Request $request){
+        $mypost = MyPost::where('title',$request->title);
+        if(!empty($request->id)) {
+            $mypost = $mypost->where('id','<>',$request->id);
+        }
+        $mypost = $mypost->first();
         if($mypost) {
             return false;
         }
         return true;
     }
-    public static function checkSlug($slug) {
-        $myPost = MyPost::where('slug', $slug)->first();
+    public static function checkSlug(Request $request, $slug = '') {
+        if(!empty($slug)) {
+            $myPost = MyPost::where('slug', $slug);
+        } else {
+            $myPost = MyPost::where('slug', $request->slug);
+        }
+        if(!empty($request->id)) {
+            $myPost = $myPost->where('id','<>',$request->id);
+        }
+        $myPost = $myPost->first();
+
         if($myPost){
             return false;
         }

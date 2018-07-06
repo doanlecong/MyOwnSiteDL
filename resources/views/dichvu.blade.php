@@ -328,16 +328,13 @@
             <div class="row mt-3">
                 <div class="col-lg" id="paralax_duan">
                     <div id="title" class="slide header">
-                        <h1>Pure CSS Parallax</h1>
+                        <h1>Coming Soon</h1>
                     </div>
 
                     <div id="slide1" class="slide">
                         <div class="title">
-                            <h1>Slide 1</h1>
-                            <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per,
-                                postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam
-                                eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris
-                                docendi denique vim.</p>
+                            <h1>TRUNG TÂM DỊCH VỤ VIỄN THÔNG VNPT TP.HCM</h1>
+                            <p>Website thuộc trung tâm viễn thông VNPT Thành phố Hồ Chí Mính . Tiền thân là công ty viễn thông và chuyển mạch 2 của tập đoàn VNPT</p>
                         </div>
                     </div>
 

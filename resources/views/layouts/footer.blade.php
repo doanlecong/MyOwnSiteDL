@@ -28,7 +28,7 @@
 
             <div class="col-sm-8 background-litle-tranparent padding-top-30">
                 <p class="danhmuc white-text text-15">
-                    <i class="fa fa-hand-o-right white-text " style="width: 30px;"></i> Mình có đam mê với lập trình . Và cũng rất thích âm nhạc . Thể thao cũng nằm trong
+                    <i class="fa fa-hand-o-right white-text " style="width: 30px;"></i> Mình có đam mê với lập trình . Và cũng rất thích âm nhạc và đọc sách. Thể thao cũng nằm trong
                     những sở thích của mình</p>
                 <hr>
                 <p class="danhmuc white-text text-15"><i class="fa  fa-phone orange-text" style="width: 30px;"></i> Liên hệ : <span class="sdt">+84 98 250 36 43</span></p>

@@ -7,7 +7,6 @@ use App\MyPost;
 use App\MyTag;
 use App\MyTopic;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Null_;
 
 class MyPostController extends Controller
 {
@@ -191,10 +190,9 @@ class MyPostController extends Controller
 
     public function checkTitle($type, Request $request)
     {
-        $title = $request->title;
-        $isSuccess = MyPost::checkTitle($title);
-        $slug = str_slug($title, '-');
-        $canUseSlug = MyPost::checkSlug($slug);
+        $isSuccess = MyPost::checkTitle($request);
+        $slug = str_slug($request->title, '-');
+        $canUseSlug = MyPost::checkSlug($request, $slug);
         return response()->json([
             'success' => $isSuccess,
             'title' => $request->title,
@@ -206,7 +204,7 @@ class MyPostController extends Controller
     public function checkSlug($type, Request $request)
     {
         $slug = $request->slug;
-        $canUseSlug = MyPost::checkSlug($slug);
+        $canUseSlug = MyPost::checkSlug($request, null);
         return response()->json([
             'success' => $canUseSlug,
             'slug' => $slug,

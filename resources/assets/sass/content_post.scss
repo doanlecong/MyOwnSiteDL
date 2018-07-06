@@ -35,8 +35,11 @@
     }
   }
   pre {
-    border: 2px solid  dodgerblue;
+    border: 1px solid  dodgerblue;
     transition: box-shadow ease-in-out 0.2s;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
     &:hover {
       box-shadow: 3px 3px 0px 1px #0000fa;
     }

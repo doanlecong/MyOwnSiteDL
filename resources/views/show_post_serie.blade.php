@@ -74,7 +74,7 @@ $date = date('w');
             <div class="col-sm-12 col-md-9">
                 <div class="contentPost container content-post-show" id="contentPost">
                     <h1 class="text-primary">{{ $post->title }}</h1>
-                    <p style="font-weight: 700; font-size: 20px;">
+                    <p style="font-weight: 700; font-size: 18px;" class="text-justify">
                         {!! strip_tags($post->description) !!}
                     </p>
                     <span class="text-20"><i class="fa fa-eye blue-text"></i> {{ $count }}</span> @@@@ &nbsp;

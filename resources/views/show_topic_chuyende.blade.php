@@ -29,7 +29,7 @@
             <div class="col-12"><h4 class="text-center text-light font-lobster">Chủ đề</h4></div>
             <div class="col-sm-4">
                 @if($topic->image_name != null &&  $topic->image_name != "NULL")
-                    <img src="{{$topic->image_name}}" alt="{{ $topic->title }}" class="image-full-width">
+                    <img src="{{$topic->image_name}}" alt="{{ $topic->title }}" class="image-full-width" style="background-color: rgba(32,0,29,0.85);">
                 @else
                     <img src="{{ asset('upload/images/blankimage.jpg') }}" alt="{{ $topic->title }}"
                          class="image-full-width">
